@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flammenloge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    :root {
+      --bg: #080808;
+      --surface: #121212;
+      --surface-hover: #1e1e1e;
+      --text: #f0ece4;
+      --text-muted: #8a867e;
+      --amber: #ff8c00;
+      --amber-light: #ffd700;
+      --fire: #ff4500;
+      --fire-deep: #cc3300;
+      --glow-amber: 0 0 30px rgba(255, 140, 0, 0.3);
+      --glow-fire: 0 0 60px rgba(255, 69, 0, 0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+    
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ===== CANVAS (Particles + Smoke) ===== */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ===== LIGHT CONE ===== */
+    .light-cone {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 100vh;
+      background: radial-gradient(ellipse at top, 
+        rgba(255, 140, 0, 0.04) 0%,
+        rgba(255, 69, 0, 0.02) 40%,
+        transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+      animation: cone-pulse 6s ease-in-out infinite;
+    }
+
+    @keyframes cone-pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 300px;
+      background: linear-gradient(to top, rgba(255, 140, 0, 0.05), transparent);
+      pointer-events: none;
+    }
+
+    .loge-emblem {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 2rem;
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.3)); }
+      50% { filter: drop-shadow(0 0 35px rgba(255, 200, 0, 0.6)); }
+    }
+
+    .loge-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: clamp(3rem, 12vw, 8rem);
+      line-height: 1;
+      background: linear-gradient(135deg, #ffd700 0%, #ff8c00 40%, #ff4500 70%, #ffd700 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fade-up 1.2s ease forwards, shine 4s linear infinite 1.2s;
+    }
+
+    @keyframes shine {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fade-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .loge-subtitle {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
+      color: var(--text-muted);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fade-up 1s ease 0.3s forwards;
+    }
+
+    .loge-line {
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--amber), transparent);
+      margin-bottom: 3rem;
+      animation: line-glow 3s ease-in-out infinite;
+      opacity: 0;
+      animation: fade-up 0.8s ease 0.6s forwards, line-glow 3s ease-in-out infinite 0.6s;
+    }
+
+    @keyframes line-glow {
+      0%, 100% { opacity: 0.5; box-shadow: 0 0 10px rgba(255, 140, 0, 0.2); }
+      50% { opacity: 1; box-shadow: 0 0 25px rgba(255, 140, 0, 0.4); }
+    }
+
+    .loge-tagline {
+      font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fade-up 1s ease 0.9s forwards;
+    }
+
+    .loge-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      border-radius: 50px;
+      background: transparent;
+      color: var(--amber-light);
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fade-up 0.8s ease 1.2s forwards;
+    }
+
+    .loge-cta:hover {
+      background: rgba(255, 140, 0, 0.1);
+      border-color: var(--amber);
+      box-shadow: var(--glow-amber);
+      transform: translateY(-2px);
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--amber-light);
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+    .section-title.visible { opacity: 1; transform: translateY(0); }
+
+    .section-line {
+      width: 60px;
+      height: 1px;
+      background: var(--amber);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transition: all 0.6s ease 0.2s;
+    }
+    .section-line.visible { opacity: 0.6; }
+
+    .section-text {
+      color: var(--text-muted);
+      line-height: 1.9;
+      font-weight: 300;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.8s ease 0.3s;
+    }
+    .section-text.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      aspect-ratio: 3/4;
+      background: var(--surface);
+      border: 1px solid rgba(255, 140, 0, 0.1);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.5s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      cursor: default;
+    }
+    .gallery-item.visible { opacity: 1; transform: translateY(0); }
+    .gallery-item:hover {
+      border-color: rgba(255, 140, 0, 0.3);
+      box-shadow: 0 0 30px rgba(255, 140, 0, 0.08);
+      transform: translateY(-5px);
+    }
+    .gallery-item:nth-child(2) { transition-delay: 0.1s; }
+    .gallery-item:nth-child(3) { transition-delay: 0.2s; }
+    .gallery-item:nth-child(4) { transition-delay: 0.3s; }
+
+    .gallery-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .gallery-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      color: var(--amber-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    .gallery-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== SMOKE PARTICLES ===== */
+    .smoke-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .smoke {
+      position: absolute;
+      bottom: -50px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(100, 80, 60, 0.06), transparent);
+      border-radius: 50%;
+      animation: smoke-rise 20s ease-out infinite;
+    }
+    .smoke:nth-child(1) { left: 20%; animation-duration: 25s; animation-delay: 0s; }
+    .smoke:nth-child(2) { left: 50%; animation-duration: 20s; animation-delay: -5s; width: 400px; }
+    .smoke:nth-child(3) { left: 75%; animation-duration: 28s; animation-delay: -10s; }
+
+    @keyframes smoke-rise {
+      0% { transform: translateY(0) scale(0.5); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-250px) scale(2); opacity: 0; }
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 140, 0, 0.4); }
+
+    /* ===== SOUND TOGGLE ===== */
+    .sound-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 100;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(10px);
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .sound-toggle:hover {
+      border-color: var(--amber);
+      color: var(--amber-light);
+      box-shadow: var(--glow-amber);
+    }
+    .sound-toggle.playing {
+      color: var(--amber-light);
+      border-color: var(--amber);
+      animation: sound-pulse 2s ease-in-out infinite;
+    }
+    @keyframes sound-pulse {
+      0%, 100% { box-shadow: 0 0 10px rgba(255, 140, 0, 0.2); }
+      50% { box-shadow: 0 0 25px rgba(255, 140, 0, 0.4); }
+    }
+    .sound-label {
+      position: fixed;
+      bottom: 2.6rem;
+      right: 5rem;
+      z-index: 100;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .sound-label.visible { opacity: 1; }
+
+    /* ===== IMPRESSUM ===== */
+    .impressum {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 140, 0, 0.08);
+    }
+    .impressum-content {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      opacity: 0.6;
+    }
+    .impressum-content strong {
+      color: var(--amber-light);
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      display: block;
+      margin-top: 1rem;
+    }
+    .impressum-content strong:first-child { margin-top: 0; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid rgba(255, 140, 0, 0.08);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 768px) {
+      .loge-title { font-size: clamp(2.5rem, 15vw, 5rem); }
+      .loge-subtitle { font-size: 0.8rem; letter-spacing: 0.2em; }
+      .loge-cta { padding: 0.8rem 1.8rem; font-size: 0.75rem; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero { padding: 1.5rem; }
+      .loge-emblem { width: 50px; height: 50px; }
+      .gallery { grid-template-columns: 1fr; }
+      .section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Light Cone -->
+  <div class="light-cone"></div>
+
+  <!-- Smoke -->
+  <div class="smoke-container">
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+    <div class="smoke"></div>
+  </div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <svg class="loge-emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="f" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#ff4500"/>
+          <stop offset="50%" stop-color="#ff8c00"/>
+          <stop offset="100%" stop-color="#ffd700"/>
+        </linearGradient>
+        <filter id="g">
+          <feGaussianBlur stdDeviation="2"/>
+        </filter>
+      </defs>
+      <path d="M50 115 Q15 80 20 55 Q25 30 50 5 Q75 30 80 55 Q85 80 50 115Z" 
+            fill="url(#f)" filter="url(#g)" opacity="0.9">
+        <animate attributeName="d" dur="1s" repeatCount="indefinite"
+          values="M50 115 Q15 80 20 55 Q25 30 50 5 Q75 30 80 55 Q85 80 50 115Z;
+                  M50 115 Q12 78 17 52 Q22 27 50 8 Q78 27 83 52 Q88 78 50 115Z;
+                  M50 115 Q15 80 20 55 Q25 30 50 5 Q75 30 80 55 Q85 80 50 115Z"/>
+      </path>
+      <path d="M50 90 Q30 70 33 55 Q36 40 50 25 Q64 40 67 55 Q70 70 50 90Z" 
+            fill="url(#f)" opacity="0.6">
+        <animate attributeName="d" dur="0.8s" repeatCount="indefinite"
+          values="M50 90 Q30 70 33 55 Q36 40 50 25 Q64 40 67 55 Q70 70 50 90Z;
+                  M50 90 Q28 68 31 52 Q34 37 50 28 Q66 37 69 52 Q72 68 50 90Z;
+                  M50 90 Q30 70 33 55 Q36 40 50 25 Q64 40 67 55 Q70 70 50 90Z"/>
+      </path>
+    </svg>
+
+    <h1 class="loge-title">Flammenloge</h1>
+    <p class="loge-subtitle">Im Licht der Erkenntnis</p>
+    <div class="loge-line"></div>
+    <p class="loge-tagline">
+      Ein stiller Ort in einer lauten Welt.<br>
+      Wo Gedanken zu Flammen werden und Flammen zu Geschichten.<br>
+      Willkommen in der Loge.
+    </p>
+    <button class="loge-cta" onclick="document.getElementById('manifest').scrollIntoView({behavior:'smooth'})">
+      ↓ Eintreten
+    </button>
+  </section>
+
+  <!-- ===== MANIFEST ===== -->
+  <section id="manifest" class="section">
+    <h2 class="section-title" data-scroll>Die Flamme</h2>
+    <div class="section-line" data-scroll></div>
+    <p class="section-text" data-scroll>
+      Die Flammenloge ist ein Ort für Menschen, die suchen. Nicht nach Antworten – 
+      sondern nach den richtigen Fragen. Hier brennen Gedanken langsam und warm, 
+      wie ein Feuer in der Nacht.
+    </p>
+    <p class="section-text" data-scroll>
+      In einer Welt, die immer lauter wird, will die Loge ein Raum der Stille sein. 
+      Ein Leuchtfeuer für alle, die innehalten, nachdenken und das Licht suchen.
+    </p>
+  </section>
+
+  <!-- ===== GEDANKEN (Galerie) ===== -->
+  <section class="section">
+    <h2 class="section-title" data-scroll>Gedanken im Licht</h2>
+    <div class="section-line" data-scroll></div>
+    <p class="section-text" data-scroll>Jede Flamme erzählt eine Geschichte. Hier sind einige, die brennen.</p>
+    
+    <div class="gallery">
+      <div class="gallery-item" data-scroll>
+        <div class="gallery-icon">🔥</div>
+        <div class="gallery-title">Wach werden</div>
+        <div class="gallery-desc">Der Moment, in dem du erkennst, dass das Leben dir gehört.</div>
+      </div>
+      <div class="gallery-item" data-scroll>
+        <div class="gallery-icon">✨</div>
+        <div class="gallery-title">Leuchtfeuer</div>
+        <div class="gallery-desc">Manchmal reicht ein kleiner Lichtpunkt, um den Weg zu zeigen.</div>
+      </div>
+      <div class="gallery-item" data-scroll>
+        <div class="gallery-icon">🌙</div>
+        <div class="gallery-title">Stille</div>
+        <div class="gallery-desc">In der Ruhe liegt die Kraft, die Welt neu zu sehen.</div>
+      </div>
+      <div class="gallery-item" data-scroll>
+        <div class="gallery-icon">🌄</div>
+        <div class="gallery-title">Morgenlicht</div>
+        <div class="gallery-desc">Jeder Tag ist eine neue Chance, das Feuer zu entfachen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WEISHEITEN DER FLAMME ===== -->
+  <section class="section">
+    <h2 class="section-title" data-scroll>Die Runen der Flamme</h2>
+    <div class="section-line" data-scroll></div>
+    <p class="section-text" data-scroll>
+      Alte Überlieferungen sprechen von einer Halle aus flüsterndem Feuer, erbaut von Händen, die längst zu Asche geworden sind. Man sagt, wer durch ihre Tore tritt, sieht die Welt mit anderen Augen.
+    </p>
+    <p class="section-text" data-scroll>
+      In jener Halle brennen neun ewige Feuer – jedes ein Zeichen, jede Flamme eine Wahrheit, die es zu entziffern gilt. Kein Weg ist dem anderen gleich, doch alle führen sie zum selben Licht.
+    </p>
+    <p class="section-text" data-scroll style="margin-top:2rem;">
+      <em>Erste Rune der Flamme:</em><br>
+      <strong>Die Stille vor dem ersten Funken.</strong> Bevor das Feuer entbrennt, muss die Dunkelheit ihren Raum haben. Wer das Schweigen nicht erträgt, wird das Knistern der Erkenntnis nie hören.
+    </p>
+    <p class="section-text" data-scroll>
+      <em>Zweite Rune der Flamme:</em><br>
+      <strong>Die Reise durch die Nacht.</strong> Jeder Wanderer, der das Licht sucht, muss zuerst durch das Tal des Ungewissen gehen. Die Dunkelheit ist keine Strafe – sie ist die Schmiede, in der Mut geschmiedet wird.
+    </p>
+    <p class="section-text" data-scroll>
+      <em>Dritte Rune der Flamme:</em><br>
+      <strong>Der Funke im Anderen.</strong> Wer nur nach dem eigenen Licht sucht, wird einsam brennen. In den Augen eines anderen ein Glimmen zu entfachen – das ist die größte Kunst des Feuers.
+    </p>
+    <p class="section-text" data-scroll style="margin-top:2rem;">
+      Die Flammenloge hütet diese Runen nicht, um sie zu verstecken. Sondern damit jene, die bereit sind, sie im richtigen Augenblick aufleuchten sehen.
+    </p>
+    <p class="section-text" data-scroll>
+      Die letzte Rune ist die schwerste. Sie lautet: <em>Lass los.</em> Denn das Licht, das du festhältst, verbrennt. Das Licht, das du weitergibst, brennt für immer.
+    </p>
+    <p class="section-text" data-scroll style="text-align:center;margin-top:2rem;font-size:0.85rem;">
+      ✦ ✦ ✦
+    </p>
+  </section>
+
+  <!-- ===== KONTAKT / LOGE ===== -->
+  <section class="section" style="text-align:center;">
+    <h2 class="section-title" data-scroll style="text-align:center;">Der Loge beitreten</h2>
+    <div class="section-line" data-scroll style="margin-left:auto;margin-right:auto;"></div>
+    <p class="section-text" data-scroll style="margin-left:auto;margin-right:auto;">
+      Die Tore der Flammenloge öffnen sich bald. 
+      Wenn du in der Zwischenzeit ein Zeichen senden möchtest, 
+      zünde eine Kerze an und denk an das Licht.
+    </p>
+    <p class="section-text" data-scroll style="margin-left:auto;margin-right:auto;font-size:0.85rem;">
+      ✦ flammenloge.de ✦
+    </p>
+  </section>
+
+  <!-- ===== IMPRESSUM ===== -->
+  <section class="impressum">
+    <div class="impressum-content">
+      <strong>Angaben gemäß §5 DDG</strong>
+      Benjamin Böhm<br>
+      Plantagenweg 37<br>
+      85354 Freising<br><br>
+      <strong>Kontakt</strong>
+      E-Mail: bestbenboehm@gmail.com<br><br>
+      <strong>Verantwortlich für den Inhalt nach §55 RStV</strong>
+      Benjamin Böhm, Plantagenweg 37, 85354 Freising<br><br>
+      <em>Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</em>
+    </div>
+  </section>
+
+  <!-- ===== DATENSCHUTZ ===== -->
+  <section class="impressum">
+    <div class="impressum-content">
+      <strong>Datenschutzerklärung</strong><br><br>
+      <strong>1. Datenschutz auf einen Blick</strong><br>
+      Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt, keine Analyse-Tools (wie Google Analytics) eingesetzt und keine Formulare zur Dateneingabe bereitgestellt.<br><br>
+      <strong>2. Externe Dienste – Google Fonts</strong><br>
+      Diese Website nutzt zur einheitlichen Darstellung von Schriftarten Google Fonts der Google Ireland Ltd. (Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten in seinen Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Hierzu muss die von Ihnen verwendete Browser Verbindung zu Servern von Google aufnehmen. Hierdurch wird an Google übermittelt, dass unsere Website über Ihre IP-Adresse aufgerufen wurde. Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" style="color:var(--amber-light);">policies.google.com/privacy</a>.<br><br>
+      <strong>3. Keine Weitergabe von Daten</strong><br>
+      Da wir keinerlei personenbezogene Daten erfassen, erfolgt auch keine Weitergabe an Dritte.<br><br>
+      <strong>4. Ihre Rechte</strong><br>
+      Ihnen stehen gemäß DSGVO die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch zu. Bei Fragen wenden Sie sich bitte an bestbenboehm@gmail.com.<br><br>
+      <em>Stand: Juni 2026</em>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <span style="color:var(--amber);">✦</span> Flammenloge · Im Licht der Erkenntnis <span style="color:var(--amber);">✦</span>
+  </footer>
+
+  <!-- Sound -->
+  <div class="sound-label" id="soundLabel">Knistern</div>
+  <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Feuer-Knistern">
+    🔊
+  </button>
+
+  <script>
+    // ===== PARTICLES =====
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Ember {
+      constructor() { this.reset(); this.y = Math.random() * canvas.height; }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = -10;
+        this.size = Math.random() * 3 + 1.5;
+        this.speedY = Math.random() * 1.2 + 0.4;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.life = 1;
+        this.decay = Math.random() * 0.006 + 0.003;
+        this.hue = Math.random() > 0.4 
+          ? Math.random() * 30 + 20
+          : Math.random() * 15 + 355;
+      }
+      update() {
+        this.y -= this.speedY;
+        this.x += this.speedX * Math.sin(this.y * 0.01);
+        this.life -= this.decay;
+        if (this.life <= 0 || this.y < -20) this.reset();
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * this.life, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.hue}, 100%, ${50 + 30 * this.life}%, ${this.life})`;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size * this.life * 3, 0, Math.PI * 2);
+        ctx.fillStyle = `hsla(${this.hue}, 100%, 60%, ${this.life * 0.15})`;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        const p = new Ember();
+        p.y = Math.random() * canvas.height;
+        particles.push(p);
+      }
+    }
+    initParticles();
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // ===== SCROLL ANIMATIONS =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
+
+    // ===== SOUND =====
+    let audioCtx = null;
+    let isPlaying = false;
+    let noiseNodes = [];
+    let crackleTimeout = null;
+
+    async function toggleSound() {
+      const btn = document.getElementById('soundToggle');
+      const label = document.getElementById('soundLabel');
+
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      if (isPlaying) {
+        if (crackleTimeout) clearTimeout(crackleTimeout);
+        noiseNodes.forEach(n => {
+          if (n.stop) try { n.stop(); } catch(e) {}
+          if (n.disconnect) n.disconnect();
+        });
+        noiseNodes = [];
+        isPlaying = false;
+        btn.classList.remove('playing');
+        btn.textContent = '🔇';
+        label.classList.remove('visible');
+        return;
+      }
+
+      try {
+        // Brownian noise
+        const bufSize = audioCtx.sampleRate * 3;
+        const buffer = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        let last = 0;
+        for (let i = 0; i < bufSize; i++) {
+          const white = Math.random() * 2 - 1;
+          data[i] = (last + 0.05 * white) / 1.05;
+          last = data[i];
+          data[i] *= 3;
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+        noise.loop = true;
+
+        const lowpass = audioCtx.createBiquadFilter();
+        lowpass.type = 'lowpass';
+        lowpass.frequency.value = 500;
+
+        const highpass = audioCtx.createBiquadFilter();
+        highpass.type = 'highpass';
+        highpass.frequency.value = 80;
+
+        const gain = audioCtx.createGain();
+        gain.gain.value = 0.08;
+
+        noise.connect(lowpass);
+        lowpass.connect(highpass);
+        highpass.connect(gain);
+        gain.connect(audioCtx.destination);
+        noise.start();
+        noiseNodes = [noise, lowpass, highpass, gain];
+
+        // Crackle bursts
+        function addCrackle() {
+          if (!isPlaying) return;
+          const duration = Math.random() * 0.15 + 0.03;
+          const g = audioCtx.createGain();
+          g.gain.setValueAtTime(Math.random() * 0.4 + 0.1, audioCtx.currentTime);
+          g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+          
+          const bpf = audioCtx.createBiquadFilter();
+          bpf.type = 'bandpass';
+          bpf.frequency.value = Math.random() * 3000 + 800;
+          bpf.Q.value = 2;
+          
+          const src = audioCtx.createBufferSource();
+          const buf2 = audioCtx.createBuffer(1, Math.ceil(audioCtx.sampleRate * duration), audioCtx.sampleRate);
+          const d2 = buf2.getChannelData(0);
+          for (let i = 0; i < d2.length; i++) d2[i] = Math.random() * 2 - 1;
+          src.buffer = buf2;
+          
+          src.connect(bpf);
+          bpf.connect(g);
+          g.connect(audioCtx.destination);
+          src.start();
+          
+          crackleTimeout = setTimeout(addCrackle, Math.random() * 300 + 100);
+        }
+        addCrackle();
+
+        isPlaying = true;
+        btn.classList.add('playing');
+        btn.textContent = '🔊';
+        label.classList.add('visible');
+      } catch(e) {
+        console.log('Sound error:', e);
+        btn.textContent = '🔇';
+      }
+    }
+  </script>
+</body>
+</html>
