@@ -245,10 +245,8 @@
       color: var(--amber-light);
       margin-bottom: 1rem;
       letter-spacing: 0.1em;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
     }
+    .section-title.visible { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
     .section-title.visible { opacity: 1; transform: translateY(0); }
 
     .section-line {
@@ -256,9 +254,9 @@
       height: 1px;
       background: var(--amber);
       margin-bottom: 2.5rem;
-      opacity: 0;
-      transition: all 0.6s ease 0.2s;
+      opacity: 0.6;
     }
+    .section-line.visible { opacity: 0; transition: all 0.6s ease 0.2s; }
     .section-line.visible { opacity: 0.6; }
 
     .section-text {
@@ -268,10 +266,8 @@
       font-size: 1.05rem;
       max-width: 700px;
       margin-bottom: 1.5rem;
-      opacity: 0;
-      transform: translateY(15px);
-      transition: all 0.8s ease 0.3s;
     }
+    .section-text.visible { opacity: 0; transform: translateY(15px); transition: all 0.8s ease 0.3s; }
     .section-text.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== GALLERY ===== */
@@ -294,10 +290,9 @@
       padding: 2rem;
       text-align: center;
       transition: all 0.5s ease;
-      opacity: 0;
-      transform: translateY(30px);
       cursor: default;
     }
+    .gallery-item.visible { opacity: 0; transform: translateY(30px); }
     .gallery-item.visible { opacity: 1; transform: translateY(0); }
     .gallery-item:hover {
       border-color: rgba(255, 140, 0, 0.3);
