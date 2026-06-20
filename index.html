@@ -420,9 +420,9 @@
       .section { padding: 5rem 2rem; }
     }
     @media (max-width: 480px) {
-      .hero { padding: 1.5rem 1rem; }
+      .hero { padding: 1.5rem 0.8rem; }
       .loge-emblem { width: 50px; height: 50px; }
-      .loge-title { font-size: clamp(2rem, 14vw, 3.5rem); letter-spacing: 0.02em; }
+      .loge-title { font-size: clamp(1.6rem, 10vw, 3rem); letter-spacing: 0.01em; word-break: keep-all; }
       .loge-subtitle { letter-spacing: 0.12em; font-size: 0.7rem; }
       .gallery { grid-template-columns: 1fr; }
       .section { padding: 4rem 1.5rem; }
@@ -640,15 +640,16 @@
   </section>
 
   <!-- ===== IMPRESSUM ===== -->
-  <section class="impressum">
-    <div class="impressum-content">
-      <strong>Angaben gemäß §5 DDG</strong>
+  <section class="impressum" style="text-align:center;padding:2rem 1.5rem;">
+    <a href="#" onclick="document.getElementById('impressum-daten').style.display='block';this.style.display='none';return false;" style="color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color=''">📜 Impressum</a>
+    <div id="impressum-daten" class="impressum-content" style="display:none;margin-top:1.5rem;text-align:left;">
+      <strong>Angaben gemäß §5 DDG</strong><br>
       Benjamin Böhm<br>
       Plantagenweg 37<br>
       85354 Freising<br><br>
-      <strong>Kontakt</strong>
+      <strong>Kontakt</strong><br>
       E-Mail: bestbenboehm@gmail.com<br><br>
-      <strong>Verantwortlich für den Inhalt nach §55 RStV</strong>
+      <strong>Verantwortlich für den Inhalt nach §55 RStV</strong><br>
       Benjamin Böhm, Plantagenweg 37, 85354 Freising<br><br>
       <em>Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</em>
     </div>
