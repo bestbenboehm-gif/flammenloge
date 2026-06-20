@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Flammenloge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root { --bg: #080808; --surface: #121212; --text: #f0ece4; --text-muted: #8a867e; --amber: #ff8c00; --amber-light: #ffd700; --border: rgba(255,107,0,0.1); }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.7; }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; font-family: 'Cinzel', serif; }
+  .nav-logo { font-size: 1rem; font-weight: 700; color: var(--amber); text-decoration: none; letter-spacing: 0.1em; }
+  .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.4rem 0.8rem; border-radius: 4px; transition: color 0.3s, background 0.3s; font-weight: 400; }
+  .nav-links a:hover { color: var(--amber); background: rgba(255,107,0,0.08); }
+  .nav-links a.active { color: var(--amber); }
+  .nav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+  @media (max-width: 600px) { .nav { padding: 0 1rem; } .nav-burger { display: block; } .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; background: rgba(8,8,8,0.98); border-bottom: 1px solid var(--border); padding: 0.5rem 1rem; gap: 0.2rem; } .nav-links.open { display: flex; } .nav-links a { padding: 0.6rem 0.8rem; font-size: 0.8rem; } }
+  .hero { padding: 100px 2rem 2rem; text-align: center; }
+  .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 600; color: var(--amber); letter-spacing: 0.1em; }
+  .content { max-width: 580px; margin: 0 auto; padding: 2rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+  .content strong { color: var(--text); }
+  .content a { color: var(--amber-light); }
+  footer { text-align: center; padding: 3rem 2rem; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">🔥 Flammenloge</a>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="gedichte.html">Gedichte</a></li>
+    <li><a href="handbuch-flammenseele.html">Handbuch</a></li>
+    <li><a href="impressum.html" class="active">Impressum</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Impressum</h1>
+</section>
+
+<div class="content">
+  <strong>Angaben gemäß §5 DDG</strong><br>
+  Benjamin Böhm<br>
+  Plantagenweg 37<br>
+  85354 Freising<br><br>
+
+  <strong>Kontakt</strong><br>
+  E-Mail: bestbenboehm@gmail.com<br><br>
+
+  <strong>Verantwortlich für den Inhalt nach §55 RStV</strong><br>
+  Benjamin Böhm, Plantagenweg 37, 85354 Freising<br><br>
+
+  <em>Haftungshinweis: Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</em>
+
+  <br><br><hr style="border-color:var(--border);margin:2rem 0;">
+
+  <strong>Datenschutzerklärung</strong><br><br>
+  <strong>1. Datenschutz auf einen Blick</strong><br>
+  Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt, keine Analyse-Tools (wie Google Analytics) eingesetzt und keine Formulare zur Dateneingabe bereitgestellt.<br><br>
+  <strong>2. Externe Dienste: Google Fonts</strong><br>
+  Diese Website nutzt zur einheitlichen Darstellung von Schriftarten Google Fonts der Google Ireland Ltd. (Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten in seinen Browsercache, um Texte und Schriftarten korrekt anzuzeigen. Hierzu muss die von Ihnen verwendete Browser Verbindung zu Servern von Google aufnehmen. Hierdurch wird an Google übermittelt, dass unsere Website über Ihre IP-Adresse aufgerufen wurde. Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.<br><br>
+  <strong>3. Keine Weitergabe von Daten</strong><br>
+  Da wir keinerlei personenbezogene Daten erfassen, erfolgt auch keine Weitergabe an Dritte.<br><br>
+  <strong>4. Ihre Rechte</strong><br>
+  Ihnen stehen gemäß DSGVO die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch zu. Bei Fragen wenden Sie sich bitte an bestbenboehm@gmail.com.<br><br>
+  <em>Stand: Juni 2026</em>
+</div>
+
+<footer>
+  <p>Die Flammenloge · flammenloge.de</p>
+</footer>
+</body>
+</html>

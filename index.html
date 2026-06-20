@@ -68,6 +68,39 @@
       50% { opacity: 1; }
     }
 
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(8,8,8,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; display: flex; align-items: center;
+      justify-content: space-between; height: 56px;
+      font-family: 'Cinzel', serif;
+    }
+    .nav-logo { font-size: 1rem; font-weight: 700; color: var(--amber); text-decoration: none; letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.75rem;
+      letter-spacing: 0.08em; padding: 0.4rem 0.8rem; border-radius: 4px;
+      transition: color 0.3s, background 0.3s; font-weight: 400;
+    }
+    .nav-links a:hover { color: var(--amber); background: rgba(255,107,0,0.08); }
+    .nav-links a.active { color: var(--amber); }
+    .nav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 1rem; }
+      .nav-burger { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 56px; left: 0; right: 0;
+        flex-direction: column; background: rgba(8,8,8,0.98);
+        border-bottom: 1px solid var(--border); padding: 0.5rem 1rem;
+        gap: 0.2rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.6rem 0.8rem; font-size: 0.8rem; }
+    }
+
     /* ===== HERO ===== */
     .hero {
       position: relative;
@@ -429,25 +462,26 @@
       .section-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
       .section-text { font-size: 0.95rem; }
     }
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- Light Cone -->
-  <div class="light-cone"></div>
+<!-- Background Particles -->
+<div class="particles" id="particles"></div>
 
-  <!-- Smoke -->
-  <div class="smoke-container">
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-    <div class="smoke"></div>
-  </div>
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">🔥 Flammenloge</a>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="gedichte.html">Gedichte</a></li>
+    <li><a href="handbuch-flammenseele.html">Handbuch</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</nav>
 
-  <!-- Particle Canvas -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
+<!-- ===== HERO ===== -->
+<section class="hero">
     <svg class="loge-emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="f" x1="0" y1="1" x2="0" y2="0">

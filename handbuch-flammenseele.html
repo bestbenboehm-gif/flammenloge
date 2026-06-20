@@ -26,7 +26,7 @@ body {
   font-size: 18px;
 }
 /* Header */
-header {
+  header {
   text-align: center;
   padding: 80px 20px 40px;
   position: relative;
@@ -52,8 +52,8 @@ header::before {
   width: 60px; height: 1px; background: var(--amber);
   margin: 40px auto; opacity: 0.5;
 }
-/* Navigation */
-nav {
+/* TOC Navigation */
+nav.toc {
   position: sticky; top: 0; z-index: 100;
   background: rgba(10,7,5,0.95); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -155,13 +155,47 @@ footer {
   h1 { font-size: 32px; letter-spacing: 4px; }
   section { padding: 40px 16px; }
   .law { padding: 16px; }
-  nav a { font-size: 11px; padding: 4px 8px; }
 }
+</style>
+
+<!-- ===== NAV CSS ===== -->
+<style>
+  .topnav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 2000;
+    background: rgba(10,7,5,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center;
+    justify-content: space-between; height: 56px;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .topnav-logo { font-size: 1.1rem; font-weight: 700; color: var(--amber); text-decoration: none; letter-spacing: 0.08em; }
+  .topnav-links { display: flex; gap: 0.5rem; list-style: none; margin: 0; }
+  .topnav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.06em; padding: 0.4rem 0.8rem; border-radius: 4px; transition: color 0.3s, background 0.3s; display: inline-block; }
+  .topnav-links a:hover { color: var(--amber); background: rgba(255,107,0,0.08); }
+  .topnav-links a.active { color: var(--amber); }
+  .topnav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; padding: 4px; }
+  @media (max-width: 600px) {
+    .topnav { padding: 0 1rem; }
+    .topnav-burger { display: block; }
+    .topnav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; background: rgba(10,7,5,0.98); border-bottom: 1px solid var(--border); padding: 0.5rem 1rem; gap: 0.2rem; margin: 0; }
+    .topnav-links.open { display: flex; }
+    .topnav-links a { padding: 0.6rem 0.8rem; font-size: 0.8rem; display: block; }
+  }
 </style>
 </head>
 <body>
 
-<header>
+<nav class="topnav">
+  <a href="index.html" class="topnav-logo">🔥 Flammenloge</a>
+  <button class="topnav-burger" onclick="document.getElementById('hnav').classList.toggle('open')">☰</button>
+  <ul class="topnav-links" id="hnav">
+    <li><a href="gedichte.html">Gedichte</a></li>
+    <li><a href="handbuch-flammenseele.html" class="active">Handbuch</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+  </ul>
+</nav>
+
+<header style="padding-top:110px;">
   <div class="seal">🔥</div>
   <h1>Die Flammenloge</h1>
   <div class="subtitle">Handbuch der Flammenseele</div>
@@ -173,7 +207,7 @@ footer {
   </p>
 </header>
 
-<nav>
+<nav class="toc">
   <a href="#einleitung">Einleitung</a>
   <a href="#gesetze">Die Neun Feuer</a>
   <a href="#pfad">Der Pfad</a>
