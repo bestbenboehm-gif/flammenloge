@@ -211,6 +211,120 @@ footer {
   background: rgba(255, 140, 0, 0.4);
 }
 
+/* ===== SOCIAL SHARING ===== */
+.share-toggle {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  color: var(--text-muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.share-toggle:hover {
+  border-color: var(--amber);
+  color: var(--amber-light);
+  box-shadow: var(--glow-amber);
+}
+
+.share-panel {
+  position: fixed;
+  bottom: 5rem;
+  left: 2rem;
+  z-index: 101;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 180px;
+}
+
+.share-panel.open {
+  display: flex;
+}
+
+.share-panel button {
+  background: none;
+  border: 1px solid rgba(255, 140, 0, 0.1);
+  border-radius: 8px;
+  color: var(--text-muted);
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.share-panel button:hover {
+  border-color: var(--amber);
+  color: var(--amber-light);
+  background: rgba(255, 140, 0, 0.05);
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(10px);
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+  display: flex;
+}
+
+.back-to-top:hover {
+  border-color: var(--amber);
+  color: var(--amber-light);
+  box-shadow: var(--glow-amber);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .share-toggle, .back-to-top {
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+  }
+  
+  .share-panel {
+    bottom: 4.5rem;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   footer {

@@ -634,10 +634,27 @@
     🔊
   </button>
 
-  <!-- JavaScript -->
+  <!-- Social Sharing -->
+  <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
+    🔗
+  </button>
+  <div class="share-panel" id="share-panel" role="dialog" aria-label="Teilen auf">
+    <button onclick="shareOnTwitter()" aria-label="Auf Twitter teilen">🐦 Twitter</button>
+    <button onclick="shareOnFacebook()" aria-label="Auf Facebook teilen">📘 Facebook</button>
+    <button onclick="shareOnWhatsApp()" aria-label="Auf WhatsApp teilen">💬 WhatsApp</button>
+    <button onclick="shareViaEmail()" aria-label="Per E-Mail teilen">✉️ E-Mail</button>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen" title="Nach oben">
+    ↑
+  </button>
+
+  </main>
   <script src="js/nav.js"></script>
   <script src="js/particles.js"></script>
   <script src="js/sound.js"></script>
+  <script src="js/share.js"></script>
   <script>
     // Service Worker registrieren
     if ('serviceWorker' in navigator) {
@@ -656,6 +673,16 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
+
+    // ===== BACK TO TOP BUTTON =====
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
   </script>
 </body>
 </html>

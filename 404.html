@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden – Flammenloge</title>
+  <meta name="description" content="Die gesuchte Seite existiert nicht. Zurück zur Flammenloge.">
+  <meta name="robots" content="noindex">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .error-flame {
+      font-size: clamp(4rem, 15vw, 8rem);
+      margin-bottom: 2rem;
+      animation: flicker 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.5));
+    }
+    
+    @keyframes flicker {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.05); }
+    }
+    
+    .error-code {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, #ffd700 0%, #ff8c00 50%, #ff4500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    
+    .error-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      color: var(--amber-light);
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .error-text {
+      font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+      color: var(--text-muted);
+      max-width: 500px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    
+    .error-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .error-link {
+      padding: 0.8rem 2rem;
+      border: 1px solid rgba(255, 140, 0, 0.3);
+      border-radius: 50px;
+      color: var(--amber-light);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+    }
+    
+    .error-link:hover {
+      background: rgba(255, 140, 0, 0.1);
+      border-color: var(--amber);
+      box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .error-link.primary {
+      background: rgba(255, 140, 0, 0.1);
+      border-color: var(--amber);
+    }
+    
+    .error-quote {
+      margin-top: 3rem;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 400px;
+      line-height: 1.6;
+      opacity: 0.7;
+    }
+    
+    .error-quote::before { content: '»'; margin-right: 0.5rem; color: var(--amber); }
+    .error-quote::after { content: '«'; margin-left: 0.5rem; color: var(--amber); }
+  </style>
+</head>
+<body>
+
+<div class="error-container">
+  <div class="error-flame">🔥</div>
+  <div class="error-code">404</div>
+  <div class="error-title">Die Flamme ist erloschen</div>
+  <p class="error-text">
+    Die Seite, die du suchst, existiert nicht. 
+    Vielleicht ist sie im Nebel verschwunden oder wurde vom Wind verweht.
+  </p>
+  
+  <div class="error-links">
+    <a href="/" class="error-link primary">Zur Startseite</a>
+    <a href="/gedichte.html" class="error-link">Gedichte</a>
+    <a href="/handbuch-flammenseele.html" class="error-link">Handbuch</a>
+  </div>
+  
+  <p class="error-quote">
+    Nicht jeder Weg führt ans Ziel. Aber jeder Weg ist Teil der Reise.
+  </p>
+</div>
+
+</body>
+</html>

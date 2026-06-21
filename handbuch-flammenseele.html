@@ -234,13 +234,121 @@ body.font-small { font-size: 15px; }
 body.font-medium { font-size: 18px; }
 body.font-large { font-size: 22px; }
 
+/* ===== SUCHE ===== */
+.search-container {
+  position: sticky;
+  top: 56px;
+  z-index: 99;
+  background: rgba(10,7,5,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 24px;
+}
+.search-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+}
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 16px;
+  background: rgba(255,107,0,0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
+.search-wrapper input:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 2px rgba(255,140,0,0.1);
+}
+.search-wrapper input::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+}
+.search-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  padding: 4px;
+  line-height: 1;
+}
+.search-clear:hover {
+  color: var(--amber);
+}
+.search-results {
+  max-width: 680px;
+  margin: 8px auto 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-style: italic;
+  display: none;
+}
+
+/* Search Highlight */
+.search-highlight {
+  background: rgba(255,215,0,0.3);
+  color: var(--gold);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+/* Search Match Animation */
+.search-match {
+  animation: searchPulse 0.5s ease;
+}
+@keyframes searchPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,140,0,0.4); }
+  50% { box-shadow: 0 0 20px 5px rgba(255,140,0,0.2); }
+  100% { box-shadow: 0 0 0 0 rgba(255,140,0,0); }
+}
+
+/* ===== BACK TO TOP ===== */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(10,7,5,0.9);
+  backdrop-filter: blur(8px);
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.back-to-top.visible {
+  display: flex;
+}
+.back-to-top:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-3px);
+}
+
 /* ===== PRINT STYLES ===== */
 @media print {
   /* Grund-Reset */
   * { color: #000 !important; background: #fff !important; box-shadow: none !important; }
   
   /* Navigation verstecken */
-  .topnav, .reading-progress-bar, .font-toggle, .toc, .skip-link { display: none !important; }
+  .topnav, .reading-progress-bar, .font-toggle, .toc, .skip-link, .search-container, .back-to-top { display: none !important; }
   
   /* Header */
   header { padding-top: 20px !important; }
@@ -342,6 +450,15 @@ body.font-large { font-size: 22px; }
   <a href="#sprueche">Die Sprüche</a>
   <a href="#schwur">Der Schwur</a>
 </nav>
+
+<!-- Suche -->
+<div class="search-container">
+  <div class="search-wrapper">
+    <input type="text" id="handbuch-search" placeholder="Suche im Handbuch..." aria-label="Suche im Handbuch">
+    <button class="search-clear" id="search-clear" aria-label="Suche löschen">×</button>
+  </div>
+  <div class="search-results" id="search-results"></div>
+</div>
 
 <!-- ===== EINLEITUNG ===== -->
 <section id="einleitung">
@@ -741,7 +858,27 @@ body.font-large { font-size: 22px; }
   // Gespeicherte Größe laden
   const savedSize = localStorage.getItem('flammenloge-font-size');
   if (savedSize) setFontSize(savedSize);
+
+  // ===== BACK TO TOP BUTTON =====
+  const backToTopBtn = document.createElement('button');
+  backToTopBtn.className = 'back-to-top';
+  backToTopBtn.id = 'backToTop';
+  backToTopBtn.innerHTML = '↑';
+  backToTopBtn.setAttribute('aria-label', 'Nach oben scrollen');
+  backToTopBtn.setAttribute('title', 'Nach oben');
+  backToTopBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+  document.body.appendChild(backToTopBtn);
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
 </script>
+
+<script src="js/search.js"></script>
 
 </body>
 </html>
