@@ -18,6 +18,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+  
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
 :root {
@@ -170,6 +174,99 @@ footer {
   section { padding: 40px 16px; }
   .law { padding: 16px; }
 }
+
+/* ===== LESEFORTSCHRITT (Progress-Bar) ===== */
+.reading-progress-bar {
+  position: fixed;
+  top: 56px; /* unter der Nav */
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255,107,0,0.1);
+  z-index: 1999;
+}
+.reading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--amber), var(--gold));
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 8px rgba(255,140,0,0.4);
+}
+
+/* ===== SCHRIFTGRÖSSEN-TOGGLE ===== */
+.font-toggle {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 100;
+  display: flex;
+  gap: 4px;
+  background: rgba(10,7,5,0.9);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  backdrop-filter: blur(8px);
+}
+.font-toggle button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', serif;
+  transition: all 0.3s;
+}
+.font-toggle button:hover {
+  color: var(--amber);
+  background: rgba(255,107,0,0.1);
+}
+.font-toggle button.active {
+  color: var(--amber);
+  background: rgba(255,107,0,0.15);
+}
+.font-toggle .font-s { font-size: 14px; }
+.font-toggle .font-m { font-size: 18px; }
+.font-toggle .font-l { font-size: 22px; }
+
+/* Schriftgrößen-Klassen */
+body.font-small { font-size: 15px; }
+body.font-medium { font-size: 18px; }
+body.font-large { font-size: 22px; }
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  /* Grund-Reset */
+  * { color: #000 !important; background: #fff !important; box-shadow: none !important; }
+  
+  /* Navigation verstecken */
+  .topnav, .reading-progress-bar, .font-toggle, .toc, .skip-link { display: none !important; }
+  
+  /* Header */
+  header { padding-top: 20px !important; }
+  header::before { display: none; }
+  
+  /* Sections */
+  section { padding: 20px 0 !important; max-width: 100% !important; page-break-inside: avoid; }
+  
+  /* Gesetze und Stufen */
+  .law, .stage, .rite { page-break-inside: avoid; border: 1px solid #ccc !important; }
+  
+  /* Verse */
+  p.verse { border-left: 2px solid #333 !important; background: #f5f5f5 !important; }
+  
+  /* Links */
+  a { text-decoration: underline; }
+  
+  /* Footer */
+  footer { border-top: 1px solid #ccc !important; padding: 20px 0 !important; }
+  
+  /* Schrift */
+  body { font-size: 12pt; line-height: 1.6; }
+  h1 { font-size: 24pt; }
+  h2 { font-size: 18pt; page-break-after: avoid; }
+  h3 { font-size: 14pt; page-break-after: avoid; }
+}
 </style>
 
 <!-- ===== NAV CSS ===== -->
@@ -199,6 +296,18 @@ footer {
 </head>
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--amber);color:var(--bg);padding:8px 16px;text-decoration:none;z-index:9999;font-weight:600;">Zum Inhalt springen</a>
+
+<!-- Lesefortschritt -->
+<div class="reading-progress-bar" aria-hidden="true">
+  <div class="reading-progress" id="reading-progress"></div>
+</div>
+
+<!-- Schriftgrößen-Toggle -->
+<div class="font-toggle" role="group" aria-label="Schriftgröße anpassen">
+  <button class="font-s" onclick="setFontSize('small')" aria-label="Kleine Schrift" title="Kleine Schrift">A</button>
+  <button class="font-m active" onclick="setFontSize('medium')" aria-label="Mittlere Schrift" title="Mittlere Schrift">A</button>
+  <button class="font-l" onclick="setFontSize('large')" aria-label="Große Schrift" title="Große Schrift">A</button>
+</div>
 
 <nav class="topnav" role="navigation" aria-label="Hauptnavigation">
   <a href="index.html" class="topnav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
@@ -589,6 +698,50 @@ footer {
   <p>Die Flammenloge · flammenloge.de</p>
 </footer>
 </main>
+
+<script>
+  // Service Worker registrieren
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('[SW] Registriert:', reg.scope))
+      .catch(err => console.log('[SW] Fehler:', err));
+  }
+
+  // ===== LESEFORTSCHRITT (Progress-Bar) =====
+  const progressBar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+  });
+
+  // ===== NAVIGATION FÜR HANDBUCH =====
+  function toggleHandbuchNav(button) {
+    const nav = document.getElementById('hnav');
+    const isOpen = nav.classList.toggle('open');
+    button.setAttribute('aria-expanded', isOpen);
+    button.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+  }
+
+  // ===== SCHRIFTGRÖSSE =====
+  function setFontSize(size) {
+    const body = document.body;
+    body.classList.remove('font-small', 'font-medium', 'font-large');
+    body.classList.add('font-' + size);
+    
+    // Buttons aktualisieren
+    document.querySelectorAll('.font-toggle button').forEach(btn => btn.classList.remove('active'));
+    document.querySelector('.font-' + size.charAt(0)).classList.add('active');
+    
+    // Speichern
+    localStorage.setItem('flammenloge-font-size', size);
+  }
+  
+  // Gespeicherte Größe laden
+  const savedSize = localStorage.getItem('flammenloge-font-size');
+  if (savedSize) setFontSize(savedSize);
+</script>
 
 </body>
 </html>
