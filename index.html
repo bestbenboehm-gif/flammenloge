@@ -3,37 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flammenloge</title>
+  <title>Flammenloge - Ein stiller Ort im Licht der Erkenntnis</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Flammenloge - Ein stiller Ort für Menschen, die suchen. Wo Gedanken zu Flammen werden und Flammen zu Geschichten.">
+  <meta name="keywords" content="Flammenloge, Philosophie, Stille, Erkenntnis, Feuer, Meditation">
+  <meta name="author" content="Benjamin Böhm">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Flammenloge">
+  <meta property="og:description" content="Ein stiller Ort in einer lauten Welt. Wo Gedanken zu Flammen werden.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flammenloge.de">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/main.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== SEITEN-SPEZIFISCHE STYLES - INDEX ===== */
     
-    :root {
-      --bg: #080808;
-      --surface: #121212;
-      --surface-hover: #1e1e1e;
-      --text: #f0ece4;
-      --text-muted: #8a867e;
-      --amber: #ff8c00;
-      --amber-light: #ffd700;
-      --fire: #ff4500;
-      --fire-deep: #cc3300;
-      --glow-amber: 0 0 30px rgba(255, 140, 0, 0.3);
-      --glow-fire: 0 0 60px rgba(255, 69, 0, 0.2);
-    }
-
-    html { scroll-behavior: smooth; }
-    
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', system-ui, sans-serif;
-      min-height: 100vh;
-    }
-
-    /* ===== CANVAS (Particles + Smoke) ===== */
+    /* Canvas for particles */
     #particle-canvas {
       position: fixed;
       top: 0;
@@ -43,7 +40,7 @@
       z-index: 0;
       pointer-events: none;
     }
-
+    
     /* ===== LIGHT CONE ===== */
     .light-cone {
       position: fixed;
@@ -66,39 +63,6 @@
     @keyframes cone-pulse {
       0%, 100% { opacity: 0.6; }
       50% { opacity: 1; }
-    }
-
-    /* ===== NAVIGATION ===== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      background: rgba(8,8,8,0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem; display: flex; align-items: center;
-      justify-content: space-between; height: 56px;
-      font-family: 'Cinzel', serif;
-    }
-    .nav-logo { font-size: 1rem; font-weight: 700; color: var(--amber); text-decoration: none; letter-spacing: 0.1em; }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--text-muted); text-decoration: none; font-size: 0.75rem;
-      letter-spacing: 0.08em; padding: 0.4rem 0.8rem; border-radius: 4px;
-      transition: color 0.3s, background 0.3s; font-weight: 400;
-    }
-    .nav-links a:hover { color: var(--amber); background: rgba(255,107,0,0.08); }
-    .nav-links a.active { color: var(--amber); }
-    .nav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
-
-    @media (max-width: 600px) {
-      .nav { padding: 0 1rem; }
-      .nav-burger { display: block; }
-      .nav-links {
-        display: none; position: absolute; top: 56px; left: 0; right: 0;
-        flex-direction: column; background: rgba(8,8,8,0.98);
-        border-bottom: 1px solid var(--border); padding: 0.5rem 1rem;
-        gap: 0.2rem;
-      }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 0.6rem 0.8rem; font-size: 0.8rem; }
     }
 
     /* ===== HERO ===== */
@@ -348,12 +312,6 @@
       100% { transform: translateY(-250px) scale(2); opacity: 0; }
     }
 
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: rgba(255, 140, 0, 0.2); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 140, 0, 0.4); }
-
     /* ===== SOUND TOGGLE ===== */
     .sound-toggle {
       position: fixed;
@@ -428,18 +386,6 @@
     }
     .impressum-content strong:first-child { margin-top: 0; }
 
-    /* ===== FOOTER ===== */
-    .footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 3rem 2rem;
-      border-top: 1px solid rgba(255, 140, 0, 0.08);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      letter-spacing: 0.1em;
-    }
-
     @media (max-width: 768px) {
       .loge-title { font-size: clamp(2.5rem, 15vw, 5rem); letter-spacing: 0.04em; }
       .loge-subtitle { font-size: 0.8rem; letter-spacing: 0.2em; }
@@ -457,27 +403,31 @@
       .section-title { font-size: clamp(1.3rem, 6vw, 1.8rem); }
       .section-text { font-size: 0.95rem; }
     }
-</style>
+  </style>
 </head>
 <body>
 
+<!-- Skip Link für Screen Reader -->
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
 <!-- Background Particles -->
-<div class="particles" id="particles"></div>
+<div class="particles" id="particles" aria-hidden="true"></div>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav">
-  <a href="index.html" class="nav-logo">🔥 Flammenloge</a>
-  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="gedichte.html">Gedichte</a></li>
-    <li><a href="handbuch-flammenseele.html">Handbuch</a></li>
-    <li><a href="impressum.html">Impressum</a></li>
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)">☰</button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="impressum.html" role="menuitem">Impressum</a></li>
   </ul>
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
-    <svg class="loge-emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+<main id="main-content">
+<section class="hero" aria-label="Willkommen">
+    <svg class="loge-emblem" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flammenloge Emblem, eine brennende Flamme">
       <defs>
         <linearGradient id="f" x1="0" y1="1" x2="0" y2="0">
           <stop offset="0%" stop-color="#ff4500"/>
@@ -512,7 +462,7 @@
       Wo Gedanken zu Flammen werden und Flammen zu Geschichten.<br>
       Willkommen in der Loge.
     </p>
-    <button class="loge-cta" onclick="document.getElementById('manifest').scrollIntoView({behavior:'smooth'})">
+    <button class="loge-cta" onclick="document.getElementById('manifest').scrollIntoView({behavior:'smooth'})" aria-label="Zum Manifest scrollen">
       ↓ Eintreten
     </button>
   </section>
@@ -532,100 +482,66 @@
     </p>
   </section>
 
-  <!-- ===== GEDANKEN (Galerie) ===== -->
-  <section class="section">
+  <!-- ===== GEDANKEN (Galerie Teaser) ===== -->
+  <section class="section" aria-label="Gedankenvorschau">
     <h2 class="section-title" data-scroll>Gedanken im Licht</h2>
     <div class="section-line" data-scroll></div>
     <p class="section-text" data-scroll>Jede Flamme erzählt eine Geschichte. Hier sind einige, die brennen.</p>
     
-    <div class="gallery">
-      <div class="gallery-item" data-scroll>
-        <div class="gallery-icon">🔥</div>
+    <div class="gallery" role="list">
+      <div class="gallery-item" data-scroll role="listitem">
+        <div class="gallery-icon" aria-hidden="true">🔥</div>
         <div class="gallery-title">Wach werden</div>
         <div class="gallery-desc">Der Moment, in dem du erkennst, dass das Leben dir gehört.</div>
       </div>
-      <div class="gallery-item" data-scroll>
-        <div class="gallery-icon">✨</div>
+      <div class="gallery-item" data-scroll role="listitem">
+        <div class="gallery-icon" aria-hidden="true">✨</div>
         <div class="gallery-title">Leuchtfeuer</div>
         <div class="gallery-desc">Manchmal reicht ein kleiner Lichtpunkt, um den Weg zu zeigen.</div>
       </div>
-      <div class="gallery-item" data-scroll>
-        <div class="gallery-icon">🌙</div>
-        <div class="gallery-title">Stille</div>
-        <div class="gallery-desc">In der Ruhe liegt die Kraft, die Welt neu zu sehen.</div>
-      </div>
-      <div class="gallery-item" data-scroll>
-        <div class="gallery-icon">🌄</div>
-        <div class="gallery-title">Morgenlicht</div>
-        <div class="gallery-desc">Jeder Tag ist eine neue Chance, das Feuer zu entfachen.</div>
-      </div>
     </div>
+    
+    <p class="section-text" data-scroll style="text-align:center;margin-top:2rem;">
+      <a href="gedichte.html" style="color:var(--amber-light);text-decoration:none;border-bottom:1px solid var(--amber);padding-bottom:2px;transition:all 0.3s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--amber-light)'">
+        → Mehr Gedanken und Runen entdecken
+      </a>
+    </p>
   </section>
 
-  <!-- ===== WEISHEITEN DER FLAMME ===== -->
-  <section class="section">
+  <!-- ===== WEISHEITEN DER FLAMME (Teaser) ===== -->
+  <section class="section" aria-label="Runenvorschau">
     <h2 class="section-title" data-scroll>Die Runen der Flamme</h2>
     <div class="section-line" data-scroll></div>
     <p class="section-text" data-scroll>
-      Alte Überlieferungen sprechen von einer Halle aus flüsterndem Feuer, erbaut von Händen, die längst zu Asche geworden sind. Man sagt, wer durch ihre Tore tritt, sieht die Welt mit anderen Augen.
+      Alte Überlieferungen sprechen von einer Halle aus flüsterndem Feuer, erbaut von Händen, die längst zu Asche geworden sind. 
+      In jener Halle brennen neun ewige Feuer. Jedes ein Zeichen, jede Flamme eine Wahrheit, die es zu entziffern gilt.
     </p>
-    <p class="section-text" data-scroll>
-      In jener Halle brennen neun ewige Feuer. Jedes ein Zeichen, jede Flamme eine Wahrheit, die es zu entziffern gilt. Kein Weg ist dem anderen gleich, doch alle führen sie zum selben Licht.
+    <p class="section-text" data-scroll style="font-style:italic;color:var(--amber-light);margin-top:1.5rem;">
+      »Die letzte Rune ist die schwerste. Sie lautet: Lass los. Denn das Licht, das du festhältst, verbrennt. 
+      Das Licht, das du weitergibst, brennt für immer.«
     </p>
-    <p class="section-text" data-scroll style="margin-top:2rem;">
-      <em>Erste Rune der Flamme:</em><br>
-      <strong>Die Stille vor dem ersten Funken.</strong> Bevor das Feuer entbrennt, muss die Dunkelheit ihren Raum haben. Wer das Schweigen nicht erträgt, wird das Knistern der Erkenntnis nie hören.
-    </p>
-    <p class="section-text" data-scroll>
-      <em>Zweite Rune der Flamme:</em><br>
-      <strong>Die Reise durch die Nacht.</strong> Jeder Wanderer, der das Licht sucht, muss zuerst durch das Tal des Ungewissen gehen. Die Dunkelheit ist keine Strafe. Sie ist die Schmiede, in der Mut geschmiedet wird.
-    </p>
-    <p class="section-text" data-scroll>
-      <em>Dritte Rune der Flamme:</em><br>
-      <strong>Der Funke im Anderen.</strong> Wer nur nach dem eigenen Licht sucht, wird einsam brennen. In den Augen eines anderen ein Glimmen zu entfachen: Das ist die größte Kunst des Feuers.
-    </p>
-    <p class="section-text" data-scroll style="margin-top:2rem;">
-      Die Flammenloge hütet diese Runen nicht, um sie zu verstecken. Sondern damit jene, die bereit sind, sie im richtigen Augenblick aufleuchten sehen.
-    </p>
-    <p class="section-text" data-scroll>
-      Die letzte Rune ist die schwerste. Sie lautet: <em>Lass los.</em> Denn das Licht, das du festhältst, verbrennt. Das Licht, das du weitergibst, brennt für immer.
-    </p>
-    <p class="section-text" data-scroll style="text-align:center;margin-top:2rem;font-size:0.85rem;">
-      ✦ ✦ ✦
+    <p class="section-text" data-scroll style="text-align:center;margin-top:2rem;">
+      <a href="gedichte.html#runen" style="color:var(--amber-light);text-decoration:none;border-bottom:1px solid var(--amber);padding-bottom:2px;transition:all 0.3s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--amber-light)'">
+        → Alle Runen lesen
+      </a>
     </p>
   </section>
 
-  <!-- ===== RUNEN / ALTE HALLE (statt Coelho) ===== -->
-  <section class="section">
+  <!-- ===== ALTE HALLE (Teaser) ===== -->
+  <section class="section" aria-label="Alte Halle Vorschau">
     <h2 class="section-title" data-scroll>Die Alte Halle</h2>
     <div class="section-line" data-scroll></div>
     <p class="section-text" data-scroll>
-      Tief im Gebirg, wo der Wind um die Felsen pfeift wie ein 
-      uraltes Lied, steht eine Halle aus Stein und Feuer. Ihre 
-      Wände sind rau vom Frost der Jahrtausende, ihr Dach wird 
-      vom Rauch des ewigen Herdes geschwärzt.
+      Tief im Gebirg, wo der Wind um die Felsen pfeift wie ein uraltes Lied, steht eine Halle aus Stein und Feuer. 
+      Neun Feuer brennen in der Halle. Neun Flammen, die nie erlöschen dürfen.
     </p>
-    <p class="section-text" data-scroll>
-      Neun Feuer brennen in der Halle. Neun Flammen, die nie 
-      erlöschen dürfen. Jede steht für eine Kraft, die der 
-      Mensch in sich trägt, wenn er den Mut hat, sie zu 
-      entfachen.
+    <p class="section-text" data-scroll style="font-style:italic;color:var(--amber-light);">
+      »Die Alte Halle ist kein Ort der Lehre. Sie ist ein Ort der Erinnerung.«
     </p>
-    <p class="section-text" data-scroll>
-      Wer die Halle betritt, lässt seine Last an der Schwelle. 
-      Hier zählt nicht, was du besitzt, sondern was du 
-      brennend weiterträgst.
-    </p>
-    <p class="section-text" data-scroll>
-      Die Alte Halle ist kein Ort der Lehre. Sie ist ein Ort 
-      der Erinnerung. An das, was war. An das, was sein wird. 
-      An das Feuer, das in dir schlummert.
-    </p>
-    <p class="section-text" data-scroll style="margin-top:2rem;text-align:center;letter-spacing:0.2em;">
-      ᚲᛖᛁᚾᛖ ᚹᛟᚱᛏᛖ — ᚾᚢᚱ ᚠᛖᚢᛖᚱ
-    </p>
-    <p class="section-text" data-scroll style="text-align:center;font-size:0.85rem;color:var(--text-muted);letter-spacing:0.05em;">
-      »Keine Worte — nur Feuer«
+    <p class="section-text" data-scroll style="text-align:center;margin-top:2rem;">
+      <a href="gedichte.html#alte-halle" style="color:var(--amber-light);text-decoration:none;border-bottom:1px solid var(--amber);padding-bottom:2px;transition:all 0.3s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--amber-light)'">
+        → Die Geschichte der Alten Halle
+      </a>
     </p>
   </section>
 
@@ -701,78 +617,22 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <span style="color:var(--amber);">✦</span> Flammenloge · Im Licht der Erkenntnis <span style="color:var(--amber);">✦</span>
+  <footer class="footer" role="contentinfo">
+    <span style="color:var(--amber);" aria-hidden="true">✦</span> Flammenloge · Im Licht der Erkenntnis <span style="color:var(--amber);" aria-hidden="true">✦</span>
   </footer>
+  </main>
 
   <!-- Sound -->
-  <div class="sound-label" id="soundLabel">Knistern</div>
-  <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Feuer-Knistern">
+  <div class="sound-label" id="soundLabel" aria-hidden="true">Knistern</div>
+  <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Feuer-Knistern ein/ausschalten" aria-label="Feuer-Knistern Soundscape ein- oder ausschalten" aria-pressed="false">
     🔊
   </button>
 
+  <!-- JavaScript -->
+  <script src="js/nav.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/sound.js"></script>
   <script>
-    // ===== PARTICLES =====
-    const canvas = document.getElementById('particle-canvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-
-    function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    class Ember {
-      constructor() { this.reset(); this.y = Math.random() * canvas.height; }
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = -10;
-        this.size = Math.random() * 3 + 1.5;
-        this.speedY = Math.random() * 1.2 + 0.4;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.life = 1;
-        this.decay = Math.random() * 0.006 + 0.003;
-        this.hue = Math.random() > 0.4 
-          ? Math.random() * 30 + 20
-          : Math.random() * 15 + 355;
-      }
-      update() {
-        this.y -= this.speedY;
-        this.x += this.speedX * Math.sin(this.y * 0.01);
-        this.life -= this.decay;
-        if (this.life <= 0 || this.y < -20) this.reset();
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * this.life, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${this.hue}, 100%, ${50 + 30 * this.life}%, ${this.life})`;
-        ctx.fill();
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size * this.life * 3, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${this.hue}, 100%, 60%, ${this.life * 0.15})`;
-        ctx.fill();
-      }
-    }
-
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < 80; i++) {
-        const p = new Ember();
-        p.y = Math.random() * canvas.height;
-        particles.push(p);
-      }
-    }
-    initParticles();
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => { p.update(); p.draw(); });
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-
     // ===== SCROLL ANIMATIONS =====
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -783,107 +643,6 @@
     }, { threshold: 0.2 });
 
     document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
-
-    // ===== SOUND =====
-    let audioCtx = null;
-    let isPlaying = false;
-    let noiseNodes = [];
-    let crackleTimeout = null;
-
-    async function toggleSound() {
-      const btn = document.getElementById('soundToggle');
-      const label = document.getElementById('soundLabel');
-
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-
-      if (isPlaying) {
-        if (crackleTimeout) clearTimeout(crackleTimeout);
-        noiseNodes.forEach(n => {
-          if (n.stop) try { n.stop(); } catch(e) {}
-          if (n.disconnect) n.disconnect();
-        });
-        noiseNodes = [];
-        isPlaying = false;
-        btn.classList.remove('playing');
-        btn.textContent = '🔇';
-        label.classList.remove('visible');
-        return;
-      }
-
-      try {
-        // Brownian noise
-        const bufSize = audioCtx.sampleRate * 3;
-        const buffer = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
-        const data = buffer.getChannelData(0);
-        let last = 0;
-        for (let i = 0; i < bufSize; i++) {
-          const white = Math.random() * 2 - 1;
-          data[i] = (last + 0.05 * white) / 1.05;
-          last = data[i];
-          data[i] *= 3;
-        }
-
-        const noise = audioCtx.createBufferSource();
-        noise.buffer = buffer;
-        noise.loop = true;
-
-        const lowpass = audioCtx.createBiquadFilter();
-        lowpass.type = 'lowpass';
-        lowpass.frequency.value = 500;
-
-        const highpass = audioCtx.createBiquadFilter();
-        highpass.type = 'highpass';
-        highpass.frequency.value = 80;
-
-        const gain = audioCtx.createGain();
-        gain.gain.value = 0.08;
-
-        noise.connect(lowpass);
-        lowpass.connect(highpass);
-        highpass.connect(gain);
-        gain.connect(audioCtx.destination);
-        noise.start();
-        noiseNodes = [noise, lowpass, highpass, gain];
-
-        // Crackle bursts
-        function addCrackle() {
-          if (!isPlaying) return;
-          const duration = Math.random() * 0.15 + 0.03;
-          const g = audioCtx.createGain();
-          g.gain.setValueAtTime(Math.random() * 0.4 + 0.1, audioCtx.currentTime);
-          g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-          
-          const bpf = audioCtx.createBiquadFilter();
-          bpf.type = 'bandpass';
-          bpf.frequency.value = Math.random() * 3000 + 800;
-          bpf.Q.value = 2;
-          
-          const src = audioCtx.createBufferSource();
-          const buf2 = audioCtx.createBuffer(1, Math.ceil(audioCtx.sampleRate * duration), audioCtx.sampleRate);
-          const d2 = buf2.getChannelData(0);
-          for (let i = 0; i < d2.length; i++) d2[i] = Math.random() * 2 - 1;
-          src.buffer = buf2;
-          
-          src.connect(bpf);
-          bpf.connect(g);
-          g.connect(audioCtx.destination);
-          src.start();
-          
-          crackleTimeout = setTimeout(addCrackle, Math.random() * 300 + 100);
-        }
-        addCrackle();
-
-        isPlaying = true;
-        btn.classList.add('playing');
-        btn.textContent = '🔊';
-        label.classList.add('visible');
-      } catch(e) {
-        console.log('Sound error:', e);
-        btn.textContent = '🔇';
-      }
-    }
   </script>
 </body>
 </html>

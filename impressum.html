@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum – Flammenloge</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root { --bg: #080808; --surface: #121212; --text: #f0ece4; --text-muted: #8a867e; --amber: #ff8c00; --amber-light: #ffd700; --border: rgba(255,107,0,0.1); }
-  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; line-height: 1.7; }
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(8,8,8,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; font-family: 'Cinzel', serif; }
-  .nav-logo { font-size: 1rem; font-weight: 700; color: var(--amber); text-decoration: none; letter-spacing: 0.1em; }
-  .nav-links { display: flex; gap: 0.5rem; list-style: none; }
-  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.08em; padding: 0.4rem 0.8rem; border-radius: 4px; transition: color 0.3s, background 0.3s; font-weight: 400; }
-  .nav-links a:hover { color: var(--amber); background: rgba(255,107,0,0.08); }
-  .nav-links a.active { color: var(--amber); }
-  .nav-burger { display: none; background: none; border: none; color: var(--text); font-size: 1.5rem; cursor: pointer; }
-  @media (max-width: 600px) { .nav { padding: 0 1rem; } .nav-burger { display: block; } .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; flex-direction: column; background: rgba(8,8,8,0.98); border-bottom: 1px solid var(--border); padding: 0.5rem 1rem; gap: 0.2rem; } .nav-links.open { display: flex; } .nav-links a { padding: 0.6rem 0.8rem; font-size: 0.8rem; } }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum – Flammenloge</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Impressum und Datenschutzerklärung der Flammenloge.">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <style>
   .hero { padding: 100px 2rem 2rem; text-align: center; }
   .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(1.5rem, 6vw, 2.5rem); font-weight: 600; color: var(--amber); letter-spacing: 0.1em; }
   .content { max-width: 580px; margin: 0 auto; padding: 2rem; font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
   .content strong { color: var(--text); }
   .content a { color: var(--amber-light); }
-  footer { text-align: center; padding: 3rem 2rem; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
 </style>
 </head>
 <body>
-<nav class="nav">
-  <a href="index.html" class="nav-logo">🔥 Flammenloge</a>
-  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="gedichte.html">Gedichte</a></li>
-    <li><a href="handbuch-flammenseele.html">Handbuch</a></li>
-    <li><a href="impressum.html" class="active">Impressum</a></li>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)">☰</button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="impressum.html" class="active" role="menuitem">Impressum</a></li>
   </ul>
 </nav>
 
-<section class="hero">
+<main id="main-content">
+<section class="hero" aria-label="Impressum">
   <h1>Impressum</h1>
 </section>
 
-<div class="content">
+<div class="content" role="region" aria-label="Rechtliche Informationen">
   <strong>Angaben gemäß §5 DDG</strong><br>
   Benjamin Böhm<br>
   Plantagenweg 37<br>
@@ -70,8 +73,12 @@
   <em>Stand: Juni 2026</em>
 </div>
 
-<footer>
+<footer role="contentinfo">
   <p>Die Flammenloge · flammenloge.de</p>
 </footer>
+</main>
+
+<!-- JavaScript -->
+<script src="js/nav.js"></script>
 </body>
 </html>

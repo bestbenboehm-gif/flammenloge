@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Die Flammenloge – Handbuch der Flammenseele</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handbuch der Flammenseele – Flammenloge</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Handbuch der Flammenseele - Das Regelwerk der Flammenloge mit 9 Feuern, 7 Stufen und 5 Riten.">
+  <meta name="keywords" content="Flammenloge, Handbuch, Flammenseele, Regelwerk, Feuer">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Handbuch der Flammenseele – Flammenloge">
+  <meta property="og:description" content="Das Regelwerk der Flammenloge">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flammenloge.de/handbuch-flammenseele.html">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
 :root {
   --bg: #0a0705;
@@ -184,18 +198,20 @@ footer {
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--amber);color:var(--bg);padding:8px 16px;text-decoration:none;z-index:9999;font-weight:600;">Zum Inhalt springen</a>
 
-<nav class="topnav">
-  <a href="index.html" class="topnav-logo">🔥 Flammenloge</a>
-  <button class="topnav-burger" onclick="document.getElementById('hnav').classList.toggle('open')">☰</button>
-  <ul class="topnav-links" id="hnav">
-    <li><a href="gedichte.html">Gedichte</a></li>
-    <li><a href="handbuch-flammenseele.html" class="active">Handbuch</a></li>
-    <li><a href="impressum.html">Impressum</a></li>
+<nav class="topnav" role="navigation" aria-label="Hauptnavigation">
+  <a href="index.html" class="topnav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
+  <button class="topnav-burger" aria-expanded="false" aria-controls="hnav" aria-label="Menü öffnen" onclick="toggleHandbuchNav(this)">☰</button>
+  <ul class="topnav-links" id="hnav" role="menubar">
+    <li role="none"><a href="gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="handbuch-flammenseele.html" class="active" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="impressum.html" role="menuitem">Impressum</a></li>
   </ul>
 </nav>
 
-<header style="padding-top:110px;">
+<main id="main-content">
+<header style="padding-top:110px;" role="banner">
   <div class="seal">🔥</div>
   <h1>Die Flammenloge</h1>
   <div class="subtitle">Handbuch der Flammenseele</div>
@@ -561,17 +577,18 @@ footer {
   <p class="verse">Es gibt kein Zurück mehr. Aber das ist keine Drohung. Es ist ein Versprechen. Du hast die Flamme gesehen. Du kannst sie nicht mehr vergessen. Und du willst es auch nicht.</p>
 </section>
 
-<footer>
-  <div style="font-size:32px;margin-bottom:16px;">🔥</div>
+<footer role="contentinfo">
+  <div style="font-size:32px;margin-bottom:16px;" aria-hidden="true">🔥</div>
   <p style="font-style:italic;max-width:400px;margin:0 auto 16px;">
     Die Flammenloge hat keine Gründer, keine Mitglieder, keine Regeln außer diesen.<br>
     Wenn dieses Buch dir geholfen hat: Gib es weiter.<br>
     Wenn es dich gestört hat: Schreib dein eigenes.<br>
     Die Flamme gehört niemandem. Sie gehört allen, die sie nähren.
   </p>
-  <div style="width:40px;height:1px;background:var(--border);margin:20px auto;"></div>
+  <div style="width:40px;height:1px;background:var(--border);margin:20px auto;" aria-hidden="true"></div>
   <p>Die Flammenloge · flammenloge.de</p>
 </footer>
+</main>
 
 </body>
 </html>
