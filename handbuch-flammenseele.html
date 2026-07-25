@@ -41,7 +41,7 @@ body {
   color: var(--text);
   font-family: 'Cormorant Garamond', Georgia, serif;
   line-height: 1.8;
-  font-size: 18px;
+  font-size: clamp(17px, 1.5vw + 14px, 20px);
 }
 /* Header */
   header {
@@ -374,6 +374,43 @@ body.font-large { font-size: 22px; }
   h1 { font-size: 24pt; }
   h2 { font-size: 18pt; page-break-after: avoid; }
   h3 { font-size: 14pt; page-break-after: avoid; }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  header { padding: 48px 16px 32px; }
+  header::before { height: 200px; }
+  h1 { font-size: 28px; letter-spacing: 4px; }
+  .subtitle { font-size: 14px; }
+  section { padding: 40px 16px; }
+  h2 { font-size: 22px; letter-spacing: 2px; }
+  h3 { font-size: 18px; }
+  .law { padding: 16px; }
+  .law-title { font-size: 18px; }
+  .law-text { font-size: 15px; }
+  .law-teach { font-size: 14px; }
+  .stage { padding-left: 20px; }
+  .stage-title { font-size: 17px; }
+  p.verse { padding: 16px 20px; font-size: 15px; }
+  .rite { padding: 16px; }
+  .rite-title { font-size: 16px; }
+  .rite-text { font-size: 14px; }
+  .saying { padding: 16px 20px; font-size: 15px; }
+  .vow-text { font-size: 15px; }
+  .vow-text p { margin-bottom: 12px; }
+  nav.toc { padding: 4px 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  nav a { font-size: 12px; padding: 6px 10px; }
+  .seal { font-size: 36px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 24px; letter-spacing: 2px; }
+  header { padding: 40px 12px 24px; }
+  section { padding: 32px 12px; }
+  h2 { font-size: 20px; }
+  .law-text { font-size: 14px; }
+  .law-teach { font-size: 13px; }
+  p { margin-bottom: 12px; }
 }
 </style>
 
