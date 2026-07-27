@@ -1,4 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12 20 L12 4"/>
-  <path d="M5 11 L12 4 L19 11"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="arrowGrad" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="50%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#fff8dc"/>
+    </linearGradient>
+    <filter id="arrowGlow">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#arrowGlow)">
+    <!-- Pfeilschaft -->
+    <line x1="12" y1="20" x2="12" y2="5" stroke="url(#arrowGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Pfeilspitze -->
+    <path d="M5 12 L12 4 L19 12" stroke="url(#arrowGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Kleiner Strich am Schaftende -->
+    <line x1="8" y1="17" x2="16" y2="17" stroke="url(#arrowGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  </g>
 </svg>

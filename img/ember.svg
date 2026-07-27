@@ -1,22 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <defs>
-    <radialGradient id="eg" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#fff8dc"/>
-      <stop offset="40%" stop-color="#ffd700"/>
-      <stop offset="80%" stop-color="#ff8c00"/>
+    <radialGradient id="emberGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="20%" stop-color="#fff8dc"/>
+      <stop offset="45%" stop-color="#ffd700"/>
+      <stop offset="70%" stop-color="#ff8c00"/>
       <stop offset="100%" stop-color="#ff450000"/>
     </radialGradient>
-    <filter id="eglow">
-      <feGaussianBlur stdDeviation="1.5" result="b"/>
+    <radialGradient id="emberCore" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff8dc"/>
+    </radialGradient>
+    <filter id="emberGlowFilter">
+      <feGaussianBlur stdDeviation="2" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <g filter="url(#eglow)">
-    <!-- Hauptstern -->
-    <path d="M24 2 L26 18 L42 20 L28 28 L32 44 L24 34 L16 44 L20 28 L6 20 L22 18Z"
-          fill="url(#eg)"/>
-    <!-- Leuchtkern -->
-    <circle cx="24" cy="24" r="6" fill="#fff8dc" opacity="0.6"/>
-    <circle cx="24" cy="24" r="3" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Äußerer Glow -->
+  <circle cx="24" cy="24" r="20" fill="url(#emberGlow)" opacity="0.3" filter="url(#emberGlowFilter)"/>
+
+  <!-- 8-zackiger Stern – präzise Geometrie -->
+  <g filter="url(#emberGlowFilter)">
+    <!-- Hauptstrahlen -->
+    <path d="M24 2 L26 10 L27 18 L34 15 L42 12 L36 20 L32 25 L38 30 L44 36 L36 34 L30 32 L27 38 L24 46 L21 38 L18 32 L12 34 L4 36 L10 30 L14 25 L10 20 L2 12 L10 15 L16 18 L18 10Z" 
+          fill="url(#emberGlow)"/>
+    
+    <!-- Zwischenstrahlen (kürzer) -->
+    <path d="M4 4 L10 10 L14 14 L12 12Z" fill="url(#emberGlow)" opacity="0.5"/>
+    <path d="M44 4 L38 10 L34 14 L36 12Z" fill="url(#emberGlow)" opacity="0.5"/>
+    <path d="M4 44 L10 38 L14 34 L12 36Z" fill="url(#emberGlow)" opacity="0.5"/>
+    <path d="M44 44 L38 38 L34 34 L36 36Z" fill="url(#emberGlow)" opacity="0.5"/>
+
+    <!-- Weißer Kern -->
+    <circle cx="24" cy="24" r="5" fill="url(#emberCore)" opacity="0.9"/>
+    <circle cx="24" cy="24" r="2.5" fill="#ffffff" opacity="1"/>
+  </g>
+
+  <!-- Mehr Glutpunkte -->
+  <g fill="#ffd700" opacity="0.6">
+    <circle cx="10" cy="18" r="1.2"/>
+    <circle cx="38" cy="18" r="1"/>
+    <circle cx="10" cy="30" r="0.8"/>
+    <circle cx="38" cy="30" r="1.2"/>
+    <circle cx="16" cy="10" r="0.6"/>
+    <circle cx="32" cy="10" r="0.8"/>
+    <circle cx="16" cy="38" r="0.7"/>
+    <circle cx="32" cy="38" r="0.6"/>
   </g>
 </svg>

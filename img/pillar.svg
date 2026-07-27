@@ -1,21 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 64" fill="none">
   <defs>
-    <linearGradient id="pig" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#d4a853"/>
+    <linearGradient id="pillarGold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#e8c878"/>
+      <stop offset="20%" stop-color="#d4a853"/>
       <stop offset="50%" stop-color="#c89335"/>
-      <stop offset="100%" stop-color="#a67828"/>
+      <stop offset="80%" stop-color="#b8862e"/>
+      <stop offset="100%" stop-color="#8b6914"/>
     </linearGradient>
+    <linearGradient id="pillarShade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d4a853" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="pillarGlow">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
   </defs>
-  <!-- Säule -->
-  <rect x="10" y="10" width="28" height="48" rx="2" fill="#1a0f08" stroke="url(#pig)" stroke-width="1.2"/>
+
+  <!-- Schatten -->
+  <rect x="11" y="8" width="26" height="48" rx="2" fill="#000" opacity="0.15" filter="url(#pillarGlow)"/>
+
+  <!-- Säulenschaft -->
+  <rect x="10" y="12" width="28" height="44" rx="1" fill="#1a0f08" stroke="url(#pillarGold)" stroke-width="0.8"/>
+
+  <!-- Kanneluren (Rillen) -->
+  <g stroke="#d4a853" stroke-width="0.4" opacity="0.25">
+    <line x1="16" y1="14" x2="16" y2="54"/>
+    <line x1="20" y1="14" x2="20" y2="54"/>
+    <line x1="24" y1="14" x2="24" y2="54"/>
+    <line x1="28" y1="14" x2="28" y2="54"/>
+    <line x1="32" y1="14" x2="32" y2="54"/>
+  </g>
+
   <!-- Basis -->
-  <rect x="6" y="54" width="36" height="8" rx="1" fill="url(#pig)" opacity="0.5"/>
+  <g>
+    <rect x="6" y="54" width="36" height="6" rx="1" fill="url(#pillarGold)" opacity="0.5"/>
+    <rect x="8" y="52" width="32" height="3" rx="1" fill="url(#pillarGold)" opacity="0.6"/>
+    <line x1="6" y1="56" x2="42" y2="56" stroke="#e8c878" stroke-width="0.3" opacity="0.3"/>
+  </g>
+
   <!-- Kapitell -->
-  <rect x="7" y="8" width="34" height="8" rx="1" fill="url(#pig)" opacity="0.5"/>
-  <!-- Kanneluren (senkrechte Rillen) -->
-  <line x1="17" y1="16" x2="17" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
-  <line x1="24" y1="16" x2="24" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
-  <line x1="31" y1="16" x2="31" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
-  <!-- Flamme oben -->
-  <path d="M24 2 C22 0 24 -3 24 -5 C24 -3 26 0 24 2Z" fill="#ff8c00" opacity="0.8"/>
+  <g>
+    <rect x="7" y="6" width="34" height="6" rx="1" fill="url(#pillarGold)" opacity="0.6"/>
+    <rect x="5" y="4" width="38" height="3" rx="1" fill="url(#pillarGold)" opacity="0.4"/>
+    <!-- Verzierung oben -->
+    <path d="M8 4 L10 2 L12 4" stroke="#e8c878" stroke-width="0.4" fill="none" opacity="0.4"/>
+    <path d="M36 4 L38 2 L40 4" stroke="#e8c878" stroke-width="0.4" fill="none" opacity="0.4"/>
+  </g>
+
+  <!-- Feuerkrone oben -->
+  <g filter="url(#pillarGlow)">
+    <path d="M20 4 C19 1 22 -2 24 -1 C26 -2 29 1 28 4" fill="#ff8c00" opacity="0.7"/>
+    <path d="M22 3 C21 0 23 -2 24 -1 C25 -2 27 0 26 3" fill="#ffd700" opacity="0.6"/>
+  </g>
 </svg>

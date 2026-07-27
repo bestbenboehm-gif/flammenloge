@@ -1,25 +1,89 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
   <defs>
-    <linearGradient id="fg" x1="0.5" y1="1" x2="0.5" y2="0">
-      <stop offset="0%" stop-color="#ff4500"/>
-      <stop offset="40%" stop-color="#ff8c00"/>
-      <stop offset="80%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#fff8dc"/>
+    <linearGradient id="flameOuter" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#cc2200"/>
+      <stop offset="25%" stop-color="#ff4500"/>
+      <stop offset="50%" stop-color="#ff8c00"/>
+      <stop offset="75%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#fffbe6"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="40%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ffffff"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
+
+  <!-- Äußerer Feuerschein -->
+  <ellipse cx="50" cy="85" rx="35" ry="8" fill="#ff4500" opacity="0.15" filter="url(#softGlow)"/>
+
+  <!-- Äußere Flamme – organischer, unregelmäßiger -->
   <g filter="url(#glow)">
-    <!-- Äußere Flamme -->
-    <path d="M50 92 C30 65 18 50 22 35 C26 20 38 8 50 4 C62 8 74 20 78 35 C82 50 70 65 50 92Z"
-          fill="url(#fg)" opacity="0.85"/>
-    <!-- Innere Flamme (hell) -->
-    <path d="M50 80 C36 60 28 48 31 38 C34 28 42 18 50 14 C58 18 66 28 69 38 C72 48 64 60 50 80Z"
-          fill="#fff8dc" opacity="0.7"/>
-    <!-- Kern -->
-    <path d="M50 68 C42 55 37 46 39 40 C41 34 46 27 50 24 C54 27 59 34 61 40 C63 46 58 55 50 68Z"
-          fill="#ffffff" opacity="0.9"/>
+    <path d="M50 112 
+             C28 80 14 62 18 42 
+             C20 32 26 22 34 14 
+             C38 10 42 6 46 3 
+             C47 2 48 0 50 0 
+             C52 0 53 2 54 3 
+             C58 6 62 10 66 14 
+             C74 22 80 32 82 42 
+             C86 62 72 80 50 112Z" 
+          fill="url(#flameOuter)" opacity="0.88"/>
+    
+    <!-- Linke kleine Flamme -->
+    <path d="M32 90 C24 72 20 58 24 44 C26 36 30 28 34 22 C36 18 38 16 38 20 C38 28 36 40 34 52 C32 64 34 78 38 90Z" 
+          fill="url(#flameOuter)" opacity="0.4"/>
+    
+    <!-- Rechte kleine Flamme -->
+    <path d="M68 90 C76 72 80 58 76 44 C74 36 70 28 66 22 C64 18 62 16 62 20 C62 28 64 40 66 52 C68 64 66 78 62 90Z" 
+          fill="url(#flameOuter)" opacity="0.4"/>
+  </g>
+
+  <!-- Innere Flamme (heller) -->
+  <path d="M50 98 
+           C34 74 24 60 27 46 
+           C29 38 34 30 40 24 
+           C43 20 46 16 50 12 
+           C54 16 57 20 60 24 
+           C66 30 71 38 73 46 
+           C76 60 66 74 50 98Z" 
+        fill="url(#flameInner)" opacity="0.75"/>
+
+  <!-- Kern (weißglühend) -->
+  <path d="M50 82 
+           C40 64 33 52 35 44 
+           C36 38 40 32 44 28 
+           C46 26 48 22 50 20 
+           C52 22 54 26 56 28 
+           C60 32 64 38 65 44 
+           C67 52 60 64 50 82Z" 
+        fill="#ffffff" opacity="0.85"/>
+
+  <!-- Glutpartikel -->
+  <g fill="#ffd700" opacity="0.7">
+    <circle cx="28" cy="68" r="1.5">
+      <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.7;0.1;0.7"/>
+      <animate attributeName="cy" dur="3s" repeatCount="indefinite" values="68;55;68"/>
+    </circle>
+    <circle cx="72" cy="62" r="1">
+      <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite" values="0.5;0;0.5"/>
+      <animate attributeName="cy" dur="4s" repeatCount="indefinite" values="62;45;62"/>
+    </circle>
+    <circle cx="44" cy="52" r="1.2">
+      <animate attributeName="opacity" dur="1.8s" repeatCount="indefinite" values="0.6;0.1;0.6"/>
+      <animate attributeName="cx" dur="3s" repeatCount="indefinite" values="44;38;44"/>
+    </circle>
+    <circle cx="60" cy="48" r="0.8">
+      <animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.4;0;0.4"/>
+      <animate attributeName="cy" dur="3.5s" repeatCount="indefinite" values="48;35;48"/>
+    </circle>
   </g>
 </svg>

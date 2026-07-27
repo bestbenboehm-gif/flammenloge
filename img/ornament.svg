@@ -1,24 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 20" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 24" fill="none">
   <defs>
-    <linearGradient id="org" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="ornGrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#ff450000"/>
-      <stop offset="30%" stop-color="#ff8c00"/>
-      <stop offset="50%" stop-color="#ffd700"/>
-      <stop offset="70%" stop-color="#ff8c00"/>
+      <stop offset="15%" stop-color="#ff8c00"/>
+      <stop offset="35%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#fff8dc"/>
+      <stop offset="65%" stop-color="#ffd700"/>
+      <stop offset="85%" stop-color="#ff8c00"/>
       <stop offset="100%" stop-color="#ff450000"/>
     </linearGradient>
+    <filter id="ornGlow">
+      <feGaussianBlur stdDeviation="0.8"/>
+    </filter>
   </defs>
-  <g stroke="url(#org)" stroke-width="1" fill="none">
-    <!-- Linie -->
-    <line x1="10" y1="10" x2="190" y2="10" opacity="0.4"/>
-    <!-- Linke Verzierung -->
-    <path d="M10 10 L20 4 L20 16Z" opacity="0.6" fill="url(#org)"/>
-    <path d="M25 10 L35 4 L35 16Z" opacity="0.4" fill="url(#org)"/>
-    <!-- Mitte: Flamme -->
-    <path d="M96 6 C94 3 97 1 100 2 C103 1 106 3 104 6 C103 9 100 14 100 14 C100 14 97 9 96 6Z" fill="url(#org)" opacity="0.8"/>
-    <circle cx="100" cy="6" r="1.5" fill="#ffd700" opacity="0.6"/>
-    <!-- Rechte Verzierung -->
-    <path d="M165 10 L175 4 L175 16Z" opacity="0.4" fill="url(#org)"/>
-    <path d="M180 10 L190 4 L190 16Z" opacity="0.6" fill="url(#org)"/>
+
+  <g stroke="url(#ornGrad)" fill="none">
+    <!-- Hauptlinie -->
+    <line x1="10" y1="12" x2="190" y2="12" stroke-width="0.8" opacity="0.4"/>
+
+    <!-- Linke Ornamentik – Wikinger-Knoten-Stil -->
+    <g stroke-width="0.6" opacity="0.6">
+      <!-- Äußerer Bogen -->
+      <path d="M10 12 Q15 4 25 6 Q35 8 30 12"/>
+      <path d="M10 12 Q15 20 25 18 Q35 16 30 12"/>
+      <!-- Innerer Bogen -->
+      <path d="M18 12 Q22 6 28 8"/>
+      <path d="M18 12 Q22 18 28 16"/>
+      <!-- Abschluss -->
+      <circle cx="10" cy="12" r="1.5" fill="url(#ornGrad)" stroke="none"/>
+    </g>
+
+    <!-- Mittlere Verzierung – Flammenmotiv -->
+    <g filter="url(#ornGlow)">
+      <!-- Flamme Mitte -->
+      <path d="M93 14 C92 10 95 7 98 8 C100 5 103 7 104 10 C106 8 108 10 107 14 C106 18 100 20 100 20 C100 20 94 18 93 14Z" 
+            fill="url(#ornGrad)" stroke="none" opacity="0.8"/>
+      <!-- Flammenkern -->
+      <path d="M98 12 C97 10 99 8 100 9 C101 8 103 10 102 12 C101 14 100 15 100 15 C100 15 99 14 98 12Z" 
+            fill="#fff8dc" stroke="none" opacity="0.6"/>
+      <!-- Seitliche Funken -->
+      <circle cx="90" cy="10" r="0.8" fill="#ffd700" stroke="none" opacity="0.5"/>
+      <circle cx="110" cy="10" r="0.8" fill="#ffd700" stroke="none" opacity="0.5"/>
+    </g>
+
+    <!-- Rechte Ornamentik -->
+    <g stroke-width="0.6" opacity="0.6">
+      <path d="M170 12 Q175 4 185 6 Q195 8 190 12"/>
+      <path d="M170 12 Q175 20 185 18 Q195 16 190 12"/>
+      <path d="M178 12 Q182 6 188 8"/>
+      <path d="M178 12 Q182 18 188 16"/>
+      <circle cx="190" cy="12" r="1.5" fill="url(#ornGrad)" stroke="none"/>
+    </g>
   </g>
 </svg>

@@ -1,25 +1,51 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <defs>
-    <linearGradient id="sg" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#d4a853"/>
+    <linearGradient id="scrollGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#e8c878"/>
+      <stop offset="20%" stop-color="#d4a853"/>
       <stop offset="50%" stop-color="#c89335"/>
+      <stop offset="80%" stop-color="#b8862e"/>
       <stop offset="100%" stop-color="#a67828"/>
     </linearGradient>
+    <linearGradient id="pageGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a2814"/>
+      <stop offset="50%" stop-color="#2a1f0e"/>
+      <stop offset="100%" stop-color="#1a1508"/>
+    </linearGradient>
+    <filter id="scrollGlow">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
   </defs>
-  <g stroke="url(#sg)" stroke-width="1.2" fill="none">
-    <!-- Rolle links -->
-    <path d="M8 12 C8 8 12 6 16 8 L16 36 C12 34 8 32 8 28Z" fill="url(#sg)" opacity="0.3"/>
-    <!-- Rolle rechts -->
-    <path d="M40 12 C40 8 36 6 32 8 L32 36 C36 34 40 32 40 28Z" fill="url(#sg)" opacity="0.3"/>
-    <!-- Papierfläche -->
-    <rect x="8" y="12" width="32" height="24" rx="1" fill="#2a1f0e" stroke="url(#sg)" stroke-width="0.8"/>
-    <!-- Textzeilen -->
-    <line x1="14" y1="18" x2="34" y2="18" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
-    <line x1="14" y1="22" x2="34" y2="22" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
-    <line x1="14" y1="26" x2="30" y2="26" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
-    <line x1="14" y1="30" x2="34" y2="30" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
+
+  <!-- Schatten -->
+  <rect x="9" y="12" width="32" height="26" rx="2" fill="#000000" opacity="0.2" filter="url(#scrollGlow)"/>
+
+  <!-- Obere Rolle -->
+  <path d="M6 6 C6 2 14 0 24 0 C34 0 42 2 42 6 L42 10 C42 8 34 6 24 6 C14 6 6 8 6 10Z" 
+        fill="url(#scrollGrad)"/>
+  <path d="M6 6 C6 4 10 2 16 2 C12 3 6 5 6 6Z" fill="#e8c878" opacity="0.3"/>
+
+  <!-- Untere Rolle -->
+  <path d="M6 40 C6 44 14 46 24 46 C34 46 42 44 42 40 L42 36 C42 38 34 40 24 40 C14 40 6 38 6 36Z" 
+        fill="url(#scrollGrad)"/>
+  <path d="M6 40 C6 42 10 44 16 44 C12 43 6 41 6 40Z" fill="#a67828" opacity="0.3"/>
+
+  <!-- Papierfläche -->
+  <rect x="6" y="10" width="36" height="26" rx="1" fill="url(#pageGrad)" stroke="#c89335" stroke-width="0.6"/>
+
+  <!-- Runen/Textzeilen – mystische Symbole -->
+  <g stroke="#d4a853" stroke-width="0.5" opacity="0.4" stroke-linecap="round">
+    <line x1="10" y1="15" x2="38" y2="15"/>
+    <line x1="10" y1="19" x2="32" y2="19"/>
+    <line x1="10" y1="23" x2="38" y2="23"/>
+    <line x1="10" y1="27" x2="28" y2="27"/>
+    <line x1="10" y1="31" x2="34" y2="31"/>
   </g>
-  <!-- Siegel -->
-  <circle cx="24" cy="34" r="3" fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.6"/>
-  <circle cx="24" cy="34" r="1.5" fill="#d4a853" opacity="0.3"/>
+
+  <!-- Siegel – kleiner Kreis mit Flammenmotiv -->
+  <g transform="translate(24, 36)">
+    <circle cx="0" cy="0" r="4" fill="none" stroke="#d4a853" stroke-width="0.6" opacity="0.5"/>
+    <circle cx="0" cy="0" r="2.5" fill="none" stroke="#e8c878" stroke-width="0.4" opacity="0.4"/>
+    <path d="M0 -1 L1 0 L0 1 L-1 0Z" fill="#d4a853" opacity="0.5"/>
+  </g>
 </svg>

@@ -1,17 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <defs>
-    <linearGradient id="sog" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#ff8c00"/>
-      <stop offset="100%" stop-color="#ffd700"/>
+    <linearGradient id="soundGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#ff4500"/>
     </linearGradient>
+    <filter id="soundGlow">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
   </defs>
-  <g stroke="url(#sog)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Lautsprecher -->
-    <rect x="4" y="16" width="8" height="16" rx="1" fill="url(#sog)" opacity="0.4"/>
-    <path d="M12 16 L22 8 L22 40 L12 32"/>
-    <!-- Schallwellen -->
-    <path d="M28 16 C33 20 33 28 28 32" opacity="0.7"/>
-    <path d="M33 10 C40 16 40 32 33 38" opacity="0.5"/>
-    <path d="M38 4 C47 12 47 36 38 44" opacity="0.3"/>
+
+  <!-- Speaker-Körper -->
+  <g filter="url(#soundGlow)">
+    <!-- Gehäuse -->
+    <path d="M4 16 L10 16 L10 32 L4 32Z" fill="url(#soundGrad)" opacity="0.25" stroke="url(#soundGrad)" stroke-width="1.2" rx="1"/>
+    <!-- Konus -->
+    <path d="M10 16 L18 10 L18 38 L10 32Z" fill="url(#soundGrad)" opacity="0.2" stroke="url(#soundGrad)" stroke-width="1.2" stroke-linejoin="round"/>
+    <!-- Membran -->
+    <ellipse cx="14" cy="24" rx="2" ry="8" fill="url(#soundGrad)" opacity="0.3"/>
+  </g>
+
+  <!-- Schallwellen -->
+  <g stroke="url(#soundGrad)" stroke-width="1.5" stroke-linecap="round" fill="none">
+    <!-- Welle 1 -->
+    <path d="M24 18 C28 20 28 28 24 30" opacity="0.7">
+      <animate attributeName="opacity" dur="1.5s" repeatCount="indefinite" values="0.7;0.2;0.7"/>
+      <animate attributeName="d" dur="1.5s" repeatCount="indefinite" 
+        values="M24 18 C28 20 28 28 24 30;M24 18 C30 20 30 28 24 30;M24 18 C28 20 28 28 24 30"/>
+    </path>
+    <!-- Welle 2 -->
+    <path d="M30 14 C36 17 36 31 30 34" opacity="0.5">
+      <animate attributeName="opacity" dur="1.5s" repeatCount="indefinite" values="0.5;0.1;0.5" begin="0.3s"/>
+      <animate attributeName="d" dur="1.5s" repeatCount="indefinite" begin="0.3s"
+        values="M30 14 C36 17 36 31 30 34;M30 14 C39 17 39 31 30 34;M30 14 C36 17 36 31 30 34"/>
+    </path>
+    <!-- Welle 3 -->
+    <path d="M36 10 C44 14 44 34 36 38" opacity="0.3">
+      <animate attributeName="opacity" dur="1.5s" repeatCount="indefinite" values="0.3;0;0.3" begin="0.6s"/>
+      <animate attributeName="d" dur="1.5s" repeatCount="indefinite" begin="0.6s"
+        values="M36 10 C44 14 44 34 36 38;M36 10 C47 14 47 34 36 38;M36 10 C44 14 44 34 36 38"/>
+    </path>
+  </g>
+
+  <!-- Akzent-Punkte -->
+  <g fill="#ffd700" opacity="0.4">
+    <circle cx="25" cy="16" r="1"/>
+    <circle cx="27" cy="14" r="0.7"/>
+    <circle cx="25" cy="32" r="1"/>
+    <circle cx="27" cy="34" r="0.7"/>
   </g>
 </svg>

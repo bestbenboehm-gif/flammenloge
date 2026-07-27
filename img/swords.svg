@@ -1,27 +1,73 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
   <defs>
-    <linearGradient id="swg" x1="0" y1="1" x2="0.5" y2="0">
-      <stop offset="0%" stop-color="#a67828"/>
-      <stop offset="50%" stop-color="#d4a853"/>
-      <stop offset="100%" stop-color="#ffd700"/>
+    <linearGradient id="swordGold" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="30%" stop-color="#ffd700"/>
+      <stop offset="60%" stop-color="#d4a853"/>
+      <stop offset="100%" stop-color="#8b6914"/>
     </linearGradient>
+    <linearGradient id="bladeEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="swordGlow">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
   </defs>
-  <!-- Schwert 1 (links) -->
-  <g opacity="0.9">
-    <!-- Klinge -->
-    <path d="M24 8 L20 40 L24 42 L28 40Z" fill="url(#swg)" opacity="0.7" stroke="#d4a853" stroke-width="0.5"/>
-    <!-- Parierstange -->
-    <rect x="16" y="36" width="16" height="3" rx="1" fill="url(#swg)" opacity="0.8"/>
-    <!-- Griff -->
-    <rect x="22" y="39" width="4" height="7" rx="1" fill="#8b6914" opacity="0.7"/>
-    <!-- Knauf -->
-    <circle cx="24" cy="47" r="2.5" fill="#d4a853" opacity="0.7"/>
+
+  <!-- Schatten -->
+  <g opacity="0.15" filter="url(#swordGlow)">
+    <path d="M24 8 L28 40 L24 42 L20 40Z" fill="#000"/>
+    <path d="M24 8 L20 40 L24 42 L28 40Z" fill="#000"/>
   </g>
-  <!-- Schwert 2 (rechts, gekreuzt) -->
-  <g opacity="0.9">
-    <path d="M24 8 L28 40 L24 42 L20 40Z" fill="url(#swg)" opacity="0.7" stroke="#d4a853" stroke-width="0.5"/>
-    <rect x="16" y="36" width="16" height="3" rx="1" fill="url(#swg)" opacity="0.8"/>
-    <rect x="22" y="39" width="4" height="7" rx="1" fill="#8b6914" opacity="0.7"/>
-    <circle cx="24" cy="47" r="2.5" fill="#d4a853" opacity="0.7"/>
+
+  <!-- Schwert 1 (von links unten nach rechts oben) -->
+  <g>
+    <!-- Klinge 1 -->
+    <path d="M14 38 L22 6 L24 4 L24 6 L26 10 L18 40Z" 
+          fill="url(#swordGold)" opacity="0.75"/>
+    <path d="M14 38 L22 6 L24 4 L24 6 L26 10 L18 40Z" 
+          fill="url(#bladeEdge)"/>
+    <!-- Klingenschärfe-Linie -->
+    <line x1="16" y1="34" x2="23" y2="6" stroke="#ffffff" stroke-width="0.3" opacity="0.3"/>
+    
+    <!-- Parierstange 1 -->
+    <rect x="10" y="38" width="16" height="2.5" rx="0.5" fill="url(#swordGold)" opacity="0.8"/>
+    <rect x="10" y="39" width="16" height="0.5" fill="#e8c878" opacity="0.3"/>
+    
+    <!-- Griff 1 -->
+    <rect x="14" y="40.5" width="4" height="6" rx="1" fill="#8b6914" opacity="0.7"/>
+    <!-- Griffwicklung -->
+    <line x1="14" y1="42" x2="18" y2="42" stroke="#6b5010" stroke-width="0.5" opacity="0.4"/>
+    <line x1="14" y1="44" x2="18" y2="44" stroke="#6b5010" stroke-width="0.5" opacity="0.4"/>
+    
+    <!-- Knauf 1 -->
+    <circle cx="16" cy="47.5" r="2.5" fill="url(#swordGold)" opacity="0.7"/>
+    <circle cx="16" cy="47.5" r="1" fill="#e8c878" opacity="0.3"/>
   </g>
+
+  <!-- Schwert 2 (von rechts unten nach links oben) -->
+  <g>
+    <!-- Klinge 2 -->
+    <path d="M34 38 L26 6 L24 4 L24 6 L22 10 L30 40Z" 
+          fill="url(#swordGold)" opacity="0.65"/>
+    <path d="M34 38 L26 6 L24 4 L24 6 L22 10 L30 40Z" 
+          fill="url(#bladeEdge)"/>
+    <line x1="32" y1="34" x2="25" y2="6" stroke="#ffffff" stroke-width="0.3" opacity="0.3"/>
+    
+    <!-- Parierstange 2 -->
+    <rect x="22" y="38" width="16" height="2.5" rx="0.5" fill="url(#swordGold)" opacity="0.8"/>
+    
+    <!-- Griff 2 -->
+    <rect x="30" y="40.5" width="4" height="6" rx="1" fill="#8b6914" opacity="0.7"/>
+    <line x1="30" y1="42" x2="34" y2="42" stroke="#6b5010" stroke-width="0.5" opacity="0.4"/>
+    <line x1="30" y1="44" x2="34" y2="44" stroke="#6b5010" stroke-width="0.5" opacity="0.4"/>
+    
+    <!-- Knauf 2 -->
+    <circle cx="32" cy="47.5" r="2.5" fill="url(#swordGold)" opacity="0.7"/>
+    <circle cx="32" cy="47.5" r="1" fill="#e8c878" opacity="0.3"/>
+  </g>
+
+  <!-- Kreuzungspunkt-Glow -->
+  <circle cx="24" cy="40" r="3" fill="#ffd700" opacity="0.15" filter="url(#swordGlow)"/>
 </svg>
