@@ -864,7 +864,7 @@ body.font-large { font-size: 22px; }
   const backToTopBtn = document.createElement('button');
   backToTopBtn.className = 'back-to-top';
   backToTopBtn.id = 'backToTop';
-  backToTopBtn.innerHTML = '↑';
+  backToTopBtn.innerHTML = '<img src="img/arrow-up.svg" alt="Nach oben" width="20" height="20">';
   backToTopBtn.setAttribute('aria-label', 'Nach oben scrollen');
   backToTopBtn.setAttribute('title', 'Nach oben');
   backToTopBtn.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});

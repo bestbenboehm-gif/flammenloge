@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="sog" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#sog)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Lautsprecher -->
+    <rect x="4" y="16" width="8" height="16" rx="1" fill="url(#sog)" opacity="0.4"/>
+    <path d="M12 16 L22 8 L22 40 L12 32"/>
+    <!-- Schallwellen -->
+    <path d="M28 16 C33 20 33 28 28 32" opacity="0.7"/>
+    <path d="M33 10 C40 16 40 32 33 38" opacity="0.5"/>
+    <path d="M38 4 C47 12 47 36 38 44" opacity="0.3"/>
+  </g>
+</svg>

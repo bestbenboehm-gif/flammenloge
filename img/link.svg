@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="lig" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#ff8c00"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#lig)" stroke-width="1.8" stroke-linecap="round" fill="none">
+    <!-- Kettenglied oben -->
+    <path d="M24 24 C24 18 28 14 34 14 C36 14 38 15 39 16 L44 21 C46 23 46 27 44 29 L38 35 C36 37 32 37 30 35"/>
+    <!-- Kettenglied unten -->
+    <path d="M24 24 C24 30 20 34 14 34 C12 34 10 33 9 32 L4 27 C2 25 2 21 4 19 L10 13 C12 11 16 11 18 13"/>
+    <!-- Mittelring -->
+    <circle cx="24" cy="24" r="3" fill="url(#lig)" opacity="0.5"/>
+  </g>
+</svg>

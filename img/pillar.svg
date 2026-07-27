@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 64" fill="none">
+  <defs>
+    <linearGradient id="pig" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#d4a853"/>
+      <stop offset="50%" stop-color="#c89335"/>
+      <stop offset="100%" stop-color="#a67828"/>
+    </linearGradient>
+  </defs>
+  <!-- Säule -->
+  <rect x="10" y="10" width="28" height="48" rx="2" fill="#1a0f08" stroke="url(#pig)" stroke-width="1.2"/>
+  <!-- Basis -->
+  <rect x="6" y="54" width="36" height="8" rx="1" fill="url(#pig)" opacity="0.5"/>
+  <!-- Kapitell -->
+  <rect x="7" y="8" width="34" height="8" rx="1" fill="url(#pig)" opacity="0.5"/>
+  <!-- Kanneluren (senkrechte Rillen) -->
+  <line x1="17" y1="16" x2="17" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
+  <line x1="24" y1="16" x2="24" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
+  <line x1="31" y1="16" x2="31" y2="54" stroke="#d4a853" stroke-width="0.5" opacity="0.3"/>
+  <!-- Flamme oben -->
+  <path d="M24 2 C22 0 24 -3 24 -5 C24 -3 26 0 24 2Z" fill="#ff8c00" opacity="0.8"/>
+</svg>

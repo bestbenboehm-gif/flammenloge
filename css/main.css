@@ -468,3 +468,69 @@ body::before {
   .share-toggle { left: 1rem; }
   .back-to-top { right: 1rem; }
 }
+
+/* ===== SVG-EMOJI REPLACEMENTS ===== */
+.nav-flame {
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.4));
+  margin-right: 6px;
+}
+
+.gallery-svg {
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.3));
+  transition: filter 0.5s ease;
+}
+
+.gallery-item:hover .gallery-svg {
+  filter: drop-shadow(0 0 16px rgba(255, 200, 0, 0.6));
+}
+
+.share-icon {
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  opacity: 0.8;
+}
+
+.inline-emoji-svg {
+  display: inline-block;
+  vertical-align: -3px;
+  margin-right: 0.2rem;
+  filter: drop-shadow(0 0 3px rgba(255, 200, 0, 0.2));
+}
+
+.inline-ornament {
+  opacity: 0.6;
+  vertical-align: middle;
+}
+
+.sound-toggle img,
+.share-toggle img {
+  filter: drop-shadow(0 0 4px rgba(255, 140, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.sound-toggle:hover img,
+.share-toggle:hover img {
+  filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.6));
+}
+
+.sound-toggle.playing img {
+  filter: drop-shadow(0 0 10px rgba(255, 200, 0, 0.5));
+}
+
+.back-to-top img {
+  filter: drop-shadow(0 0 4px rgba(255, 140, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.back-to-top:hover img {
+  filter: drop-shadow(0 0 10px rgba(255, 200, 0, 0.6));
+}
+
+@media (max-width: 480px) {
+  .nav-flame { width: 20px; height: 20px; }
+  .gallery-svg { width: 32px; height: 32px; }
+}

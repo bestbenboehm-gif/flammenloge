@@ -16,7 +16,7 @@
   <meta property="og:url" content="https://flammenloge.de/gedichte.html">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -41,7 +41,7 @@
   .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
   .gallery-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.3s, border-color 0.3s; }
   .gallery-item:hover { transform: translateY(-2px); border-color: rgba(255,107,0,0.3); }
-  .gallery-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .gallery-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; min-height: 36px; }
   .gallery-title { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--amber-light); margin-bottom: 0.4rem; }
   .gallery-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
   .rune { margin-bottom: 2rem; }
@@ -62,8 +62,8 @@
 <body>
 <a href="#main-content" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--amber);color:var(--bg);padding:8px 16px;text-decoration:none;z-index:9999;font-weight:600;">Zum Inhalt springen</a>
 <nav class="nav" role="navigation" aria-label="Hauptnavigation">
-  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
-  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)">☰</button>
+  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
   <ul class="nav-links" id="navLinks" role="menubar">
     <li role="none"><a href="gedichte.html" class="active" role="menuitem">Gedichte</a></li>
     <li role="none"><a href="handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
@@ -81,22 +81,22 @@
 <section class="section">
   <div class="gallery">
     <div class="gallery-item scroll-fade">
-      <div class="gallery-icon">🔥</div>
+      <div class="gallery-icon"><img src="img/flame.svg" alt="" aria-hidden="true" width="32" height="32"></div>
       <div class="gallery-title">Wach werden</div>
       <div class="gallery-desc">Der Moment, in dem du erkennst, dass das Leben dir gehört.</div>
     </div>
     <div class="gallery-item scroll-fade">
-      <div class="gallery-icon">✨</div>
+      <div class="gallery-icon"><img src="img/ember.svg" alt="" aria-hidden="true" width="32" height="32"></div>
       <div class="gallery-title">Leuchtfeuer</div>
       <div class="gallery-desc">Manchmal reicht ein kleiner Lichtpunkt, um den Weg zu zeigen.</div>
     </div>
     <div class="gallery-item scroll-fade">
-      <div class="gallery-icon">🌙</div>
+      <div class="gallery-icon"><img src="img/ember.svg" alt="" aria-hidden="true" width="32" height="32"></div>
       <div class="gallery-title">Stille</div>
       <div class="gallery-desc">In der Ruhe liegt die Kraft, die Welt neu zu sehen.</div>
     </div>
     <div class="gallery-item scroll-fade">
-      <div class="gallery-icon">🌄</div>
+      <div class="gallery-icon"><img src="img/ember.svg" alt="" aria-hidden="true" width="32" height="32"></div>
       <div class="gallery-title">Morgenlicht</div>
       <div class="gallery-desc">Jeder Tag ist eine neue Chance, das Feuer zu entfachen.</div>
     </div>
@@ -121,7 +121,7 @@
 
   <p class="section-text scroll-fade">Die Flammenloge hütet diese Runen nicht, um sie zu verstecken. Sondern damit jene, die bereit sind, sie im richtigen Augenblick aufleuchten sehen.</p>
   <p class="section-text scroll-fade"><em>Die letzte Rune ist die schwerste. Sie lautet: Lass los. Denn das Licht, das du festhältst, verbrennt. Das Licht, das du weitergibst, brennt für immer.</em></p>
-  <div class="rune-divider">✦ ✦ ✦</div>
+  <div class="rune-divider"><img src="img/ornament.svg" alt="" aria-hidden="true" width="14" height="14"> <img src="img/ornament.svg" alt="" aria-hidden="true" width="14" height="14"> <img src="img/ornament.svg" alt="" aria-hidden="true" width="14" height="14"></div>
 </section>
 
 <section class="section">
@@ -144,23 +144,23 @@
 </section>
 
 <footer role="contentinfo">
-  <p>Die Flammenloge · flammenloge.de</p>
+  <p>Die Flammenloge <img src="img/ornament.svg" alt="" aria-hidden="true" width="16" height="16"> flammenloge.de</p>
 </footer>
 
 <!-- Social Sharing -->
 <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
-  🔗
+  <img src="img/link.svg" alt="" aria-hidden="true" width="22" height="22">
 </button>
 <div class="share-panel" id="share-panel" role="dialog" aria-label="Teilen auf">
-  <button onclick="shareOnTwitter()" aria-label="Auf Twitter teilen">🐦 Twitter</button>
-  <button onclick="shareOnFacebook()" aria-label="Auf Facebook teilen">📘 Facebook</button>
-  <button onclick="shareOnWhatsApp()" aria-label="Auf WhatsApp teilen">💬 WhatsApp</button>
-  <button onclick="shareViaEmail()" aria-label="Per E-Mail teilen">✉️ E-Mail</button>
+  <button onclick="shareOnTwitter()" aria-label="Auf Twitter teilen"><img src="img/share-x.svg" alt="" class="share-icon" width="18" height="18"> Twitter</button>
+  <button onclick="shareOnFacebook()" aria-label="Auf Facebook teilen"><img src="img/share-github.svg" alt="" class="share-icon" width="18" height="18"> Facebook</button>
+  <button onclick="shareOnWhatsApp()" aria-label="Auf WhatsApp teilen"><img src="img/share-whatsapp.svg" alt="" class="share-icon" width="18" height="18"> WhatsApp</button>
+  <button onclick="shareViaEmail()" aria-label="Per E-Mail teilen"><img src="img/share-email.svg" alt="" class="share-icon" width="18" height="18"> E-Mail</button>
 </div>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen" title="Nach oben">
-  ↑
+  <img src="img/arrow-up.svg" alt="Nach oben" width="20" height="20">
 </button>
 
 </main>

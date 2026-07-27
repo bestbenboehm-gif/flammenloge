@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="sg" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#d4a853"/>
+      <stop offset="50%" stop-color="#c89335"/>
+      <stop offset="100%" stop-color="#a67828"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#sg)" stroke-width="1.2" fill="none">
+    <!-- Rolle links -->
+    <path d="M8 12 C8 8 12 6 16 8 L16 36 C12 34 8 32 8 28Z" fill="url(#sg)" opacity="0.3"/>
+    <!-- Rolle rechts -->
+    <path d="M40 12 C40 8 36 6 32 8 L32 36 C36 34 40 32 40 28Z" fill="url(#sg)" opacity="0.3"/>
+    <!-- Papierfläche -->
+    <rect x="8" y="12" width="32" height="24" rx="1" fill="#2a1f0e" stroke="url(#sg)" stroke-width="0.8"/>
+    <!-- Textzeilen -->
+    <line x1="14" y1="18" x2="34" y2="18" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
+    <line x1="14" y1="22" x2="34" y2="22" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
+    <line x1="14" y1="26" x2="30" y2="26" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
+    <line x1="14" y1="30" x2="34" y2="30" stroke="#c89335" stroke-width="0.5" opacity="0.5"/>
+  </g>
+  <!-- Siegel -->
+  <circle cx="24" cy="34" r="3" fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.6"/>
+  <circle cx="24" cy="34" r="1.5" fill="#d4a853" opacity="0.3"/>
+</svg>

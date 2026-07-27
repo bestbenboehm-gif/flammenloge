@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="fg" x1="0.5" y1="1" x2="0.5" y2="0">
+      <stop offset="0%" stop-color="#ff4500"/>
+      <stop offset="40%" stop-color="#ff8c00"/>
+      <stop offset="80%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#fff8dc"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)">
+    <!-- Äußere Flamme -->
+    <path d="M50 92 C30 65 18 50 22 35 C26 20 38 8 50 4 C62 8 74 20 78 35 C82 50 70 65 50 92Z"
+          fill="url(#fg)" opacity="0.85"/>
+    <!-- Innere Flamme (hell) -->
+    <path d="M50 80 C36 60 28 48 31 38 C34 28 42 18 50 14 C58 18 66 28 69 38 C72 48 64 60 50 80Z"
+          fill="#fff8dc" opacity="0.7"/>
+    <!-- Kern -->
+    <path d="M50 68 C42 55 37 46 39 40 C41 34 46 27 50 24 C54 27 59 34 61 40 C63 46 58 55 50 68Z"
+          fill="#ffffff" opacity="0.9"/>
+  </g>
+</svg>

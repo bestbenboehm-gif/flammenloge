@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -273,7 +273,7 @@
     .gallery-item:nth-child(3) { transition-delay: 0.2s; }
     .gallery-item:nth-child(4) { transition-delay: 0.3s; }
 
-    .gallery-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .gallery-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; min-height: 44px; }
     .gallery-title {
       font-family: 'Cinzel', serif;
       font-size: 0.9rem;
@@ -426,8 +426,8 @@
 
 <!-- ===== NAVIGATION ===== -->
 <nav class="nav" role="navigation" aria-label="Hauptnavigation">
-  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite">🔥 Flammenloge</a>
-  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)">☰</button>
+  <a href="index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
   <ul class="nav-links" id="navLinks" role="menubar">
     <li role="none"><a href="gedichte.html" role="menuitem">Gedichte</a></li>
     <li role="none"><a href="handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
@@ -502,12 +502,12 @@
     
     <div class="gallery" role="list">
       <div class="gallery-item scroll-fade" data-scroll role="listitem">
-        <div class="gallery-icon" aria-hidden="true">🔥</div>
+        <div class="gallery-icon" aria-hidden="true"><img src="img/flame.svg" alt="" width="40" height="40" class="gallery-svg"></div>
         <div class="gallery-title">Wach werden</div>
         <div class="gallery-desc">Der Moment, in dem du erkennst, dass das Leben dir gehört.</div>
       </div>
       <div class="gallery-item scroll-fade" data-scroll role="listitem">
-        <div class="gallery-icon" aria-hidden="true">✨</div>
+        <div class="gallery-icon" aria-hidden="true"><img src="img/ember.svg" alt="" width="40" height="40" class="gallery-svg"></div>
         <div class="gallery-title">Leuchtfeuer</div>
         <div class="gallery-desc">Manchmal reicht ein kleiner Lichtpunkt, um den Weg zu zeigen.</div>
       </div>
@@ -592,13 +592,13 @@
       zünde eine Kerze an und denk an das Licht.
     </p>
     <p class="section-text scroll-fade" data-scroll style="margin-left:auto;margin-right:auto;font-size:0.85rem;">
-      ✦ flammenloge.de ✦
+      <img src="img/ornament.svg" alt="" aria-hidden="true" class="inline-ornament" width="120" height="12" style="display:block;margin:0 auto 0.5rem"> flammenloge.de
     </p>
   </section>
 
   <!-- ===== IMPRESSUM ===== -->
   <section class="impressum" style="text-align:center;padding:2rem 1.5rem;">
-    <a href="#" onclick="document.getElementById('impressum-daten').style.display='block';this.style.display='none';return false;" style="color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color=''">📜 Impressum</a>
+    <a href="#" onclick="document.getElementById('impressum-daten').style.display='block';this.style.display='none';return false;" style="color:var(--text-muted);font-size:0.75rem;letter-spacing:0.1em;text-decoration:none;transition:color 0.3s;display:inline-flex;align-items:center;gap:0.5rem;" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color=''"><img src="img/scroll.svg" alt="" aria-hidden="true" width="16" height="16" style="opacity:0.6"> Impressum</a>
     <div id="impressum-daten" class="impressum-content" style="display:none;margin-top:1.5rem;text-align:left;">
       <strong>Angaben gemäß §5 DDG</strong><br>
       Benjamin Böhm<br>
@@ -630,30 +630,30 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
-    <span style="color:var(--amber);" aria-hidden="true">✦</span> Flammenloge · Im Licht der Erkenntnis <span style="color:var(--amber);" aria-hidden="true">✦</span>
+    <img src="img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge · Im Licht der Erkenntnis <img src="img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
   </footer>
   </main>
 
   <!-- Sound -->
   <div class="sound-label" id="soundLabel" aria-hidden="true">Knistern</div>
   <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" title="Feuer-Knistern ein/ausschalten" aria-label="Feuer-Knistern Soundscape ein- oder ausschalten" aria-pressed="false">
-    🔊
+    <img src="img/sound.svg" alt="" aria-hidden="true" width="22" height="22">
   </button>
 
   <!-- Social Sharing -->
   <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
-    🔗
+    <img src="img/link.svg" alt="" aria-hidden="true" width="22" height="22">
   </button>
   <div class="share-panel" id="share-panel" role="dialog" aria-label="Teilen auf">
-    <button onclick="shareOnTwitter()" aria-label="Auf Twitter teilen">🐦 Twitter</button>
-    <button onclick="shareOnFacebook()" aria-label="Auf Facebook teilen">📘 Facebook</button>
-    <button onclick="shareOnWhatsApp()" aria-label="Auf WhatsApp teilen">💬 WhatsApp</button>
-    <button onclick="shareViaEmail()" aria-label="Per E-Mail teilen">✉️ E-Mail</button>
+    <button onclick="shareOnTwitter()" aria-label="Auf Twitter teilen"><img src="img/share-x.svg" alt="" width="18" height="18" class="share-icon"> Twitter</button>
+    <button onclick="shareOnFacebook()" aria-label="Auf Facebook teilen"><img src="img/share-github.svg" alt="" width="18" height="18" class="share-icon"> Facebook</button>
+    <button onclick="shareOnWhatsApp()" aria-label="Auf WhatsApp teilen"><img src="img/share-whatsapp.svg" alt="" width="18" height="18" class="share-icon"> WhatsApp</button>
+    <button onclick="shareViaEmail()" aria-label="Per E-Mail teilen"><img src="img/share-email.svg" alt="" width="18" height="18" class="share-icon"> E-Mail</button>
   </div>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen" title="Nach oben">
-    ↑
+    <img src="img/arrow-up.svg" alt="Nach oben" width="20" height="20">
   </button>
 
   </main>
