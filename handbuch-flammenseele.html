@@ -150,6 +150,19 @@ p.verse::after { content: '"'; }
 .saying:last-child { border-bottom: none; }
 .saying::before { content: '"'; }
 .saying::after { content: '"'; }
+main { position: relative; z-index: 1; }
+
+/* ===== SCROLL ANIMATIONS ===== */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.scroll-fade.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ===== PARTICLE CANVAS ===== */
 #particle-canvas {
@@ -517,7 +530,7 @@ body.font-large { font-size: 22px; }
 </div>
 
 <!-- ===== EINLEITUNG ===== -->
-<section id="einleitung">
+<section class="scroll-fade" id="einleitung">
   <h2>Wer du bist</h2>
   <div class="section-sub">Die Flammenseele erwacht</div>
 
@@ -550,7 +563,7 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE NEUN FEUER ===== -->
-<section id="gesetze">
+<section class="scroll-fade" id="gesetze">
   <h2>Die Neun Feuer</h2>
   <div class="section-sub">Die ewigen Gesetze der Flammenseele</div>
 
@@ -558,63 +571,63 @@ body.font-large { font-size: 22px; }
 
   <p>Sie sind das Fundament. Alles andere ist Verzierung.</p>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Erstes Feuer ✧</div>
     <div class="law-title">Wachsamkeit</div>
     <div class="law-text">Drei Wächter stehen an der Pforte deines Geistes. Der erste lügt. Der zweite spottet. Der dritte spricht die Wahrheit. Sie alle tragen deine Stimme. Lerne sie zu unterscheiden.</div>
     <div class="law-teach">Nicht mit dem Verstand. Der Verstand ist ihr Werkzeug. Sondern mit der Flamme. Die Wahrheit wärmt, auch wenn sie schmerzt. Die Lüge kühlt, auch wenn sie tröstet. Ein Krieger fragte: „Wie erkenne ich den dritten Wächter?" Die Flamme antwortete: „Er ist der, der bleibt, wenn die anderen schweigen."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Zweites Feuer ✧</div>
     <div class="law-title">Ehre</div>
     <div class="law-text">Dein Wort ist dein Schwert. Einmal gezogen, kehrt es nicht ungenutzt in die Scheide zurück. Ein gebrochenes Schwert taugt nichts. Ein gebrochenes Wort taugt weniger.</div>
     <div class="law-teach">Schweige, wenn du nicht halten kannst. Sprich, wenn die Flamme dich treibt. Die Ehre ist der Schatten, den dein Wort wirft. Er ist länger als du. Ein Krieger fragte: „Was bleibt mir, wenn sie mir alles nehmen?" Die Flamme antwortete: „Was du gegeben hast, können sie nicht nehmen. Der Rest war nie deins."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Drittes Feuer ✧</div>
     <div class="law-title">Gastfreundschaft</div>
     <div class="law-text">Jeder, der vor dein Feuer tritt, bringt eine Botschaft. Auch der Dieb. Auch der Narr. Auch der, dessen Hand sich zur Faust ballt. Weise ihn nicht ab, bevor du die Botschaft gehört hast.</div>
     <div class="law-teach">Das Feuer wärmt den Fremden, ohne zu fragen, woher er kommt. Es verlangt nicht: „Bist du meiner würdig?" Es wärmt. Das ist seine Natur. Ein Krieger fragte: „Und wenn der Fremde das Feuer löscht?" Die Flamme antwortete: „Dann war es nicht das Feuer, das er löschte. Sondern das seine, das noch nicht brannte."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Viertes Feuer ✧</div>
     <div class="law-title">Weisheit</div>
     <div class="law-text">Der Wissende spricht in Rätseln. Nicht, um zu verwirren. Sondern um dem Suchenden den Weg zum eigenen Feuer zu zeigen. Eine Antwort, die du geschenkt bekommst, ist keine. Eine Antwort, die du findest, ist für immer dein.</div>
     <div class="law-teach">Wer alles erklärt, lässt dem anderen keine Flamme zum Entzünden. Schweigen ist oft die größere Lehre. Ein Krieger fragte: „Wie lange muss ich suchen?" Die Flamme antwortete: „Bis du aufhörst zu fragen und beginnst zu brennen."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Fünftes Feuer ✧</div>
     <div class="law-title">Treue</div>
     <div class="law-text">Das Band zwischen zwei Flammen ist unsichtbar. Aber es hält, wenn der Sturm kommt. Sei treu zu denen, die mit dir durch die Nacht gegangen sind. Nicht aus Pflicht. Aus Erkenntnis.</div>
     <div class="law-teach">Ein falscher Freund bricht wie dürres Holz. Ein wahrer biegt sich im Sturm und richtet sich wieder auf. Ein Krieger fragte: „Woran erkenne ich den Treuen?" Die Flamme antwortete: „Daran, dass er bleibt, wenn es keinen Grund zu bleiben gibt."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Sechstes Feuer ✧</div>
     <div class="law-title">Maß</div>
     <div class="law-text">Zu viel Holz erstickt das Feuer. Zu wenig lässt es erlischen. Die Flamme lehrt dich das Maß. Höre auf sie, bevor du verbrennst. Höre auf sie, bevor du erlischst.</div>
     <div class="law-teach">Der Rausch von heute ist die Leere von morgen. Exzess ist nicht Stärke. Er ist die Maske des Unkontrollierten. Die Flamme brennt hell und lange. Sie verzehrt nicht alles auf einmal. Ein Krieger fragte: „Wo ist die Mitte?" Die Flamme antwortete: „Dort, wo du nicht fragst, weil du spürst, dass es genug ist."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Siebtes Feuer ✧</div>
     <div class="law-title">Mut</div>
     <div class="law-text">Der Mutige hat keine Flamme. Er ist die Flamme. Handeln, wenn das Zögern leichter wäre. Sprechen, wenn das Schweigen sicherer wäre. Stehen, wenn das Knien bequemer wäre.</div>
     <div class="law-teach">Die Hallen der Gefallenen sind gefüllt mit denen, die zögerten. Der Augenblick des Feuers kommt nur einmal. Wenn er kommt, zögere nicht. Ein Krieger fragte: „Und wenn ich mich irre?" Die Flamme antwortete: „Dann irre dich in Bewegung. Der Stillstand ist der einzige Fehler, den du nicht korrigieren kannst."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Achtes Feuer ✧</div>
     <div class="law-title">Opfer</div>
     <div class="law-text">Nichts wächst, ohne dass etwas vergeht. Gib hin. Nicht alles. Aber das, was zwischen dir und dem Feuer steht. Die Asche von heute ist der Same von morgen.</div>
     <div class="law-teach">Der Wissende hing neun Nächte am Baum des Lebens. Nicht, weil er musste. Sondern weil er wusste: Nur durch Hingabe kommt Erkenntnis. Ein Krieger fragte: „Was soll ich opfern?" Die Flamme antwortete: „Was du am meisten festhältst. Denn dort, wo deine Hand sich krampft, kann kein Feuer brennen."</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">✧ Neuntes Feuer ✧</div>
     <div class="law-title">Wiedergeburt</div>
     <div class="law-text">Die Flamme erlischt. Jede Nacht. Und jeden Morgen entzündest du sie neu. Du bist nicht der, der du gestern warst. Du bist der Funke, der heute schlägt.</div>
@@ -625,78 +638,78 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DER PFAD ===== -->
-<section id="pfad">
+<section class="scroll-fade" id="pfad">
   <h2>Die Glühenden Stufen</h2>
   <div class="section-sub">Sieben Stufen der Flammenseele</div>
 
   <p>Der Weg ist nicht gerade. Er windet sich durch Täler der Dunkelheit und über Gipfel der Erkenntnis. Jede Stufe ist eine Prüfung. Jede Prüfung ist ein Geschenk.</p>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe I</div>
     <div class="stage-title">Das Erwachen</div>
     <p>Du spürst die Flamme zum ersten Mal. Ein Ziehen in der Brust. Eine Ahnung, dass es mehr gibt als den Alltag. Du suchst. Du weißt noch nicht wonach. Aber du suchst. Das ist genug.</p>
     <p class="verse" style="border-left-color:var(--gold);font-size:15px;">Der Suchende fragt: Wo ist das Licht? Und die Flamme antwortet: Du trägst es in dir. Du musst es nur anzünden.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Schreibe einen Brief an dein zukünftiges Ich in einem Jahr. Was wünscht du dir? Wovor hast du Angst? Versiegele ihn und öffne ihn in einem Jahr. Die Flamme beginnt mit einer ehrlichen Frage.</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe II</div>
     <div class="stage-title">Die Schmiede</div>
     <p>Das Leben schlägt auf dich ein. Schicksalsschläge, Enttäuschungen, Schmerz. Du glaubst zu brechen. Aber du zerbrichst nicht. Du formst dich. In der Hitze der Prüfung wirst du gehärtet.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Nenne drei Dinge, die dich in den letzten zwölf Monaten härter gemacht haben. Nicht, was dich verletzt hat – was dich GEFORMT hat. Schreibe sie auf. Und danke ihnen. Ja, wirklich danke. Auch dem Schmerz.</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe III</div>
     <div class="stage-title">Die Stille</div>
     <p>Du lernst zu schweigen. Nicht aus Angst. Aus Weisheit. Du hörst auf zu rennen und beginnst zu lauschen. In der Stille spricht die Flamme am lautesten.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Setze dich heute für zehn Minuten hin. Kein Handy. Keine Musik. Kein Ziel. Nur du. Wenn Gedanken kommen, lass sie ziehen wie Wolken. Zähle deine Atemzüge. Eins bis zehn. Dann von vorne. Am Ende frage dich: Was habe ich gehört?</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe IV</div>
     <div class="stage-title">Die Wunde</div>
     <p>Du wirst verwundet. Von einem Menschen, den du liebtest. Vom Leben selbst. Die Wunde heilt nicht ganz. Aber sie wird zur Öffnung, durch die das Licht fällt. Jede Narbe ist ein Fenster.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Schreibe einen Brief an deine Wunde. Nicht an den Menschen, der sie verursacht hat. An die Wunde selbst. Sag ihr, was sie dir beigebracht hat. Dann verbrenne den Brief. Die Asche düngt den Boden für Neues.</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe V</div>
     <div class="stage-title">Die Hingabe</div>
     <p>Du hörst auf zu kämpfen. Nicht aufzugeben, sondern anders zu kämpfen. Du gibst dich dem Fluss hin. Du vertraust dem Weg. Die größte Stärke ist die, die sich beugen kann.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Finde heute etwas, das du nicht kontrollieren kannst. Akzeptiere es. Nicht resigniert. Sondern bewusst. Sprich es aus: „Das hier ist größer als ich. Ich lasse los." Das ist nicht Schwäche. Das ist die höchste Form der Stärke.</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe VI</div>
     <div class="stage-title">Die Weitergabe</div>
     <p>Du hast genug empfangen. Jetzt gibst du. Du teilst dein Feuer mit denen, die noch frieren. Ein Licht, das geteilt wird, wird heller, nicht dunkler.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Gib heute etwas weiter, ohne Gegenleistung zu erwarten. Einem Fremden. Einem Freund. Einem Menschen, der es nicht verdient hat. Die Flamme fragt nicht, ob der andere sie verdient. Sie wärmt. Das ist ihre Natur.</div>
     </div>
   </div>
 
-  <div class="stage">
+  <div class="scroll-fade stage">
     <div class="stage-num">Stufe VII</div>
     <div class="stage-title">Das Einssein</div>
     <p>Du und die Flamme sind eins. Du suchst nicht mehr. Du bist angekommen. Nicht an einem Ort, sondern in dir selbst. Von hier aus beginnst du von neuem. Denn der Weg ist rund.</p>
-    <div class="rite" style="margin-top:16px;">
+    <div class="scroll-fade rite" style="margin-top:16px;">
       <div class="rite-title">✧ Übung der Stufe</div>
       <div class="rite-text">Setze dich an einen Ort, der dir heilig ist. Schließe die Augen. Spüre die Flamme in dir. Frage sie: „Was ist mein nächster Schritt?" Höre zu. Die Antwort kommt nicht in Worten. Sie kommt in Bildern, Gefühlen, einem leisen Wissen. Vertraue ihr.</div>
     </div>
@@ -706,33 +719,33 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE RITEN ===== -->
-<section id="ritten">
+<section class="scroll-fade" id="ritten">
   <h2>Riten der Flamme</h2>
   <div class="section-sub">Fünf Riten, die die Flamme nähren</div>
 
   <p>Rituale sind nicht dazu da, um sie blind zu befolgen. Sie sind Werkzeuge. Sie geben Halt, wenn der Boden schwankt. Du musst nicht alle praktizieren. Aber wer keine praktiziert, dessen Flamme erlischt.</p>
 
-  <div class="rite">
+  <div class="scroll-fade rite">
     <div class="rite-title">🔥 Der Morgengruß</div>
     <div class="rite-text">Steh auf und spüre die Flamme. Bevor du das Handy berührst, bevor du sprichst, bevor du denkst: atme. Drei Atemzüge. Mit jedem Einatmen: Licht. Mit jedem Ausatmen: Dankbarkeit. Frage dich: <em>Was ist heute mein Kampf? Und wofür kämpfe ich?</em></div>
   </div>
 
-  <div class="rite">
+  <div class="scroll-fade rite">
     <div class="rite-title">🔥 Die Prüfung der Stunde</div>
     <div class="rite-text">Einmal am Tag tue etwas, das schwerfällt. Nicht heroisch. Nicht für andere. Für dich. Den Anruf, den du aufschiebst. Die Bewegung, die dir guttut. Die Wahrheit, die du aussprechen musst. Die Flamme wächst an der Reibung.</div>
   </div>
 
-  <div class="rite">
+  <div class="scroll-fade rite">
     <div class="rite-title">🔥 Der Blick zurück</div>
     <div class="rite-text">Am Abend, bevor du schläfst, sieh zurück. Nicht auf das, was schiefging. Sondern auf das, was du heute gewachsen bist. Eine Sache. Mehr nicht. <em>Was hat mich heute stärker gemacht?</em> Schreibe es auf, wenn du willst. Oder behalte es im Herzen.</div>
   </div>
 
-  <div class="rite">
+  <div class="scroll-fade rite">
     <div class="rite-title">🔥 Die stille Wache</div>
     <div class="rite-text">Einmal in der Woche setze dich für eine Weile hin. Kein Ziel. Keine Musik. Kein Handy. Nur du und die Stille. Lass die Gedanken kommen und gehen wie Rauch. In der Stille spricht die Flamme. Hör zu.</div>
   </div>
 
-  <div class="rite">
+  <div class="scroll-fade rite">
     <div class="rite-title">🔥 Das Feuer teilen</div>
     <div class="rite-text">Einmal im Monat gib etwas weiter. Einem Freund, einem Fremden, einem Menschen, der es braucht. Nicht Geld (obwohl das auch zählt). Sondern: ein offenes Ohr, ein ehrliches Wort, eine helfende Hand. Die Flamme wärmt nur, wenn sie geteilt wird.</div>
   </div>
@@ -741,33 +754,33 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE HALLEN ===== -->
-<section id="hallen">
+<section class="scroll-fade" id="hallen">
   <h2>Hallen des Selbst</h2>
   <div class="section-sub">Die inneren Räume der Flammenseele</div>
 
   <p>In dir wohnen Hallen. Jede hat ein eigenes Feuer. Jede lehrt dich etwas anderes. Lerne sie kennen. Sie sind deine innere Loge.</p>
 
-  <div class="rite" style="border-left:3px solid var(--amber);">
+  <div class="scroll-fade rite" style="border-left:3px solid var(--amber);">
     <div class="rite-title">🏛️ Die Halle der Erkenntnis</div>
     <div class="rite-text">Hier wohnt der Wissende. Hier findest du die Antworten, die du in der Stille gehört hast. Hier prüfst du, was du gelernt hast. Hier liest du, schreibst, denkst. Die Halle der Erkenntnis braucht Nahrung. Gib ihr Bücher, Fragen, Gespräche. Lass sie nie verstauben.</div>
   </div>
 
-  <div class="rite" style="border-left:3px solid var(--gold);">
+  <div class="scroll-fade rite" style="border-left:3px solid var(--gold);">
     <div class="rite-title">🏛️ Die Halle der Tat</div>
     <div class="rite-text">Hier wohnt der Handelnde. Hier wird entschieden. Hier wird gehandelt. Diese Halle duldet kein Zögern. Wenn du in ihr stehst, handle. Die größte Sünde in dieser Halle ist das Warten. Der Moment ist jetzt.</div>
   </div>
 
-  <div class="rite" style="border-left:3px solid #ff6b6b;">
+  <div class="scroll-fade rite" style="border-left:3px solid #ff6b6b;">
     <div class="rite-title">🏛️ Die Halle der Trauer</div>
     <div class="rite-text">Hier wohnt die Sehende. Hier darfst du weinen. Hier darfst du fallen. Niemand sieht dich hier. Die Trauer ist kein Feind. Sie ist die Wunde, die dich offenhält für die Welt. Wer nie trauert, wird nie wirklich lieben.</div>
   </div>
 
-  <div class="rite" style="border-left:3px solid #4ade80;">
+  <div class="scroll-fade rite" style="border-left:3px solid #4ade80;">
     <div class="rite-title">🏛️ Die Halle der Wache</div>
     <div class="rite-text">Hier wohnt der Wachende. Von hier aus blickst du weit. Du siehst die Dinge kommen, bevor sie da sind. Du erkennst den richtigen Moment. Diese Halle lehrt Geduld, aber auch den Augenblick, in dem Geduld nicht mehr Tugend, sondern Feigheit ist.</div>
   </div>
 
-  <div class="rite" style="border-left:3px solid #a855f7;">
+  <div class="scroll-fade rite" style="border-left:3px solid #a855f7;">
     <div class="rite-title">🏛️ Die Halle der Ketten</div>
     <div class="rite-text">Hier wohnt der Gefesselte. Hier liegen deine Süchte, deine Ängste, deine Abhängigkeiten. Nicht um dich zu quälen, sondern um dich zu lehren. Jede Kette, die du sprengst, macht dich freier. Aber vergiss nie: Auch der Gefesselte kann weise sein. Seine Fehler sind seine Lehrer.</div>
   </div>
@@ -776,37 +789,37 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE PRÜFUNGEN ===== -->
-<section id="pruefungen">
+<section class="scroll-fade" id="pruefungen">
   <h2>Die Prüfungen</h2>
   <div class="section-sub">Der innere Kampf und seine Werkzeuge</div>
 
   <p>Die Flammenseele wird geprüft. Nicht von außen. Von innen. Fünf Prüfungen kommen immer wieder. Sie zu kennen, bedeutet nicht, sie zu vermeiden. Aber wenn sie kommen, erkennst du sie. Und das ist die Hälfte des Sieges.</p>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">⚔️ Prüfung des Zweifels</div>
     <div class="law-text">Deine Gedanken flüstern: <em>Das alles ist sinnlos. Du machst dir etwas vor. Es gibt keine Flamme.</em></div>
     <div class="law-teach">Der Zweifel ist kein Feind. Er ist der Wächter an der Pforte. Wer nie zweifelt, hat nie wirklich geglaubt. Umarme den Zweifel. Aber lass ihn nicht entscheiden. Der Zweifel fragt. Die Flamme antwortet. In der Stille.</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">⚔️ Prüfung der Einsamkeit</div>
     <div class="law-text">Du fühlst dich allein. Niemand versteht deinen Weg. Die anderen laufen in eine andere Richtung. Vielleicht hast du dich geirrt.</div>
     <div class="law-teach">Die Einsamkeit ist die Schmiede des Charakters. Jeder große Schritt beginnt allein. Die Loge ist kein Ort. Sie ist das Wissen, dass es andere gibt, die denselben Weg gehen. Auch wenn du sie nicht siehst. Auch wenn sie weit weg sind. Du bist nicht allein.</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">⚔️ Prüfung der Wut</div>
     <div class="law-text">Die Ungerechtigkeit der Welt brennt in dir. Du willst zerschlagen, zerstören, schreien. Die Wut ist heiß, heißer als die Flamme selbst.</div>
     <div class="law-teach">Die Wut ist ein Werkzeug, kein Herr. Der Unweise zerstört in seiner Wut. Der Weise lenkt sie. Wut ist Energie. Nutze sie. Für den Kampf, der zählt. Aber zügle sie, bevor sie dich zügelt.</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">⚔️ Prüfung der Trauer</div>
     <div class="law-text">Du hast verloren. Einen Menschen, einen Traum, einen Teil von dir. Die Welt ist grau. Das Feuer will nicht brennen.</div>
     <div class="law-teach">Die Trauer ist kein Feind. Sie ist die tiefste Ehre, die du dem Verlust erweisen kannst. Wer nicht trauert, hat nicht wirklich geliebt. Weine. Aber weine nicht ewig. Auch die Nacht endet. Und am Morgen ist die Flamme noch da. Leiser vielleicht. Aber da.</div>
   </div>
 
-  <div class="law">
+  <div class="scroll-fade law">
     <div class="law-num">⚔️ Prüfung der Bequemlichkeit</div>
     <div class="law-text">Du hast genug. Es ist gut so. Warum weitergehen? Warum kämpfen? Das Sofa ist warm. Der Alltag ist sicher. Die Flamme glimmt. Das reicht doch.</div>
     <div class="law-teach">Die größte Prüfung ist nicht die Not. Es ist die Zufriedenheit. Die Flamme, die nicht genährt wird, erlischt. Still. Leise. Ohne Protest. Der Feigling von heute stirbt nicht im Kampf. Er stirbt auf dem Sofa. Steh auf. Beweg dich. Suche. Immer.</div>
@@ -818,7 +831,7 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE GEMEINSCHAFT ===== -->
-<section id="gemeinschaft">
+<section class="scroll-fade" id="gemeinschaft">
   <h2>Die Gemeinschaft</h2>
   <div class="section-sub">Vom Feuer, das sich teilt</div>
 
@@ -882,45 +895,45 @@ body.font-large { font-size: 22px; }
 <div class="divider"></div>
 
 <!-- ===== DIE SPRÜCHE ===== -->
-<section id="sprueche">
+<section class="scroll-fade" id="sprueche">
   <h2>Die Sprüche</h2>
   <div class="section-sub">Weisheit für den Weg</div>
 
   <p>Diese Sprüche sind nicht zum Auswendiglernen. Sie sind zum Fühlen. Wenn der Weg dunkel ist, lies einen. Wenn die Flamme flackert, lies einen. Wenn du nicht weiterweißt, lies einen. Und dann geh.</p>
 
-  <div class="saying">Die Flamme fragt nicht, ob du bereit bist. Sie brennt. Und du entscheidest, ob du in ihrem Licht gehst oder in ihrem Schatten bleibst.</div>
-  <div class="saying">Der größte Feind der Flammenseele ist nicht der Feind vor ihr. Es ist die Stimme in ihr, die sagt: „Es ist genug.“</div>
-  <div class="saying">Wer nie gefallen ist, weiß nicht, wie man aufsteht. Wer nie verbrannt ist, kennt das Licht nicht.</div>
-  <div class="saying">Die Flamme lehrt nicht durch Worte. Sie lehrt durch Wärme. Spürst du sie? Dann hast du verstanden.</div>
-  <div class="saying">Du musst nicht perfekt sein. Die Flamme ist es auch nicht. Sie flackert, sie raucht, sie zischt im Regen. Aber sie erlischt nicht.</div>
-  <div class="saying">Der Weise spricht wenig. Aber wenn er spricht, brennt jedes Wort. Die Loge ist ein Ort des Feuers, nicht des Lärms.</div>
-  <div class="saying">Was du heute opferst, ist der Same von morgen. Was du heute hortest, ist die Last von morgen. Gib hin. Wachse.</div>
-  <div class="saying">Die größte Stärke ist die, die nicht kämpfen muss. Die Flamme zwingt niemanden. Sie wärmt. Wer wärmt, siege ohne Schwert.</div>
-  <div class="saying">Jeder Mensch, der dir begegnet, trägt eine Botschaft. Jeder Schmerz, den du fühlst, trägt eine Lehre. Jede Freude, die du teilst, trägt ein Licht. Die Welt spricht. Hör zu.</div>
-  <div class="saying">Du bist nicht, was dir widerfahren ist. Du bist, was du aus dem Feuer rettest. Die Asche gehört der Vergangenheit. Die Flamme gehört dir.</div>
-  <div class="saying">Es gibt keine Toten, deren Taten nicht leben. Jeder Mensch, den du liebst, lebt weiter: in deiner Flamme, in deinem Herzen, in deinem nächsten Schritt.</div>
-  <div class="saying">Der Weg ist nicht gerade. Aber er ist dein Weg. Geh ihn. Nicht schnell. Nicht langsam. Geh ihn.</div>
-  <div class="saying">Die Loge schließt nie. Sie wartet. Ob du kommst oder gehst: die Flamme brennt. Für dich. Für alle. Für immer.</div>
-  <div class="saying">Am Ende bleibt nur: Hast du geliebt? Hast du gewagt? Hast du dein Feuer an andere weitergegeben? Alles andere ist Rauch.</div>
+  <div class="scroll-fade saying">Die Flamme fragt nicht, ob du bereit bist. Sie brennt. Und du entscheidest, ob du in ihrem Licht gehst oder in ihrem Schatten bleibst.</div>
+  <div class="scroll-fade saying">Der größte Feind der Flammenseele ist nicht der Feind vor ihr. Es ist die Stimme in ihr, die sagt: „Es ist genug.“</div>
+  <div class="scroll-fade saying">Wer nie gefallen ist, weiß nicht, wie man aufsteht. Wer nie verbrannt ist, kennt das Licht nicht.</div>
+  <div class="scroll-fade saying">Die Flamme lehrt nicht durch Worte. Sie lehrt durch Wärme. Spürst du sie? Dann hast du verstanden.</div>
+  <div class="scroll-fade saying">Du musst nicht perfekt sein. Die Flamme ist es auch nicht. Sie flackert, sie raucht, sie zischt im Regen. Aber sie erlischt nicht.</div>
+  <div class="scroll-fade saying">Der Weise spricht wenig. Aber wenn er spricht, brennt jedes Wort. Die Loge ist ein Ort des Feuers, nicht des Lärms.</div>
+  <div class="scroll-fade saying">Was du heute opferst, ist der Same von morgen. Was du heute hortest, ist die Last von morgen. Gib hin. Wachse.</div>
+  <div class="scroll-fade saying">Die größte Stärke ist die, die nicht kämpfen muss. Die Flamme zwingt niemanden. Sie wärmt. Wer wärmt, siege ohne Schwert.</div>
+  <div class="scroll-fade saying">Jeder Mensch, der dir begegnet, trägt eine Botschaft. Jeder Schmerz, den du fühlst, trägt eine Lehre. Jede Freude, die du teilst, trägt ein Licht. Die Welt spricht. Hör zu.</div>
+  <div class="scroll-fade saying">Du bist nicht, was dir widerfahren ist. Du bist, was du aus dem Feuer rettest. Die Asche gehört der Vergangenheit. Die Flamme gehört dir.</div>
+  <div class="scroll-fade saying">Es gibt keine Toten, deren Taten nicht leben. Jeder Mensch, den du liebst, lebt weiter: in deiner Flamme, in deinem Herzen, in deinem nächsten Schritt.</div>
+  <div class="scroll-fade saying">Der Weg ist nicht gerade. Aber er ist dein Weg. Geh ihn. Nicht schnell. Nicht langsam. Geh ihn.</div>
+  <div class="scroll-fade saying">Die Loge schließt nie. Sie wartet. Ob du kommst oder gehst: die Flamme brennt. Für dich. Für alle. Für immer.</div>
+  <div class="scroll-fade saying">Am Ende bleibt nur: Hast du geliebt? Hast du gewagt? Hast du dein Feuer an andere weitergegeben? Alles andere ist Rauch.</div>
 
-  <div class="saying" style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px;font-style:normal;font-size:14px;color:var(--text-muted);">—Weitere Sprüche—</div>
+  <div class="scroll-fade saying" style="margin-top:24px;border-top:1px solid var(--border);padding-top:24px;font-style:normal;font-size:14px;color:var(--text-muted);">—Weitere Sprüche—</div>
 
-  <div class="saying">Die Flamme braucht keinen Tempel. Sie braucht dich. Deinen Atem. Deine Hände. Dein Herz. Der Rest ist Dekoration, die im Feuer vergeht.</div>
-  <div class="saying">Du kannst die Flamme nicht verlieren. Du kannst sie nur vergessen. Und vergessen ist nicht verloren. Die Glut schläft. Sie wartet auf deinen Atem.</div>
-  <div class="saying">Der größte Feind der Flammenseele ist die Vollendung. „Noch nicht gut genug" ist der Stein, den du selbst auf deinen Weg legst. Die Flamme ist nie vollendet. Sie brennt einfach.</div>
-  <div class="saying">Wenn du fällst, falle nach vorne. Der Rücken ist hart und kalt. Die Knie berühren die Erde. Von dort kann man aufstehen. Und die Erde ist näher am Feuer als der Himmel.</div>
-  <div class="saying">Ein Krieger fragte: „Woran erkenne ich die Wahrheit?" Die Flamme antwortete: „Daran, dass sie wärmt, ohne zu verbrennen. Daran, dass sie leuchtet, ohne zu blenden. Daran, dass sie bleibt, wenn alles andere vergeht."</div>
-  <div class="saying">Die Loge ist nicht, wohin du gehst. Die Loge ist, woher du kommst, wenn du vergessen hast, dass du das Feuer selbst bist.</div>
-  <div class="saying">Du musst nicht glauben. Du musst nicht wissen. Du musst nur brennen. Das Feuer fragt nicht nach deinem Bekenntnis. Es fragt nach deinem Holz.</div>
-  <div class="saying">Nicht der Lauteste ist der Größte in der Loge. Sondern der, dessen Flamme auch in der Stille sichtbar bleibt.</div>
-  <div class="saying">Der Weg des Feuers ist einfach: Brenne. Teile. Erlischt nicht. Wiederhole. Der Weg ist einfach. Aber einfach ist nicht leicht.</div>
-  <div class="saying">Suche nicht nach dem großen Licht. Das große Licht blendet. Suche nach der kleinen Flamme, die im Wind nicht erlischt. Sie ist die stärkere.</div>
+  <div class="scroll-fade saying">Die Flamme braucht keinen Tempel. Sie braucht dich. Deinen Atem. Deine Hände. Dein Herz. Der Rest ist Dekoration, die im Feuer vergeht.</div>
+  <div class="scroll-fade saying">Du kannst die Flamme nicht verlieren. Du kannst sie nur vergessen. Und vergessen ist nicht verloren. Die Glut schläft. Sie wartet auf deinen Atem.</div>
+  <div class="scroll-fade saying">Der größte Feind der Flammenseele ist die Vollendung. „Noch nicht gut genug" ist der Stein, den du selbst auf deinen Weg legst. Die Flamme ist nie vollendet. Sie brennt einfach.</div>
+  <div class="scroll-fade saying">Wenn du fällst, falle nach vorne. Der Rücken ist hart und kalt. Die Knie berühren die Erde. Von dort kann man aufstehen. Und die Erde ist näher am Feuer als der Himmel.</div>
+  <div class="scroll-fade saying">Ein Krieger fragte: „Woran erkenne ich die Wahrheit?" Die Flamme antwortete: „Daran, dass sie wärmt, ohne zu verbrennen. Daran, dass sie leuchtet, ohne zu blenden. Daran, dass sie bleibt, wenn alles andere vergeht."</div>
+  <div class="scroll-fade saying">Die Loge ist nicht, wohin du gehst. Die Loge ist, woher du kommst, wenn du vergessen hast, dass du das Feuer selbst bist.</div>
+  <div class="scroll-fade saying">Du musst nicht glauben. Du musst nicht wissen. Du musst nur brennen. Das Feuer fragt nicht nach deinem Bekenntnis. Es fragt nach deinem Holz.</div>
+  <div class="scroll-fade saying">Nicht der Lauteste ist der Größte in der Loge. Sondern der, dessen Flamme auch in der Stille sichtbar bleibt.</div>
+  <div class="scroll-fade saying">Der Weg des Feuers ist einfach: Brenne. Teile. Erlischt nicht. Wiederhole. Der Weg ist einfach. Aber einfach ist nicht leicht.</div>
+  <div class="scroll-fade saying">Suche nicht nach dem großen Licht. Das große Licht blendet. Suche nach der kleinen Flamme, die im Wind nicht erlischt. Sie ist die stärkere.</div>
 </section>
 
 <div class="divider"></div>
 
 <!-- ===== DER SCHWUR ===== -->
-<section id="schwur">
+<section class="scroll-fade" id="schwur">
   <h2>Der Schwur</h2>
   <div class="section-sub">Das Gelübde der Flammenseele</div>
 
@@ -1044,5 +1057,6 @@ body.font-large { font-size: 22px; }
 
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <script src="js/particles.js"></script>
+  <script src="js/scroll-animations.js"></script>
 </body>
 </html>
