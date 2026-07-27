@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <defs>
+    <linearGradient id="pg" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#3a2a14"/>
+      <stop offset="50%" stop-color="#2a1f0e"/>
+      <stop offset="100%" stop-color="#1a1508"/>
+    </linearGradient>
+    <linearGradient id="gg" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#d4a853"/>
+      <stop offset="50%" stop-color="#c89335"/>
+      <stop offset="100%" stop-color="#a67828"/>
+    </linearGradient>
+    <filter id="pglow"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+  <!-- Pergament -->
+  <rect x="5" y="8" width="90" height="104" rx="2" fill="url(#pg)" stroke="url(#gg)" stroke-width="0.6"/>
+  <!-- Brandspuren oben -->
+  <path d="M30 8 Q35 -1 42 4 Q48 -2 55 5 Q60 -1 65 8" stroke="#8b6914" stroke-width="0.4" fill="none" opacity="0.3"/>
+  <!-- Schriftzeilen -->
+  <g stroke="#d4a853" stroke-width="0.3" opacity="0.2">
+    <line x1="18" y1="22" x2="82" y2="22"/>
+    <line x1="18" y1="28" x2="78" y2="28"/>
+    <line x1="18" y1="34" x2="82" y2="34"/>
+    <line x1="18" y1="40" x2="72" y2="40"/>
+    <line x1="18" y1="46" x2="80" y2="46"/>
+    <line x1="18" y1="52" x2="68" y2="52"/>
+    <line x1="18" y1="58" x2="82" y2="58"/>
+    <line x1="18" y1="64" x2="74" y2="64"/>
+    <line x1="18" y1="70" x2="80" y2="70"/>
+    <line x1="18" y1="76" x2="62" y2="76"/>
+    <line x1="18" y1="82" x2="78" y2="82"/>
+    <line x1="18" y1="88" x2="70" y2="88"/>
+  </g>
+  <!-- Siegel -->
+  <g transform="translate(50, 100)">
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#d4a853" stroke-width="0.6" opacity="0.4"/>
+    <path d="M-3 0 L0 -4 L3 0 L0 4Z" fill="#d4a853" opacity="0.3"/>
+  </g>
+  <!-- Flamme oben -->
+  <g filter="url(#pglow)">
+    <path d="M48 4 C46 1 48 -2 50 -1 C52 -2 54 1 52 4" fill="#ff8c00" opacity="0.6"/>
+  </g>
+</svg>

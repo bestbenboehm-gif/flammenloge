@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tagebuch der Flamme – Flammenloge</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Das Tagebuch der Flamme. Geschichten historischer Persönlichkeiten, die das innere Feuer entfachten. Zitate der Flamme. Zeitlose Gedanken.">
+  <meta name="keywords" content="Flammenloge, Tagebuch, Philosophie, Heraklit, Geschichte, Weisheit, Feuer">
+  <meta name="author" content="Die Flammenloge">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tagebuch der Flamme – Flammenloge">
+  <meta property="og:description" content="Zeitlose Geschichten. Historische Persönlichkeiten. Zitate der Flamme.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .logbuch-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 3rem;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .logbuch-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--amber-light);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .logbuch-sigil {
+      width: 40px;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.3));
+    }
+
+    .logbuch-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .logbuch-intro {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    .entry-list {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .entry-card {
+      display: block;
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 140, 0, 0.1);
+      border-radius: 4px;
+      background: var(--surface);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .entry-card:hover {
+      border-color: rgba(255, 140, 0, 0.3);
+      box-shadow: 0 0 30px rgba(255, 140, 0, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .entry-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--amber), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .entry-card:hover::before {
+      opacity: 1;
+    }
+
+    .entry-card .date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-card .title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--amber-light);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.05em;
+    }
+
+    .entry-card .preview {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .entry-card .flame-mark {
+      display: inline-block;
+      color: var(--amber);
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .entry-card:hover .flame-mark {
+      letter-spacing: 0.1em;
+    }
+
+    .coming-soon {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-size: 0.9rem;
+      opacity: 0.5;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    @media (max-width: 480px) {
+      .logbuch-hero { padding: 100px 1rem 2rem; }
+      .entry-card { padding: 1.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<!-- Navigation -->
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" class="active" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <section class="logbuch-hero">
+    <img src="/img/parchment.svg" alt="" class="logbuch-sigil" aria-hidden="true">
+    <h1 class="logbuch-title">Tagebuch der Flamme</h1>
+    <p class="logbuch-sub">
+      Geschichten jener, die das Feuer in sich trugen.<br>
+      Aufgeschrieben für die, die es noch entfachen wollen.
+    </p>
+    <p class="logbuch-intro">
+      Die Flamme spricht nicht jeden Tag. Aber wenn sie spricht, tut sie es durch 
+      Menschen, die gelebt haben, gekämpft, gezweifelt und gebrannt haben. 
+      Hier sammeln wir ihre Geschichten. Keine Lehren. Keine Antworten. 
+      Nur Funken, die vielleicht auch dich entzünden.
+    </p>
+  </section>
+
+  <section class="entry-list">
+
+    <a href="/logbuch/heraklit.html" class="entry-card scroll-fade" data-scroll>
+      <div class="date">Juli 2026</div>
+      <div class="title">Heraklit von Ephesos – Der Dunkle, der das Feuer sah</div>
+      <div class="preview">
+        Es gab einen Mann, der sah die Welt anders als alle um ihn herum. 
+        Während andere in den Dingen das Feste suchten, sah er das Fließende. 
+        Während andere nach Beständigkeit griffen, erkannte er das ewige Werden.
+      </div>
+      <span class="flame-mark">→ das Feuer berühren</span>
+    </a>
+
+    <div class="coming-soon">Weitere Einträge werden geschrieben, während die Flamme brennt ...</div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge · Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('[data-scroll]').forEach(el => observer.observe(el));
+</script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+</body>
+</html>
