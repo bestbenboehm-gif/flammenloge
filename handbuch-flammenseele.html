@@ -36,6 +36,7 @@
   --border: rgba(255,107,0,0.1);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
+main { position: relative; z-index: 1; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -149,6 +150,17 @@ p.verse::after { content: '"'; }
 .saying:last-child { border-bottom: none; }
 .saying::before { content: '"'; }
 .saying::after { content: '"'; }
+
+/* ===== PARTICLE CANVAS ===== */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* Vow section */
 .vow-box {
@@ -1029,5 +1041,8 @@ body.font-large { font-size: 22px; }
 
 <script src="js/search.js"></script>
 
+
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <script src="js/particles.js"></script>
 </body>
 </html>
