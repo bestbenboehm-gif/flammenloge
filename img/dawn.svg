@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="dawnGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#662200"/>
+      <stop offset="30%" stop-color="#cc3300"/>
+      <stop offset="60%" stop-color="#ff8c00"/>
+      <stop offset="85%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#fff8dc"/>
+    </linearGradient>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0705"/>
+      <stop offset="40%" stop-color="#1a0a05"/>
+      <stop offset="70%" stop-color="#3d1a0a"/>
+      <stop offset="100%" stop-color="#cc3300"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="0.5" cy="1" r="0.8">
+      <stop offset="0%" stop-color="#fff8dc" stop-opacity="1"/>
+      <stop offset="30%" stop-color="#ffd700" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#ff8c00" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff4500" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="dawnGlow">
+      <feGaussianBlur stdDeviation="2"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Himmel -->
+  <rect x="0" y="0" width="48" height="36" fill="url(#skyGrad)" opacity="0.5"/>
+
+  <!-- Sonne am Horizont -->
+  <g filter="url(#dawnGlow)">
+    <ellipse cx="24" cy="36" rx="10" ry="10" fill="url(#sunGrad)">
+      <animate attributeName="ry" dur="3s" repeatCount="indefinite" values="10;11;10"/>
+    </ellipse>
+    <ellipse cx="24" cy="36" rx="6" ry="6" fill="#fff8dc" opacity="0.6"/>
+  </g>
+
+  <!-- Horizontlinie/Berge -->
+  <path d="M0 36 L8 30 L14 33 L20 28 L26 32 L32 29 L38 33 L42 30 L48 34 L48 48 L0 48Z" 
+        fill="#1a0f08" stroke="url(#dawnGrad)" stroke-width="0.6" opacity="0.8"/>
+
+  <!-- Erste Lichtstrahlen -->
+  <g stroke="url(#dawnGrad)" stroke-width="0.5" opacity="0.3">
+    <line x1="24" y1="36" x2="18" y2="16">
+      <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.3;0.1;0.3"/>
+    </line>
+    <line x1="24" y1="36" x2="24" y2="12">
+      <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.2;0.1;0.2"/>
+    </line>
+    <line x1="24" y1="36" x2="30" y2="16">
+      <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.3;0.1;0.3"/>
+    </line>
+    <line x1="24" y1="36" x2="12" y2="20">
+      <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.15;0.05;0.15"/>
+    </line>
+    <line x1="24" y1="36" x2="36" y2="20">
+      <animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.15;0.05;0.15"/>
+    </line>
+  </g>
+
+  <!-- Morgentau-Tropfen -->
+  <g fill="#ffd700" opacity="0.4">
+    <circle cx="12" cy="42" r="1">
+      <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.4;0.1;0.4"/>
+    </circle>
+    <circle cx="36" cy="40" r="0.8">
+      <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.3;0.1;0.3"/>
+    </circle>
+    <circle cx="24" cy="44" r="1.2">
+      <animate attributeName="opacity" dur="2.5s" repeatCount="indefinite" values="0.35;0.1;0.35"/>
+    </circle>
+  </g>
+
+  <!-- Vögel am Horizont -->
+  <g stroke="url(#dawnGrad)" stroke-width="0.5" stroke-linecap="round" fill="none" opacity="0.4">
+    <path d="M14 20 Q15 18 16 20"/>
+    <path d="M32 18 Q33 16 34 18"/>
+    <path d="M28 14 Q29 12 30 14"/>
+  </g>
+</svg>

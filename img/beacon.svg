@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 64" fill="none">
+  <defs>
+    <linearGradient id="beaconGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="20%" stop-color="#ffd700"/>
+      <stop offset="50%" stop-color="#ff8c00"/>
+      <stop offset="80%" stop-color="#cc3300"/>
+      <stop offset="100%" stop-color="#662200"/>
+    </linearGradient>
+    <linearGradient id="beamGrad" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#fff8dc" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="towerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a1f0e"/>
+      <stop offset="50%" stop-color="#3d2e15"/>
+      <stop offset="100%" stop-color="#1a1508"/>
+    </linearGradient>
+    <filter id="beaconGlow">
+      <feGaussianBlur stdDeviation="3"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Lichtstrahl nach oben -->
+  <g filter="url(#beaconGlow)" opacity="0.6">
+    <path d="M20 8 L24 -2 L28 8 Q28 16 24 16 Q20 16 20 8Z" fill="url(#beamGrad)">
+      <animate attributeName="opacity" dur="2s" repeatCount="indefinite" values="0.6;1;0.6"/>
+    </path>
+  </g>
+
+  <!-- Laterne/Lichtquelle -->
+  <g filter="url(#beaconGlow)">
+    <circle cx="24" cy="12" r="6" fill="url(#beaconGrad)" opacity="0.9">
+      <animate attributeName="r" dur="1.5s" repeatCount="indefinite" values="6;7;6"/>
+    </circle>
+    <circle cx="24" cy="12" r="3" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Turm -->
+  <path d="M18 18 L16 56 L32 56 L30 18Z" fill="url(#towerGrad)" stroke="url(#beaconGrad)" stroke-width="0.8"/>
+
+  <!-- Turmfenster -->
+  <g fill="#ffd700" opacity="0.15">
+    <rect x="21" y="24" width="6" height="4" rx="1"/>
+    <rect x="21" y="32" width="6" height="4" rx="1"/>
+    <rect x="21" y="40" width="6" height="4" rx="1"/>
+  </g>
+
+  <!-- Turmring oben -->
+  <rect x="16" y="16" width="16" height="4" rx="1" fill="url(#beaconGrad)" opacity="0.4"/>
+
+  <!-- Basis mit Wellen -->
+  <path d="M12 56 Q14 52 18 54 Q22 56 24 54 Q26 52 28 54 Q32 56 34 54 Q36 52 38 56" 
+        stroke="url(#beaconGrad)" stroke-width="0.8" fill="none" opacity="0.3"/>
+
+  <!-- Lichtreflexion auf Wasser -->
+  <g opacity="0.2">
+    <path d="M20 58 L28 58" stroke="#ffd700" stroke-width="0.5" stroke-linecap="round">
+      <animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.2;0.5;0.2"/>
+    </path>
+    <path d="M22 60 L26 60" stroke="#ffd700" stroke-width="0.5" stroke-linecap="round">
+      <animate attributeName="opacity" dur="3s" repeatCount="indefinite" values="0.3;0.1;0.3"/>
+    </path>
+  </g>
+</svg>
