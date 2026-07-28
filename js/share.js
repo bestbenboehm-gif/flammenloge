@@ -30,6 +30,12 @@ function shareOnTelegram() {
   window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
 }
 
+function shareOnBluesky() {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent('Flammenloge - Ein stiller Ort im Licht der Erkenntnis');
+  window.open(`https://bsky.app/intent/compose?text=${text}%20${url}`, '_blank');
+}
+
 // Sharing-Panel Toggle
 function toggleSharePanel() {
   const panel = document.getElementById('share-panel');
