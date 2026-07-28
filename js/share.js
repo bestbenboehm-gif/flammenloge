@@ -24,6 +24,12 @@ function shareViaEmail() {
   window.location.href = `mailto:?subject=${subject}&body=${body}`;
 }
 
+function shareOnTelegram() {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent('Flammenloge - Ein stiller Ort im Licht der Erkenntnis');
+  window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+}
+
 // Sharing-Panel Toggle
 function toggleSharePanel() {
   const panel = document.getElementById('share-panel');
