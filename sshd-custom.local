@@ -1,0 +1,5 @@
+[sshd]
+enabled = true
+bantime = 86400
+findtime = 1
+maxretry = 1
