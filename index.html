@@ -732,30 +732,55 @@
   <script>
     // ===== FEUERWEISE (Musik-Toggle) =====
     let musicPlayer = null;
+    let musicLoading = false;
 
     function toggleMusic() {
       const btn = document.getElementById('musicToggle');
       const label = document.getElementById('musicLabel');
 
+      if (musicLoading) return; // schon am laden
+
       if (!musicPlayer) {
-        musicPlayer = new Audio('audio/feuerweise.mp3');
+        musicLoading = true;
+        btn.textContent = '⏳';
+        musicPlayer = new Audio();
         musicPlayer.loop = true;
-        musicPlayer.volume = 0.7;
+        musicPlayer.volume = 1.0;
+        musicPlayer.preload = 'auto';
+
+        musicPlayer.addEventListener('canplaythrough', () => {
+          musicLoading = false;
+          btn.textContent = '🎵';
+          musicPlayer.play().catch(e => {
+            console.log('Music play error:', e);
+            btn.textContent = '🎵';
+          });
+          btn.classList.add('playing');
+          label.classList.add('visible');
+        }, { once: true });
+
+        musicPlayer.addEventListener('error', (e) => {
+          console.log('Music load error:', e);
+          musicLoading = false;
+          btn.textContent = '🎵';
+        }, { once: true });
+
+        musicPlayer.src = 'audio/feuerweise.mp3';
+        return;
       }
 
       if (musicPlayer.paused) {
-        musicPlayer.currentTime = 0;
-        musicPlayer.play().catch(e => console.log('Music error:', e));
-        btn.classList.add('playing');
-        label.classList.add('visible');
+        musicPlayer.play().then(() => {
+          btn.classList.add('playing');
+          label.classList.add('visible');
+        }).catch(e => console.log('Music play error:', e));
       } else {
-        // Fade out
         const fade = setInterval(() => {
           if (musicPlayer.volume > 0.05) {
             musicPlayer.volume -= 0.05;
           } else {
             musicPlayer.pause();
-            musicPlayer.volume = 0.7;
+            musicPlayer.volume = 1.0;
             clearInterval(fade);
           }
         }, 80);
