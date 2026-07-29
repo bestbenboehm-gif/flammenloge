@@ -766,6 +766,7 @@
         }, { once: true });
 
         musicPlayer.src = 'audio/feuerweise.mp3';
+        musicPlayer.load(); // <-- wichtig für mobile Browser!
         return;
       }
 
