@@ -350,25 +350,72 @@
       animation: sound-pulse 2s ease-in-out infinite;
     }
     @keyframes sound-pulse {
-      0%, 100% { box-shadow: 0 0 10px rgba(255, 140, 0, 0.2); }
+      0%, 100% { box-shadow: 0 0 15px rgba(255, 140, 0, 0.2); }
       50% { box-shadow: 0 0 25px rgba(255, 140, 0, 0.4); }
     }
     .sound-label {
       position: fixed;
       bottom: 2.6rem;
-      right: 5rem;
-      z-index: 100;
-      font-size: 0.75rem;
-      color: var(--text-muted);
+      right: 2rem;
+      z-index: 99;
+      font-size: 0.7rem;
+      color: var(--amber);
       letter-spacing: 0.1em;
+      text-transform: uppercase;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(5px);
       pointer-events: none;
       font-family: 'Inter', sans-serif;
     }
-    .sound-label.visible { opacity: 1; }
+    .sound-label.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== IMPRESSUM ===== */
+    /* ===== MUSIC TOGGLE (Feuerweise) ===== */
+    .music-toggle {
+      position: fixed;
+      bottom: 2rem;
+      right: 4.5rem;
+      z-index: 100;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 140, 0, 0.2);
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(10px);
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .music-toggle:hover {
+      border-color: var(--amber);
+      color: var(--amber-light);
+      box-shadow: var(--glow-amber);
+    }
+    .music-toggle.playing {
+      color: var(--amber-light);
+      border-color: var(--amber);
+      animation: sound-pulse 2s ease-in-out infinite;
+    }
+    .music-label {
+      position: fixed;
+      bottom: 2.6rem;
+      right: 4.5rem;
+      z-index: 99;
+      font-size: 0.7rem;
+      color: var(--amber);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      transform: translateY(5px);
+      pointer-events: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .music-label.visible { opacity: 1; transform: translateY(0); }
     .impressum {
       position: relative;
       z-index: 1;
@@ -652,6 +699,12 @@
     <img src="img/sound.svg" alt="" aria-hidden="true" width="22" height="22">
   </button>
 
+  <!-- Music (Feuerweise) -->
+  <div class="music-label" id="musicLabel" aria-hidden="true">Feuerweise</div>
+  <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Feuerweise ein/ausschalten" aria-label="Feuerweise (düstere Musik) ein- oder ausschalten" aria-pressed="false">
+    🎵
+  </button>
+
   <!-- Social Sharing -->
   <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
     <img src="img/link.svg" alt="" aria-hidden="true" width="22" height="22">
@@ -677,6 +730,40 @@
   <script src="js/sound.js"></script>
   <script src="js/share.js"></script>
   <script>
+    // ===== FEUERWEISE (Musik-Toggle) =====
+    let musicPlayer = null;
+
+    function toggleMusic() {
+      const btn = document.getElementById('musicToggle');
+      const label = document.getElementById('musicLabel');
+
+      if (!musicPlayer) {
+        musicPlayer = new Audio('audio/feuerweise.mp3');
+        musicPlayer.loop = true;
+        musicPlayer.volume = 0.7;
+      }
+
+      if (musicPlayer.paused) {
+        musicPlayer.currentTime = 0;
+        musicPlayer.play().catch(e => console.log('Music error:', e));
+        btn.classList.add('playing');
+        label.classList.add('visible');
+      } else {
+        // Fade out
+        const fade = setInterval(() => {
+          if (musicPlayer.volume > 0.05) {
+            musicPlayer.volume -= 0.05;
+          } else {
+            musicPlayer.pause();
+            musicPlayer.volume = 0.7;
+            clearInterval(fade);
+          }
+        }, 80);
+        btn.classList.remove('playing');
+        label.classList.remove('visible');
+      }
+    }
+
     // Service Worker registrieren
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
