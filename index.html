@@ -701,10 +701,25 @@
 
   <!-- Music (Feuerweise) -->
   <div class="music-label" id="musicLabel" aria-hidden="true">Feuerweise</div>
-  <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Feuerweise ein/ausschalten" aria-label="Feuerweise (düstere Musik) ein- oder ausschalten" aria-pressed="false">
-    🎵
-  </button>
-  <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto" controls style="position:fixed;bottom:6rem;right:2rem;width:240px;z-index:99;opacity:0.8;border-radius:8px;"></audio>
+  <div style="position:fixed;bottom:2rem;right:4.5rem;z-index:102;width:52px;height:52px;">
+    <!-- 🎵-Button (dekorativ) -->
+    <button class="music-toggle" id="musicToggle" title="Feuerweise" aria-label="Feuerweise" style="position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,140,0,0.2);background:rgba(18,18,18,0.85);backdrop-filter:blur(10px);color:var(--text-muted);font-size:1.3rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;">
+      🎵
+    </button>
+    <!-- Unsichtbarer nativer Player drüber -->
+    <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto" controls style="position:absolute;top:0;left:0;width:52px;height:52px;z-index:3;opacity:0.01;cursor:pointer;"></audio>
+  </div>
+  <!-- Sync: Button-State mit Player verknüpfen -->
+  <script>
+    document.getElementById('feuerweiseAudio').addEventListener('play', function(){
+      document.getElementById('musicToggle').classList.add('playing');
+      document.getElementById('musicLabel').classList.add('visible');
+    });
+    document.getElementById('feuerweiseAudio').addEventListener('pause', function(){
+      document.getElementById('musicToggle').classList.remove('playing');
+      document.getElementById('musicLabel').classList.remove('visible');
+    });
+  </script>
 
   <!-- Social Sharing -->
   <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
@@ -730,62 +745,8 @@
   <script src="js/scroll-animations.js"></script>
   <script src="js/sound.js"></script>
   <script src="js/share.js"></script>
+  <!-- Feuerweise Sync ist oben im HTML-Bereich -->
   <script>
-    // ===== FEUERWEISE (Musik-Toggle) =====
-    // Web Audio API – wie das Knistern, nur mit MP3 statt Rauschen
-    var musicCtx = null;
-    var musicSrc = null;
-    var musicGain = null;
-    var musicPlaying = false;
-
-    function toggleMusic() {
-      var btn = document.getElementById('musicToggle');
-      var label = document.getElementById('musicLabel');
-
-      if (!musicCtx) {
-        musicCtx = new (window.AudioContext || window.webkitAudioContext)();
-        if (musicCtx.state === 'suspended') musicCtx.resume();
-      }
-
-      if (musicPlaying) {
-        if (musicGain) musicGain.gain.linearRampToValueAtTime(0, musicCtx.currentTime + 1);
-        setTimeout(function() {
-          if (musicSrc) { try { musicSrc.stop(); } catch(e) {} try { musicSrc.disconnect(); } catch(e) {} musicSrc = null; }
-          musicPlaying = false;
-          btn.classList.remove('playing');
-          label.classList.remove('visible');
-        }, 1200);
-        return;
-      }
-
-      // Laden & abspielen
-      btn.textContent = '⏳';
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'audio/feuerweise.mp3', true);
-      xhr.responseType = 'arraybuffer';
-      xhr.onload = function() {
-        musicCtx.decodeAudioData(xhr.response, function(buffer) {
-          btn.textContent = '🎵';
-          if (musicPlaying) return;
-          musicSrc = musicCtx.createBufferSource();
-          musicSrc.buffer = buffer;
-          musicSrc.loop = true;
-          musicGain = musicCtx.createGain();
-          musicGain.gain.setValueAtTime(0, musicCtx.currentTime);
-          musicGain.gain.linearRampToValueAtTime(0.9, musicCtx.currentTime + 3);
-          musicSrc.connect(musicGain);
-          musicGain.connect(musicCtx.destination);
-          musicSrc.start();
-          musicPlaying = true;
-          btn.classList.add('playing');
-          label.classList.add('visible');
-        }, function() {
-          btn.textContent = '❌';
-        });
-      };
-      xhr.onerror = function() { btn.textContent = '❌'; };
-      xhr.send();
-    }
 
     // Service Worker registrieren
     if ('serviceWorker' in navigator) {
