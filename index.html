@@ -404,7 +404,7 @@
       position: fixed;
       bottom: 2.6rem;
       right: 4.5rem;
-      z-index: 99;
+      z-index: 200;
       font-size: 0.7rem;
       color: var(--amber);
       letter-spacing: 0.1em;
@@ -722,9 +722,12 @@
       fwBtn.classList.remove('playing');
       fwLabel.classList.remove('visible');
     });
-    // Beim Seitenstart Player zurücksetzen falls er noch läuft
+    // Beim Seitenstart Player hart zurücksetzen
     fwAudio.pause();
     fwAudio.currentTime = 0;
+    fwAudio.load();
+    fwBtn.classList.remove('playing');
+    fwLabel.classList.remove('visible');
   </script>
 
   <!-- Social Sharing -->
