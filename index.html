@@ -702,23 +702,29 @@
   <!-- Music (Feuerweise) -->
   <div class="music-label" id="musicLabel" aria-hidden="true">Feuerweise</div>
   <div style="position:fixed;bottom:2rem;right:4.5rem;z-index:102;width:52px;height:52px;">
-    <!-- 🎵-Button (dekorativ) -->
-    <button class="music-toggle" id="musicToggle" title="Feuerweise" aria-label="Feuerweise" style="position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,140,0,0.2);background:rgba(18,18,18,0.85);backdrop-filter:blur(10px);color:var(--text-muted);font-size:1.3rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;">
+    <!-- 🎵-Button (dekorativ) – fängt Klicks ab -->
+    <button class="music-toggle" id="musicToggle" title="Feuerweise" aria-label="Feuerweise" style="position:absolute;top:0;left:0;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,140,0,0.2);background:rgba(18,18,18,0.85);backdrop-filter:blur(10px);color:var(--text-muted);font-size:1.3rem;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;transition:all 0.3s ease;pointer-events:none;">
       🎵
     </button>
-    <!-- Unsichtbarer nativer Player drüber -->
+    <!-- Unsichtbarer nativer Player drüber (fängt die echten Klicks) -->
     <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto" controls style="position:absolute;top:0;left:0;width:52px;height:52px;z-index:3;opacity:0.01;cursor:pointer;"></audio>
   </div>
-  <!-- Sync: Button-State mit Player verknüpfen -->
   <script>
-    document.getElementById('feuerweiseAudio').addEventListener('play', function(){
-      document.getElementById('musicToggle').classList.add('playing');
-      document.getElementById('musicLabel').classList.add('visible');
+    // Sync: Button-Zustand mit Player verknüpfen
+    var fwAudio = document.getElementById('feuerweiseAudio');
+    var fwBtn = document.getElementById('musicToggle');
+    var fwLabel = document.getElementById('musicLabel');
+    fwAudio.addEventListener('play', function(){
+      fwBtn.classList.add('playing');
+      fwLabel.classList.add('visible');
     });
-    document.getElementById('feuerweiseAudio').addEventListener('pause', function(){
-      document.getElementById('musicToggle').classList.remove('playing');
-      document.getElementById('musicLabel').classList.remove('visible');
+    fwAudio.addEventListener('pause', function(){
+      fwBtn.classList.remove('playing');
+      fwLabel.classList.remove('visible');
     });
+    // Beim Seitenstart Player zurücksetzen falls er noch läuft
+    fwAudio.pause();
+    fwAudio.currentTime = 0;
   </script>
 
   <!-- Social Sharing -->
