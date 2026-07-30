@@ -731,63 +731,77 @@
   <script src="js/share.js"></script>
   <script>
     // ===== FEUERWEISE (Musik-Toggle) =====
-    let musicPlayer = null;
+    // Nutzt Web Audio API wie das Knistern – kompatibler auf Handys
+    let musicCtx = null;
+    let musicBuffer = null;
+    let musicSource = null;
+    let musicGain = null;
+    let musicPlaying = false;
     let musicLoading = false;
 
-    function toggleMusic() {
+    async function toggleMusic() {
       const btn = document.getElementById('musicToggle');
       const label = document.getElementById('musicLabel');
 
-      if (musicLoading) return; // schon am laden
+      if (musicLoading) return;
 
-      if (!musicPlayer) {
-        musicLoading = true;
-        btn.textContent = '⏳';
-        musicPlayer = new Audio();
-        musicPlayer.loop = true;
-        musicPlayer.volume = 1.0;
-        musicPlayer.preload = 'auto';
+      if (!musicCtx) {
+        musicCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (musicCtx.state === 'suspended') musicCtx.resume();
+      }
 
-        musicPlayer.addEventListener('canplaythrough', () => {
-          musicLoading = false;
-          btn.textContent = '🎵';
-          musicPlayer.play().catch(e => {
-            console.log('Music play error:', e);
-            btn.textContent = '🎵';
-          });
-          btn.classList.add('playing');
-          label.classList.add('visible');
-        }, { once: true });
-
-        musicPlayer.addEventListener('error', (e) => {
-          console.log('Music load error:', e);
-          musicLoading = false;
-          btn.textContent = '🎵';
-        }, { once: true });
-
-        musicPlayer.src = 'audio/feuerweise.mp3';
-        musicPlayer.load(); // <-- wichtig für mobile Browser!
+      if (musicPlaying) {
+        // Fade out and stop
+        if (musicGain) {
+          musicGain.gain.linearRampToValueAtTime(0, musicCtx.currentTime + 1);
+        }
+        setTimeout(() => {
+          if (musicSource) {
+            try { musicSource.stop(); } catch(e) {}
+            musicSource.disconnect();
+            musicSource = null;
+          }
+          musicPlaying = false;
+          btn.classList.remove('playing');
+          label.classList.remove('visible');
+        }, 1100);
         return;
       }
 
-      if (musicPlayer.paused) {
-        musicPlayer.play().then(() => {
-          btn.classList.add('playing');
-          label.classList.add('visible');
-        }).catch(e => console.log('Music play error:', e));
-      } else {
-        const fade = setInterval(() => {
-          if (musicPlayer.volume > 0.05) {
-            musicPlayer.volume -= 0.05;
-          } else {
-            musicPlayer.pause();
-            musicPlayer.volume = 1.0;
-            clearInterval(fade);
-          }
-        }, 80);
-        btn.classList.remove('playing');
-        label.classList.remove('visible');
+      if (!musicBuffer) {
+        // Laden
+        musicLoading = true;
+        btn.textContent = '⏳';
+        try {
+          const resp = await fetch('audio/feuerweise.mp3');
+          const arrayBuffer = await resp.arrayBuffer();
+          musicBuffer = await musicCtx.decodeAudioData(arrayBuffer);
+        } catch(e) {
+          console.log('Music load error:', e);
+          btn.textContent = '🎵';
+          musicLoading = false;
+          return;
+        }
+        musicLoading = false;
+        btn.textContent = '🎵';
       }
+
+      // Play
+      musicSource = musicCtx.createBufferSource();
+      musicSource.buffer = musicBuffer;
+      musicSource.loop = true;
+
+      musicGain = musicCtx.createGain();
+      musicGain.gain.setValueAtTime(0, musicCtx.currentTime);
+      musicGain.gain.linearRampToValueAtTime(0.9, musicCtx.currentTime + 2.5);
+
+      musicSource.connect(musicGain);
+      musicGain.connect(musicCtx.destination);
+      musicSource.start();
+
+      musicPlaying = true;
+      btn.classList.add('playing');
+      label.classList.add('visible');
     }
 
     // Service Worker registrieren
