@@ -731,34 +731,36 @@
   <script src="js/share.js"></script>
   <script>
     // ===== FEUERWEISE (Musik-Toggle) =====
-    // Nutzt Web Audio API wie das Knistern – kompatibler auf Handys
+    // Zweistufig: erst laden, dann spielen – umgeht iOS User-Gesture-Limit
     let musicCtx = null;
     let musicBuffer = null;
     let musicSource = null;
     let musicGain = null;
     let musicPlaying = false;
     let musicLoading = false;
+    let musicPendingPlay = false;
 
-    async function toggleMusic() {
+    function toggleMusic() {
       const btn = document.getElementById('musicToggle');
       const label = document.getElementById('musicLabel');
 
       if (musicLoading) return;
 
+      // AudioContext immer synchron im User-Gesture erstellen
       if (!musicCtx) {
         musicCtx = new (window.AudioContext || window.webkitAudioContext)();
         if (musicCtx.state === 'suspended') musicCtx.resume();
       }
 
+      // Wenn gerade am Abspielen → stoppen
       if (musicPlaying) {
-        // Fade out and stop
         if (musicGain) {
           musicGain.gain.linearRampToValueAtTime(0, musicCtx.currentTime + 1);
         }
         setTimeout(() => {
           if (musicSource) {
             try { musicSource.stop(); } catch(e) {}
-            musicSource.disconnect();
+            try { musicSource.disconnect(); } catch(e) {}
             musicSource = null;
           }
           musicPlaying = false;
@@ -768,32 +770,52 @@
         return;
       }
 
-      if (!musicBuffer) {
-        // Laden
-        musicLoading = true;
-        btn.textContent = '⏳';
-        try {
-          const resp = await fetch('audio/feuerweise.mp3');
-          const arrayBuffer = await resp.arrayBuffer();
-          musicBuffer = await musicCtx.decodeAudioData(arrayBuffer);
-        } catch(e) {
-          console.log('Music load error:', e);
-          btn.textContent = '🎵';
-          musicLoading = false;
-          return;
-        }
-        musicLoading = false;
-        btn.textContent = '🎵';
+      // Buffer schon geladen → sofort abspielen
+      if (musicBuffer) {
+        playMusic();
+        return;
       }
 
-      // Play
+      // Noch kein Buffer → laden (async, aber ohne User-Gesture-Bruch)
+      musicLoading = true;
+      btn.textContent = '⏳';
+
+      fetch('audio/feuerweise.mp3')
+        .then(r => r.arrayBuffer())
+        .then(buf => musicCtx.decodeAudioData(buf))
+        .then(buf => {
+          musicBuffer = buf;
+          musicLoading = false;
+          btn.textContent = '🎵';
+          // Automatisch abspielen sobald geladen
+          playMusic();
+        })
+        .catch(err => {
+          console.log('Music load error:', err);
+          musicLoading = false;
+          btn.textContent = '🎵';
+        });
+    }
+
+    function playMusic() {
+      const btn = document.getElementById('musicToggle');
+      const label = document.getElementById('musicLabel');
+      if (!musicCtx || !musicBuffer) return;
+      if (musicPlaying) return;
+
+      // Alte Source sauber entfernen
+      if (musicSource) {
+        try { musicSource.stop(); } catch(e) {}
+        try { musicSource.disconnect(); } catch(e) {}
+      }
+
       musicSource = musicCtx.createBufferSource();
       musicSource.buffer = musicBuffer;
       musicSource.loop = true;
 
       musicGain = musicCtx.createGain();
       musicGain.gain.setValueAtTime(0, musicCtx.currentTime);
-      musicGain.gain.linearRampToValueAtTime(0.9, musicCtx.currentTime + 2.5);
+      musicGain.gain.linearRampToValueAtTime(0.9, musicCtx.currentTime + 3);
 
       musicSource.connect(musicGain);
       musicGain.connect(musicCtx.destination);
