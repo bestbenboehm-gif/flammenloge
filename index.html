@@ -707,7 +707,7 @@
       🎵
     </button>
     <!-- Unsichtbarer nativer Player drüber (fängt die echten Klicks) -->
-    <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto" controls style="position:absolute;top:0;left:0;width:52px;height:52px;z-index:3;opacity:0.01;cursor:pointer;"></audio>
+    <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto" controls controlsList="nodownload" disablePictureInPicture oncontextmenu="return false" style="position:absolute;top:0;left:0;width:52px;height:52px;z-index:3;opacity:0.01;cursor:pointer;"></audio>
   </div>
   <script>
     // Sync: Button-Zustand mit Player verknüpfen
