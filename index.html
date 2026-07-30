@@ -732,28 +732,59 @@
   <script src="js/share.js"></script>
   <script>
     // ===== FEUERWEISE (Musik-Toggle) =====
-    // Globales onclick – direkt im User-Gesture, kein Listener-Overhead
+    // Web Audio API – wie das Knistern, nur mit MP3 statt Rauschen
+    var musicCtx = null;
+    var musicSrc = null;
+    var musicGain = null;
+    var musicPlaying = false;
+
     function toggleMusic() {
       var btn = document.getElementById('musicToggle');
       var label = document.getElementById('musicLabel');
-      var audio = document.getElementById('feuerweiseAudio');
 
-      if (!btn || !audio) return;
+      if (!musicCtx) {
+        musicCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (musicCtx.state === 'suspended') musicCtx.resume();
+      }
 
-      if (audio.paused) {
-        audio.currentTime = 0;
-        var p = audio.play();
-        if (p) p.then(function() {
+      if (musicPlaying) {
+        if (musicGain) musicGain.gain.linearRampToValueAtTime(0, musicCtx.currentTime + 1);
+        setTimeout(function() {
+          if (musicSrc) { try { musicSrc.stop(); } catch(e) {} try { musicSrc.disconnect(); } catch(e) {} musicSrc = null; }
+          musicPlaying = false;
+          btn.classList.remove('playing');
+          label.classList.remove('visible');
+        }, 1200);
+        return;
+      }
+
+      // Laden & abspielen
+      btn.textContent = '⏳';
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'audio/feuerweise.mp3', true);
+      xhr.responseType = 'arraybuffer';
+      xhr.onload = function() {
+        musicCtx.decodeAudioData(xhr.response, function(buffer) {
+          btn.textContent = '🎵';
+          if (musicPlaying) return;
+          musicSrc = musicCtx.createBufferSource();
+          musicSrc.buffer = buffer;
+          musicSrc.loop = true;
+          musicGain = musicCtx.createGain();
+          musicGain.gain.setValueAtTime(0, musicCtx.currentTime);
+          musicGain.gain.linearRampToValueAtTime(0.9, musicCtx.currentTime + 3);
+          musicSrc.connect(musicGain);
+          musicGain.connect(musicCtx.destination);
+          musicSrc.start();
+          musicPlaying = true;
           btn.classList.add('playing');
           label.classList.add('visible');
-        }).catch(function(e) {
+        }, function() {
           btn.textContent = '❌';
         });
-      } else {
-        audio.pause();
-        btn.classList.remove('playing');
-        label.classList.remove('visible');
-      }
+      };
+      xhr.onerror = function() { btn.textContent = '❌'; };
+      xhr.send();
     }
 
     // Service Worker registrieren
