@@ -704,6 +704,7 @@
   <button class="music-toggle" id="musicToggle" onclick="toggleMusic()" title="Feuerweise ein/ausschalten" aria-label="Feuerweise (düstere Musik) ein- oder ausschalten" aria-pressed="false">
     🎵
   </button>
+  <audio id="feuerweiseAudio" src="audio/feuerweise.mp3" loop preload="auto"></audio>
 
   <!-- Social Sharing -->
   <button class="share-toggle" onclick="toggleSharePanel()" aria-label="Teilen" aria-expanded="false" title="Seite teilen">
@@ -731,26 +732,19 @@
   <script src="js/share.js"></script>
   <script>
     // ===== FEUERWEISE (Musik-Toggle) =====
-    // Minimalistisch: HTML Audio Element, kein Web Audio API
-    let musicPlayer = null;
-
+    // Direktes <audio>-Element im HTML, kein neues Objekt
     function toggleMusic() {
       const btn = document.getElementById('musicToggle');
       const label = document.getElementById('musicLabel');
+      const audio = document.getElementById('feuerweiseAudio');
 
-      if (!musicPlayer) {
-        musicPlayer = new Audio('audio/feuerweise.mp3');
-        musicPlayer.loop = true;
-        musicPlayer.volume = 1.0;
-      }
-
-      if (musicPlayer.paused || musicPlayer.ended) {
-        musicPlayer.currentTime = 0;
-        musicPlayer.play();
+      if (audio.paused) {
+        audio.currentTime = 0;
+        audio.play();
         btn.classList.add('playing');
         label.classList.add('visible');
       } else {
-        musicPlayer.pause();
+        audio.pause();
         btn.classList.remove('playing');
         label.classList.remove('visible');
       }
