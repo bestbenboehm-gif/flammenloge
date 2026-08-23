@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mark Aurel – Der Kaiser, der über sich selbst herrschte – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Mark Aurel regierte das mächtigste Reich seiner Zeit – und schrieb dabei nur ein einziges Buch: die Selbstbetrachtungen, Fragen eines Kaisers an sich selbst. Eine Geschichte über den Philosophen auf dem Thron und die innere Zitadelle.">
+  <meta name="keywords" content="Mark Aurel, Marcus Aurelius, Stoiker, Stoa, Selbstbetrachtungen, Kaiser, innere Zitadelle, Geist, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Mark Aurel – Der Kaiser, der über sich selbst herrschte">
+  <meta property="og:description" content="Eine Geschichte über den Philosophen auf dem Thron, der ein Weltreich regierte – und nur eines wirklich beherrschte: sich selbst.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/mark-aurel.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">August 2026</div>
+      <h1 class="entry-title">Mark Aurel</h1>
+      <p class="entry-sub">Der Kaiser, der &uuml;ber sich selbst herrschte</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Herrscher, die &uuml;ber Reiche gebieten. Und es gibt Herrscher, 
+        die &uuml;ber sich selbst gebieten. Mark Aurel tat beides &ndash; 
+        und er wusste, dass das zweite das schwerere Werk ist, 
+        das einzige wahrhaft k&ouml;nigliche.
+      </p>
+
+      <p>
+        Er wurde im Jahr 121 nach Christus in Rom geboren, in einer Zeit, 
+        in der das Imperium auf dem Gipfel seiner Macht stand. Seine Familie war 
+        vornehm, sein Weg vorgezeichnet. Doch das Schicksal hatte anderes mit ihm vor: 
+        Es setzte ihn auf den Thron des m&auml;chtigsten Reiches der damaligen Welt &ndash; 
+        und schenkte ihm zugleich eine Seele, die nach etwas anderem d&uuml;rstete 
+        als nach Macht.
+      </p>
+
+      <p>
+        Man nennt ihn den letzten der F&uuml;nf Guten Kaiser. Er regierte von 161 bis 180, 
+        f&uuml;hrte Kriege an der Donau, k&auml;mpfte gegen die Pest, die sein Reich 
+        entv&ouml;lkerte, und verlor doch nie das, was ihm am kostbarsten war: 
+        die Ruhe seines inneren Feuers.
+      </p>
+
+      <p>
+        Mark Aurel war Stoiker &ndash; wie Seneca vor ihm, wie Epiktet, 
+        dessen Lehren er in sich aufnahm. Aber er war kein Gelehrter im Elfenbeinturm. 
+        Er war ein Feldherr im Zelt, ein Kaiser im Feldlager. Und in diesen N&auml;chten, 
+        zwischen Schlachten und Ratsversammlungen, schrieb er kein Gesetz und keinen 
+        Feldzugplan &ndash; sondern ein Buch, das er nie zu ver&ouml;ffentlichen gedachte: 
+        die <em>Selbstbetrachtungen</em>. Briefe an niemanden. Fragen an sich selbst.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Du hast Macht &uuml;ber deinen Geist &ndash;<br>
+        nicht &uuml;ber die &auml;u&szlig;eren Ereignisse.<br>
+        Erkenne das, und du wirst Kraft finden.&ldquo;</p>
+        <div class="attribution">&mdash; Mark Aurel, Selbstbetrachtungen</div>
+      </div>
+
+      <p>
+        Dieser Satz ist der Schl&uuml;ssel zu allem, was Mark Aurel schrieb. 
+        Er teilt die Welt nicht in Gut und B&ouml;se, sondern in das, 
+        was wir lenken k&ouml;nnen, und das, was wir nur ertragen. 
+        Die &auml;u&szlig;eren Ereignisse sind wie der Wind: Sie kommen und gehen. 
+        Aber der Geist ist die Flamme &ndash; und nur sie geh&ouml;rt uns wirklich. 
+        Wer das begreift, hat einen Ort in sich, den kein Sturm erreicht. 
+        Die Stoiker nannten ihn die <em>innere Zitadelle</em>. Mark Aurel baute sie 
+        jeden Abend neu, wenn er in seinen Notizen das Geschehene durchging 
+        und fragte: Was lag in meiner Macht? Was nicht? Und habe ich beides verwechselt?
+      </p>
+
+      <p>
+        Das klingt nach K&auml;lte und ist das Gegenteil. Wer die innere Zitadelle besitzt, 
+        braucht keine Mauern nach au&szlig;en zu errichten. Er kann freundlich sein, 
+        weil er nichts zu verteidigen hat. Er kann den Feind sehen, ohne ihn zu hassen. 
+        Er kann leiden, ohne zu zerbrechen &ndash; denn er wei&szlig;, 
+        dass der Schmerz zum K&ouml;rper geh&ouml;rt, nicht zur Flamme.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Die beste Art, sich zu r&auml;chen, ist,<br>
+        dem Menschen nicht &auml;hnlich zu werden,<br>
+        der das Unrecht getan hat.&ldquo;</p>
+        <div class="attribution">&mdash; Mark Aurel, Selbstbetrachtungen (6, 6)</div>
+      </div>
+
+      <p>
+        Als die Markomannen &uuml;ber die Donau brachen und das Reich zu wanken schien, 
+        zog Mark Aurel in den Krieg &ndash; nicht aus Blutdurst, sondern aus Pflicht. 
+        Er schlief im Zelt, a&szlig; wie die Soldaten, teilte ihre N&auml;chte. 
+        Man sagt, er habe den Krieg gehasst wie kaum ein Kaiser vor ihm &ndash; 
+        und gerade deshalb gef&uuml;hrt wie kein anderer. Denn er wusste, 
+        was die Loge in ihren stillen Stunden lehrt: Mut ist nicht die Abwesenheit 
+        von Furcht, sondern die Entscheidung, trotz der Furcht zu brennen.
+      </p>
+
+      <p>
+        Er starb im Jahr 180 im Feldlager an der Donau, fern von Rom, 
+        fern von allem Glanz, den seine Kaiserw&uuml;rde h&auml;tte bieten k&ouml;nnen. 
+        Seine letzten Worte, so berichtet man, galten nicht dem Reich, 
+        sondern den Soldaten: Geht nun zur Sonne; ich scheide schon. 
+        Ob es wahr ist, wei&szlig; niemand. Aber es ist wahr genug: Der Mann, 
+        der ein Weltreich beherrschte, hatte nur eines wirklich regiert &ndash; sich selbst.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Hier ber&uuml;hrt sich der Weg des Kaisers mit dem der Flammenloge. 
+        Auch wir glauben nicht, dass das Feuer drau&szlig;en liegt &ndash; 
+        in den Ehren, in den Siegen, in der Meinung der Menge. 
+        Es liegt innen. Und wer es h&uuml;tet, braucht keine Krone, um zu leuchten. 
+        Mark Aurel sa&szlig; auf dem Thron der Welt und schrieb doch nur ein einziges Buch: 
+        das &uuml;ber die Herrschaft &uuml;ber sich selbst. Es ist das Buch, 
+        das jeder von uns schreiben m&uuml;sste &ndash; Seite um Seite, Abend f&uuml;r Abend.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk daran: 
+        Auch du bist Kaiser &uuml;ber ein Reich &ndash; &uuml;ber das einzige, 
+        das dir wirklich geh&ouml;rt: deinen Geist. Die St&uuml;rme drau&szlig;en 
+        wirst du nicht aufhalten k&ouml;nnen. Aber du kannst die Flamme h&uuml;ten, 
+        die in dir brennt, und sie jedem Wind zum Trotz hell halten. 
+        Wer das tut, hat mehr erreicht als Eroberer: Er hat die innere Zitadelle 
+        errichtet, die kein Feind je schleifen kann.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Die Krone f&auml;llt, das Reich zerf&auml;llt,<br>
+        die Legionen verwehen. Doch die Flamme, die ein Mensch<br>
+        in sich selbst entz&uuml;ndet, brennt weiter &ndash; von Herz zu Herz,<br>
+        und kein Kaiser kann sie erobern, kein Feind ersticken.&ldquo;</p>
+        <div class="attribution">&mdash; f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
