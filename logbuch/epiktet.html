@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epiktet – Der Sklave, der die Freiheit lehrte – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Epiktet wurde als Sklave geboren und wurde zum Lehrer der Freiheit. Er schrieb kein einziges Buch – doch sein Handbüchlein entzündet seit zwei Jahrtausenden die innere Flamme. Eine Geschichte über den Gefangenen, der niemandem gehörte.">
+  <meta name="keywords" content="Epiktet, Stoa, Stoiker, Freiheit, Sklave, Handbüchlein, innere Zitadelle, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Epiktet – Der Sklave, der die Freiheit lehrte">
+  <meta property="og:description" content="Eine Geschichte über den Philosophen, der in Ketten geboren wurde – und freier war als die Männer, die sie ihm angelegt hatten.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/epiktet.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">August 2026</div>
+      <h1 class="entry-title">Epiktet</h1>
+      <p class="entry-sub">Der Sklave, der die Freiheit lehrte</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Man sagt, die Freiheit beginne dort, wo die Ketten enden. 
+        Epiktet h&auml;tte gel&auml;chelt. Denn er trug die Ketten &ndash; 
+        und war freier als die M&auml;nner, die sie ihm angelegt hatten.
+      </p>
+
+      <p>
+        Er wurde um das Jahr f&uuml;nfzig nach unserer Zeitrechnung in Hierapolis 
+        geboren, einer Stadt im heutigen Kleinasien, aus deren Boden noch immer 
+        warme Quellen steigen. Sein Name bedeutet nichts anderes als 
+        &bdquo;der Erworbene&ldquo;. Er kam als Eigentum eines anderen zur Welt. 
+        Ein Sklave. Doch hier liegt das erste Geheimnis der Loge, das sein ganzes 
+        Leben verraten wird: Fesseln greifen nur, was man besitzt. 
+        Und es gibt etwas in dir, das keinem Herrn je geh&ouml;rt hat.
+      </p>
+
+      <p>
+        Die &Uuml;berlieferung erz&auml;hlt, sein Herr habe ihm einmal zum Spiel 
+        das Bein verdreht. Epiktet warnte ruhig: &bdquo;Du wirst mein Bein 
+        brechen.&ldquo; Und als es brach, sagte er: &bdquo;Habe ich es dir nicht 
+        gesagt?&ldquo; Ob es sich genau so zugetragen hat, wissen wir nicht. 
+        Aber die Geschichte ist wahr in dem, was sie zeigt: Epiktet hatte 
+        l&auml;ngst entschieden, was ihm geh&ouml;rt &ndash; sein Urteil &ndash; 
+        und losgelassen, was ihm nicht geh&ouml;rte: seinen Leib.
+      </p>
+
+      <p>
+        Schon als Sklave studierte er die Philosophie der Stoa bei Musonius Rufus, 
+        einem Lehrer, der selbst das Feuer weitergegeben hatte. Als Kaiser Domitian 
+        um das Jahr dreiundneunzig die Philosophen aus Rom vertrieb, zog Epiktet 
+        nach Nikopolis in Griechenland und er&ouml;ffnete dort eine Schule. 
+        Er selbst schrieb nie eine Zeile. Was wir von ihm kennen, stammt von seinem 
+        Sch&uuml;ler Arrian, der seine Worte festhielt &ndash; in den 
+        &bdquo;Unterredungen&ldquo; und im kleinen &bdquo;Handb&uuml;chlein&ldquo;, 
+        das seither unz&auml;hlige Leben entz&uuml;ndet hat.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Es sind nicht die Dinge,<br>
+        die den Menschen beunruhigen,<br>
+        sondern ihre Urteile &uuml;ber die Dinge.&ldquo;</p>
+        <div class="attribution">&mdash; Epiktet, Handb&uuml;chlein</div>
+      </div>
+
+      <p>
+        Dieser eine Satz ist das Herz der Loge. Die Welt wirft Feuer auf uns &ndash; 
+        Verlust, Krankheit, Ungerechtigkeit, Tod. Wir k&ouml;nnen den Brand nicht 
+        aufhalten. Aber wir w&auml;hlen, woran er sich entz&uuml;ndet. Dieselbe 
+        Flamme, die ein Haus verzehrt, w&auml;rmt den Wanderer in der Nacht. 
+        Das Ereignis ist stumm; die Bedeutung gibt ihm unser Urteil. Das ist das 
+        innere Feuer, von dem die Loge spricht: die Macht, die Welt zu sehen, 
+        wie sie ist, ohne sich von ihr verbrennen zu lassen.
+      </p>
+
+      <p>
+        Epiktet teilte die Welt in zwei Reiche. In unserer Macht stehen unser 
+        Urteil, unser Wollen, unser Streben und Meiden. Nicht in unserer Macht 
+        stehen Leib, Besitz, Ehre, Amt und der Tod. Der T&ouml;richte ringt mit 
+        dem zweiten Reich und verbrennt sich. Der Weise pflegt allein das erste. 
+        Denn nur das, was niemand dir nehmen kann, ist wirklich dein. Alles andere 
+        ist nur geliehen &ndash; und Leihgaben brennen, wenn die Welt sie 
+        zur&uuml;ckfordert.
+      </p>
+
+      <p>
+        Man erkennt hier eine alte Verwandtschaft. Wie Musashi leer wurde, 
+        um nicht zu flackern, und wie Heraklit das Feuer als ewigen Wandel 
+        erkannte, so lehrte Epiktet: Die innere Zitadelle ist keine Mauer aus 
+        Stein, sondern eine Flamme. Kein Kaiser, keine Kette, kein Urteilsspruch 
+        der Welt kann sie erreichen. Sie steht in deiner Macht &ndash; und nur 
+        in deiner.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Der gr&ouml;&szlig;te Hohn der Geschichte: Ein Sklave lehrte die Freien, 
+        was Freiheit ist. Die M&auml;nner, die vor ihm sa&szlig;en, waren B&uuml;rger 
+        des m&auml;chtigsten Reiches ihrer Zeit &ndash; und kamen zu dem, der in 
+        Ketten geboren war, um zu lernen, was wirklich frei macht. Weil er das 
+        Einzige besa&szlig;, was z&auml;hlt: sich selbst.
+      </p>
+
+      <p>
+        Als Epiktet um das Jahr hundertf&uuml;nfunddrei&szlig;ig starb, 
+        hinterlie&szlig; er kein Buch, kein Verm&ouml;gen, kein Standbild. 
+        Er hinterlie&szlig; ein Feuer. Es sprang vom Lehrer auf den Sch&uuml;ler, 
+        vom Sch&uuml;ler auf die Leser, von Generation zu Generation &ndash; 
+        bis es an einem Abend wie diesem zu dir findet.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Man kann die H&auml;nde fesseln,<br>
+        den Leib, das Schicksal.<br>
+        Nur die Flamme im Innern nicht.<br>
+        Wer sie h&uuml;tet, ist frei &ndash;<br>
+        und tr&auml;gt seine Zitadelle &uuml;berallhin.&ldquo;</p>
+        <div class="attribution">&mdash; aus der Freiheitslehre des Epiktet, f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk an Epiktet. 
+        Die Flamme braucht keine Erlaubnis, keine Mauer, keinen Namen. 
+        Sie brennt, weil sie brennt. So ist dein Urteil: das eine Licht, 
+        das dir niemand nehmen kann. H&uuml;te es, n&auml;hre es &ndash; 
+        und lass es brennen, wohin du auch gehst.
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
