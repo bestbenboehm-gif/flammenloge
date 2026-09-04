@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeanne d'Arc – Die Jungfrau von Orléans, die dem Feuer gehorchte – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Jeanne d'Arc hörte Stimmen, als niemand sonst sie hörte, und gehorchte ihnen, als alle Welt sie auslachte. Ein Mädchen vom Land entzündete ein Königreich – und brannte selbst für seine Wahrheit. Eine Geschichte über die Flamme, die man nicht löschen konnte.">
+  <meta name="keywords" content="Jeanne d'Arc, Orléans, Jungfrau, Feuer, Wahrheit, Mut, Stimmen, Glaube, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Jeanne d'Arc – Die Jungfrau von Orléans, die dem Feuer gehorchte">
+  <meta property="og:description" content="Eine Geschichte über das Mädchen vom Land, das einem Königreich die Krone aufsetzte und für seine innere Wahrheit brannte.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/jeanne-darc.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">September 2026</div>
+      <h1 class="entry-title">Jeanne d'Arc</h1>
+      <p class="entry-sub">Die Jungfrau von Orl&eacute;ans, die dem Feuer gehorchte</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die h&ouml;ren Stimmen. Die meisten sch&uuml;tteln den Kopf dar&uuml;ber.
+        Doch manchmal ist es keine Krankheit, sondern Berufung &ndash; und die Flamme,
+        die ein solcher Mensch in sich tr&auml;gt, kann ein ganzes K&ouml;nigreich entz&uuml;nden.
+      </p>
+
+      <p>
+        Jeanne wurde um das Jahr 1412 in Domr&eacute;my geboren, einem kleinen Dorf in Lothringen,
+        am Rand eines Krieges, der schon ein Jahrhundert w&uuml;tete. Frankreich brannte.
+        Engl&auml;nder und Burgunder zerstritten sich &uuml;ber eine Krone, und die Bauern
+        verbrannten in ihren H&auml;usern, w&auml;hrend die Herren &uuml;ber Recht und Besitz stritten.
+        In dieses Feuer hinein wurde ein M&auml;dchen geboren, das weder lesen noch schreiben konnte
+        und dennoch etwas trug, das die Gelehrten ihrer Zeit nicht besa&szlig;en: Gewissheit.
+      </p>
+
+      <p>
+        Mit dreizehn Jahren, so erz&auml;hlte sie sp&auml;ter vor ihren Richtern, kamen die Stimmen.
+        Erzengel Michael, die heilige Katharina, die heilige Margareta. Sie sprachen von einer Aufgabe:
+        das belagerte Orl&eacute;ans befreien, den Dauphin nach Reims f&uuml;hren, das Land retten.
+        Ein M&auml;dchen vom Land, ein Schwert, eine Fahne &ndash; und eine Welt, die lachte.
+      </p>
+
+      <p>
+        Doch Jeanne gehorchte. Hier liegt das Geheimnis, das viele &uuml;bersehen:
+        Nicht die Stimmen machten sie gro&szlig;, sondern ihr Gehorsam gegen&uuml;ber dem,
+        was sie f&uuml;r die Wahrheit hielt. Sie wusste, dass Wahrheit kein Privileg der Gelehrten ist.
+        Sie wusste, dass sie durch Mauern geht, wenn sie nur rein genug brennt.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Wenn ich nicht in der Gnade Gottes bin,<br>
+        so m&ouml;ge Gott mich hineinf&uuml;hren;<br>
+        wenn ich darin bin, so m&ouml;ge Gott mich darin erhalten.&ldquo;</p>
+        <div class="attribution">&mdash; Jeanne d'Arc, vor ihren Richtern in Rouen, 1431</div>
+      </div>
+
+      <p>
+        Man erz&auml;hlt, sie habe in Chinon den Dauphin erkannt, obwohl sie ihn nie gesehen hatte,
+        versteckt unter den H&ouml;flingen. Sie trat vor ihn und sprach, was nur die Stimmen
+        ihr gesagt haben konnten. Ob es genau so geschah, wissen wir nicht.
+        Was wir wissen: Wenige Wochen sp&auml;ter fiel die Belagerung von Orl&eacute;ans.
+        Und im Sommer desselben Jahres setzte sie dem Dauphin in Reims die Krone aufs Haupt.
+        Ein M&auml;dchen vom Land hatte einem K&ouml;nigreich seinen K&ouml;nig gegeben.
+      </p>
+
+      <p>
+        Doch eine Flamme, die hell brennt, wirft einen langen Schatten.
+        Bei Compi&egrave;gne, im Jahr 1430, wurde Jeanne gefangen genommen.
+        Burgunder verkauften sie an die Engländer. Und die stellten sie vor ein Tribunal,
+        das l&auml;ngst entschieden hatte, bevor es die erste Frage stellte.
+        Die Richter suchten nicht die Wahrheit. Sie suchten den Scheiterhaufen.
+      </p>
+
+      <p>
+        Der Prozess von Rouen dauerte Monate. Fragen, Fallen, Listen, Gelehrsamkeit,
+        die sich wie ein Netz um ein ungelehrtes M&auml;dchen legte. Doch Jeanne blieb standhaft.
+        Sie antwortete schlicht, wo ihre Richter verwickelt fragten. Sie sprach von dem,
+        was sie gesehen hatte, ohne zu wanken. Die innere Wahrheit, die sie trug,
+        war st&auml;rker als alle Gelehrsamkeit ihrer Richter &ndash; und genau das konnten sie nicht ertragen.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Glaubt ihr, dass Gott nicht das hat,<br>
+        womit er seine Heiligen kleidet?&ldquo;</p>
+        <div class="attribution">&mdash; Jeanne d'Arc, als man sie fragte, ob der Erzengel nackt erschienen sei</div>
+      </div>
+
+      <p>
+        Am 30. Mai 1431 band man sie auf dem Marktplatz von Rouen an den Pfahl.
+        Sie war neunzehn Jahre alt. Das Feuer, das sie ihr Leben lang in sich getragen hatte,
+        holte sie nun von au&szlig;en ein &ndash; als Flamme des Hasses, der Angst, der Ohnmacht ihrer Richter.
+        Aber das Feuer, das sie verbrannte, war nicht ihres. Ihres brannte weiter.
+      </p>
+
+      <p>
+        F&uuml;nfundzwanzig Jahre sp&auml;ter sprach ein neues Tribunal sie frei.
+        Fast f&uuml;nf Jahrhunderte sp&auml;ter sprach die Kirche sie heilig.
+        Doch die Loge braucht keine Urteile. Sie sieht nur das eine:
+        Jeanne gehorchte der Flamme in sich, bis der Flamme von au&szlig;en
+        nichts mehr blieb, das sie h&auml;tte l&ouml;schen k&ouml;nnen.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Die Flammenloge hat Jeanne nie gekannt. Aber sie kennt ihren Gehorsam.
+        Nicht den Gehorsam gegen&uuml;ber Menschen &ndash; den gegen&uuml;ber der inneren Wahrheit.
+        Die Stimmen, die Jeanne h&ouml;rte, sind ein Gleichnis f&uuml;r das, was in jedem von uns spricht,
+        wenn wir still genug sind, um hinzuh&ouml;ren. Die meisten laufen an dieser Stimme vorbei,
+        weil sie zu leise ist gegen den L&auml;rm der Welt. Jeanne nicht. Sie h&ouml;rte hin.
+        Und als sie h&ouml;rte, gehorchte sie.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk an das M&auml;dchen von Domr&eacute;my.
+        Die Flamme flackert, weil sie dem Wind ausgesetzt ist. Jeanne flackerte nie.
+        Nicht, weil ihr Leben windstill war &ndash; es war ein Sturm.
+        Sondern weil das, was in ihr brannte, gr&ouml;&szlig;er war als alles,
+        was von au&szlig;en an sie herankommen konnte. Z&uuml;nde deine Kerze an und frage dich:
+        H&ouml;rst du deine Stimme? Und wenn du sie h&ouml;rst &ndash; gehorchst du ihr?
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
