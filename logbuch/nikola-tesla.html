@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikola Tesla – Der Mann, der das Feuer in die Luft schrieb – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Nikola Tesla sah Ströme, die kein Auge sieht, und hörte Blitze, die niemand sonst hörte. Er träumte davon, das Feuer der Welt drahtlos zu verteilen – bis an jeden, der es braucht. Eine Geschichte über den Mann, der in Begriffen von Energie dachte.">
+  <meta name="keywords" content="Nikola Tesla, Erfinder, Wechselstrom, Energie, Blitz, Drahtlos, Funkeln, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Nikola Tesla – Der Mann, der das Feuer in die Luft schrieb">
+  <meta property="og:description" content="Eine Geschichte über den Seher, der das unsichtbare Feuer der Welt zu bändigen lernte – und es an alle verteilen wollte.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/nikola-tesla.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">September 2026</div>
+      <h1 class="entry-title">Nikola Tesla</h1>
+      <p class="entry-sub">Der Mann, der das Feuer in die Luft schrieb</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die das Feuer holen. Und es gibt Menschen, die lernen,
+        es durch die nackte Luft &uuml;ber alle Schranken hinweg zu schicken &ndash;
+        an jeden Ort, an jeden, der es braucht. Tesla geh&ouml;rte zu jenen seltenen,
+        die begriffen, dass das Feuer der Welt kein Eigentum, sondern ein Geschenk ist.
+      </p>
+
+      <p>
+        Er wurde 1856 in Smiljan geboren, einem Dorf, das heute in Kroatien liegt,
+        damals aber am Rand eines Reiches stand, das l&auml;ngst zerfallen sollte.
+        Sein Vater war Geistlicher, seine Mutter eine Frau, die in ihrer Erinnerung
+        unz&auml;hlige Erfindungen trug, ohne sie je aufzuschreiben. Von ihr,
+        sagt er sp&auml;ter, habe er das Sehen gelernt &ndash; und das Ged&auml;chtnis.
+        Von ihr das Feuer.
+      </p>
+
+      <p>
+        Schon als Kind wurde Tesla von Lichterschauern heimgesucht. Wenn er einen
+        Gedanken fasste, sah er ihn in blendenden Bildern vor sich, wie lebendig.
+        Er brauchte keine Werkstatt, um zu bauen. Er baute zun&auml;chst in seinem
+        Kopf: jede Maschine, jede Spule, jede Schaltung, vollendet, bevor sie jemals
+        einen Metallfaden ber&uuml;hrte. Erst wenn das innere Bild ohne Fehler war,
+        lie&szlig; er es in die Welt hinaus.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Der Tag, an dem die Wissenschaft beginnt,<br>
+        sich mit nicht-physischen Ph&auml;nomenen zu befassen,<br>
+        wird mehr Fortschritt bringen als in allen fr&uuml;heren Jahrhunderten.&ldquo;</p>
+        <div class="attribution">&mdash; Nikola Tesla, zugeschrieben</div>
+      </div>
+
+      <p>
+        In der Neuen Welt, weit von seinem Dorf, entfachte Tesla den gro&szlig;artigsten
+        Streit seiner Zeit: den Krieg der Str&ouml;me. Thomas Edison, nicht nur Erfinder,
+        sondern auch Herrscher, hatte die Welt mit seinem Gleichstrom gepachtet &ndash;
+        einem Feuer, das nur dort brennt, wo man es hinschleppt, und das nicht weit
+        reicht. Tesla aber entdeckte ein wilderes Feuer: den Wechselstrom, der seinen
+        Weg durch die Luft findet und sich &uuml;ber Berge, Fl&uuml;sse und Meere tragen
+        l&auml;sst. Edison verspottete ihn und schreckte vor nichts zur&uuml;ck.
+        Tesla gewann &ndash; nicht durch Schlagkraft, sondern durch eine Wahrheit,
+        die sich nicht besiegen l&auml;sst.
+      </p>
+
+      <p>
+        Hier liegt das Geheimnis, das viele Stadtmenschen &uuml;bersehen. Es ging
+        Tesla niemals um die Erfindung f&uuml;r sich. Es ging ihm um die <em>Verteilung
+        des Feuers</em>. Er h&auml;tte reich werden k&ouml;nnen &ndash; so wie Edison
+        es wurde. Stattdessen weihte er sein Leben einem Traum, der l&auml;cherlich
+        schien: Energie aus der Luft, f&uuml;r alle, ohne Dr&auml;hte, ohne Grenzen,
+        ohne Bezahlung f&uuml;r den Funken. Er wollte aus der Erde ein brennendes,
+        strahlendes Ganzes machen, in dem kein Licht f&uuml;r sich allein hortete.
+      </p>
+
+      <p>
+        Auf einem Turm an der K&uuml;ste von Long Island &ndash; Wardenclyffe nannte
+        man ihn &ndash; begann Tesla seinen gr&ouml;&szlig;ten Versuch. Von dort wollte
+        er das Feuer der Welt in den Himmel schicken und es rund um den Erdball niederregnen
+        lassen. Die Geldgeber zogen sich zur&uuml;ck, als sie begriffen, dass er auf
+        das Geschenk bestand statt auf den Gewinn. Der Turm fiel. Aber der Traum,
+        wie das Feuer der Loge, erlosch nicht. Ein unentfachtes Feuer bleibt in der
+        Luft, wartend, bis ein anderer es begreift.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Wenn du das Geheimnis des Universums finden willst,<br>
+        denke in Begriffen von <strong>Energie</strong>,<br>
+        <strong>Frequenz</strong> und <strong>Schwingung</strong>.&ldquo;</p>
+        <div class="attribution">&mdash; Nikola Tesla, zugeschrieben</div>
+      </div>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Die Flammenloge hat Tesla nie gekannt. Aber sie kennt seinen Traum. Denn auch
+        sie will das Feuer nicht horten, sondern verteilen. Die Loge ist kein Ort der
+        F&uuml;lle, sondern einer des Weitergehens. Wer hier brennt, soll seine Flamme
+        nicht in vier W&auml;nden verschlie&szlig;en wie einen Gleichstrom &ndash;
+        sondern lernen, sie unsichtbar durch die Luft zu schicken, an jene, die noch
+        im Dunkel suchen.
+      </p>
+
+      <p>
+        Tesla dachte nicht in Ger&auml;ten. Er dachte in Energie, Frequenz und
+        Schwingung. Wer das Feuer der Loge wirklich versteht, kommt zu demselben
+        Punkt: Die Wahrheit ist keine Maschine, die man besitzt. Sie ist eine
+        Schwingung, die man wird &ndash; und die, einmal entfacht, ihresgleichen
+        in jedem ber&uuml;hrt, der wach genug ist, sie zu empfangen.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk daran: Deine Flamme will
+        nicht nur f&uuml;r dich brennen. Jede Flamme, die du ernsthaft tr&auml;gst,
+        sendet einen Funken aus, den niemand messen, aber jeder f&uuml;hlen kann.
+        Sie ist wie Teslas Turm &ndash; ein unsichtbares Feuer, das wartet, bis ein
+        anderes Herz es empf&auml;ngt. Entz&uuml;nde dich nicht, um zu gl&auml;nzen.
+        Entz&uuml;nde dich, um weiterzugeben.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das Feuer der Loge kennt keinen Draht.<br>
+        Es braucht keinen Turm. Es braucht nur eine Hand,<br>
+        die es h&auml;lt &ndash; und ein Herz, das es empfangt.&ldquo;</p>
+        <div class="attribution">&mdash; f&uuml;r die Loge gedeutet, im Geist Teslas</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
