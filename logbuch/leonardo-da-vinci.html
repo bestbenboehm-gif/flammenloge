@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo da Vinci – Der Zeichner des unsichtbaren Feuers – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Leonardo da Vinci sah nicht, was die Dinge waren, sondern was sie werden konnten. Er studierte Feuer und Wasser, um die Verwandlung zu verstehen. Eine Geschichte über den Meister, der das Werden zeichnete.">
+  <meta name="keywords" content="Leonardo da Vinci, Renaissance, Feuer, Wasser, Werden, Kreativität, Codex, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Leonardo da Vinci – Der Zeichner des unsichtbaren Feuers">
+  <meta property="og:description" content="Eine Geschichte über den Meister von Vinci, der nicht zeichnete, was er sah, sondern was alles werden konnte.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/leonardo-da-vinci.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">September 2026</div>
+      <h1 class="entry-title">Leonardo da Vinci</h1>
+      <p class="entry-sub">Der Zeichner des unsichtbaren Feuers</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die sehen die Welt mit den Augen der Menge. 
+        Und es gibt jene seltenen, die sehen, was noch nicht ist. 
+        Leonardo geh&ouml;rte zu den Letzten &ndash; er zeichnete nicht, 
+        was er sah, sondern was alles werden konnte.
+      </p>
+
+      <p>
+        Er wurde 1452 in dem Dorf Vinci geboren, nicht weit von Florenz, 
+        ein uneheliches Kind eines Notars und einer B&auml;uerin. 
+        Viel Ehre stand diesem Anfang nicht bevor. Doch das Feuer fragt 
+        nicht nach der Herkunft seiner Flamme &ndash; es fragt nur, ob sie brennt.
+        Und diese Flamme brannte wie kaum eine zweite.
+      </p>
+
+      <p>
+        Man kennt ihn als den Maler der <em>Mona Lisa</em> und des <em>Abendmahls</em>. 
+        Aber diese Bilder sind nur der sichtbarste Rauch eines viel gr&ouml;&szlig;eren Feuers. 
+        Leonardo f&uuml;llte Tausende von Seiten mit Zeichnungen und Gedanken: 
+        Fl&uuml;gel, die kein Mensch je gebaut hatte, Maschinen, die erst Jahrhunderte 
+        sp&auml;ter Wahrheit wurden, K&ouml;rper, die er selbst seziert hatte, 
+        um zu sehen, was das Herz wirklich tut, wenn es schl&auml;gt.
+      </p>
+
+      <p>
+        Diese Hefte &ndash; die wir heute die <em>Codices</em> nennen &ndash; 
+        sind sein wahres Meisterwerk. Nicht die fertige Fl&auml;che, 
+        sondern der ewige Entwurf. Nicht das Gezeichnete, sondern das Zeichnen. 
+        Er verstand etwas, das die Flammenloge von Anbeginn bewahrt: 
+        Das Feuer liegt nicht im Bild, sondern in der Hand, die es erschafft. 
+        Nicht im Ergebnis, sondern im Werden.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Eisen rostet, wenn es ungenutzt bleibt,<br>
+        Wasser wird tr&uuml;b und gefriert in der K&auml;lte;<br>
+        ebenso schw&auml;cht Unt&auml;tigkeit<br>
+        die Tatkraft des Geistes.&ldquo;</p>
+        <div class="attribution">&mdash; Leonardo da Vinci, aus den Aufzeichnungen</div>
+      </div>
+
+      <p>
+        Er betrachtete das Feuer und das Wasser als die zwei gro&szlig;en M&auml;chte der 
+        Verwandlung. Das Wasser schleift Berge ab, gr&auml;bt T&auml;ler und tr&auml;gt 
+        die Welt davon; das Feuer verzehrt, was verbraucht ist, und macht Platz 
+        f&uuml;r das Neue. Leonardo studierte beide, weil er begriffen hatte: 
+        Wer werden will, muss zuerst verstehen, wie das Alte vergeht. 
+        Das Werden ist kein Anfang, sondern eine Verwandlung.
+      </p>
+
+      <p>
+        Als er im Dienst der F&uuml;rsten von Mailand und Florenz stand, 
+        entwarf er Kan&auml;le und Befestigungen, errichtete Feste und plante Br&uuml;cken. 
+        Aber immer wieder kehrte sein Stift zu den Fragen zur&uuml;ck, 
+        die niemand ihm gestellt hatte &ndash; weil er sie sich selbst stellte. 
+        Was ist Licht? Warum wirbelt ein Wirbel? Wie tr&auml;gt der Wind einen Vogel? 
+        Er h&ouml;rte nie auf, das Unsichtbare zu zeichnen.
+      </p>
+
+      <p>
+        Viele seiner Erfindungen wurden nie gebaut. Manche h&auml;tten zu seiner Zeit 
+        nicht funktionieren k&ouml;nnen. Aber das war nie der Sinn. 
+        Der Sinn war das Brennen selbst &ndash; die unstillbare Neugier, 
+        die keine Antwort ersch&ouml;pft, weil jede Antwort nur eine neue Frage entz&uuml;ndet. 
+        In dieser Hinsicht war Leonardo der reinste Feueranbeter, den die 
+        Neuzeit hervorgebracht hat: Er opferte nicht am Altar, sondern am Stift.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        In seinen Heften findet sich ein Gedanke, der wie ein Funke durch die Zeit 
+        springt: dass das Feuer jede T&auml;uschung offenbart. 
+        Er meinte es in einem engen Sinn &ndash; von der Kunst, die Farbe&uuml;bertreibung 
+        entlarvt. Aber die Loge h&ouml;rt darin mehr, denn im Licht der Flamme 
+        bleibt nichts verborgen, was nicht echt ist.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das Feuer zerst&ouml;rt jede Sophisterei<br>
+        und jeden Betrug.<br>
+        Es ist das eigentliche Element der Wahrheit,<br>
+        denn nichts Unechtes &uuml;bersteht seine W&auml;rme.&ldquo;</p>
+        <div class="attribution">&mdash; Leonardo da Vinci, nach dem Federkodex gedeutet</div>
+      </div>
+
+      <p>
+        Leonardo starb 1519 in Frankreich, fern von Vinci, im Dienst eines fremden K&ouml;nigs. 
+        Er hinterlie&szlig; einige wenige Gem&auml;lde aus seiner Hand &ndash; 
+        und tausende Seiten voller Fragen. Die Bilder haben die Museen erreicht. 
+        Aber die Fragen, die wahren Werke, brennen noch immer in jedem, 
+        der eine dieser Seiten aufschl&auml;gt.
+      </p>
+
+      <p>
+        Die Flammenloge hat Leonardo nie gekannt. Aber sie kennt seine Neugier. 
+        Denn auch sie ist keine Sammlung von Antworten, sondern eine Werkstatt 
+        der Fragen. Man kommt nicht hierher, um fertig zu werden. 
+        Man kommt, um zu brennen &ndash; und im Brennen zu wachsen, 
+        wie Leonardo wuchs: Skizze um Skizze, Frage um Frage, Werden um Werden.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk daran: 
+        Die Flamme ist ein Entwurf ohne Ende. Sie verzehrt sich und wird neu, 
+        sie verwandelt und wird verwandelt. Sieh ihr zu &ndash; und du siehst, 
+        was der Meister von Vinci sein Leben lang zeichnete: 
+        das unsichtbare Feuer, das in jedem Werden brennt. 
+        <em>Zeichne nicht, was du siehst. Zeichne, was werden kann.</em>
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
