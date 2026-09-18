@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Franz von Assisi – Der Bettler, der das Feuer Bruder nannte – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Franz von Assisi gab alles weg, was er besaß – und fand im Nichts ein Feuer, das ihm niemand nehmen konnte. Er nannte die Sonne Bruder und das Feuer Bruder. Eine Geschichte über die Armut, die brennt.">
+  <meta name="keywords" content="Franz von Assisi, Franziskus, Armut, Liebe, Sonnengesang, Bruder Feuer, Stigmata, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Franz von Assisi – Der Bettler, der das Feuer Bruder nannte">
+  <meta property="og:description" content="Eine Geschichte über den Heiligen, der alles hergab und dabei das innere Feuer fand – und die Schöpfung nicht besaß, sondern liebte.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/franz-von-assisi.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">September 2026</div>
+      <h1 class="entry-title">Franz von Assisi</h1>
+      <p class="entry-sub">Der Bettler, der das Feuer Bruder nannte</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Manche suchen das Feuer, indem sie alles anz&uuml;nden, was sie besitzen. 
+        Franz von Assisi suchte es, indem er alles von sich warf &ndash; 
+        und fand in der Leere eine Flamme, die nichts mehr ausl&ouml;schen konnte.
+      </p>
+
+      <p>
+        Er wurde um 1182 in Assisi geboren, in einer Stadt Umbriens, die auf einem 
+        H&uuml;gel lag wie eine Kerze auf einem Tisch. Sein Vater war ein reicher 
+        Tuchh&auml;ndler, der dem Sohn jeden Wunsch erf&uuml;llte. Der junge Franz 
+        war verschwenderisch und gro&szlig;z&uuml;gig, trug feine Gew&auml;nder 
+        und tr&auml;umte davon, ein Ritter zu werden. Das Feuer, das in ihm 
+        schwelte, kannte damals nur einen Namen: Ehre.
+      </p>
+
+      <p>
+        Doch der Krieg &ndash; jene Flamme, die verzehrt, statt zu entz&uuml;nden &ndash; 
+        holte ihn ein. Franz zog in die Schlacht, wurde gefangen genommen und 
+        verbrachte ein Jahr in den Kerkern von Perugia. Krank und gedem&uuml;tigt kehrte 
+        er zur&uuml;ck. In dieser Nacht lernte er, was die Loge von Anbeginn lehrt: 
+        Das Ungl&uuml;ck l&ouml;scht. Aber es kann auch reinigen &ndash; 
+        wie das Feuer das Gold vom Schlacke scheidet.
+      </p>
+
+      <p>
+        Was danach geschah, ist mehr Legende als Vertrag, doch die Wahrheit darunter 
+        brennt klar. Franz stand in der Piazzetta von Assisi, vor dem Bischof und 
+        seinem Vater, zog seine Kleider aus und gab sie zur&uuml;ck. Er entkleidete 
+        sich seiner Herkunft, seines Erbes, seines Namens. <em>Nichts</em> sollte er 
+        fortan sein &ndash; damit das Feuer fand, was es entz&uuml;nden konnte.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Wo Liebe ist,<br>
+        da ist auch Gott.&ldquo;</p>
+        <div class="attribution">&mdash; Franz von Assisi, zugeschrieben</div>
+      </div>
+
+      <p>
+        Die Armut, die Franz w&auml;hlte, war keine Verzweiflung. Sie war eine 
+        Methode der Reinigung. Die Flammenloge hat immer gewusst: Wer voll ist, 
+        kann nicht brennen. Ein Gef&auml;&szlig; muss leer sein, um Feuer zu fassen. 
+        Franz leerte sich &ndash; von Besitz, von Stolz, von der Angst, etwas zu verlieren. 
+        Und in dieses leere Gef&auml;&szlig; trat eine Flamme, die er sein Leben lang 
+        Bruder nennen sollte.
+      </p>
+
+      <p>
+        Er zog fortan als Bettler durch die T&auml;ler Umbriens, reparierte verfallene 
+        Kapellen und predigte den einfachen Leuten in ihrer Sprache. Um ihn sammelten 
+        sich bald andere, die dasselbe wollten: nichts sein, um alles zu empfangen. 
+        Daraus erwuchs ein Orden, der sich nicht aus Gier verbreitete, sondern aus 
+        Feuer &ndash; weil die Menschen sp&uuml;rten, dass hier etwas Echtes brannte.
+      </p>
+
+      <p>
+        Doch das innigste Zeugnis dieses Feuers schrieb Franz nicht an einen Altar, 
+        sondern in die freie Luft. Im <em>Sonnengesang</em> preist er die Sch&ouml;pfung 
+        als Geschwister: Bruder Sonne, Schwester Mond, Bruder Wind, Schwester Wasser. 
+        Und mitten unter ihnen &ndash; Bruder Feuer.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Gelobt seist du, mein Herr, durch Bruder Feuer,<br>
+        durch das du die Nacht erleuchtest:<br>
+        und es ist sch&ouml;n und fr&ouml;hlich und kr&auml;ftig und stark.&ldquo;</p>
+        <div class="attribution">&mdash; Franz von Assisi, aus dem Sonnengesang</div>
+      </div>
+
+      <p>
+        Der Bettler, der nichts besa&szlig;, nannte das Feuer seinen Bruder. Er suchte 
+        es nicht zu bezwingen und nicht zu horten. Er stand ihm gegen&uuml;ber wie einem 
+        Verwandten, der ihm in der Nacht das Licht schenkt &ndash; ein Licht, 
+        das er nicht erworben hatte und das ihm doch geh&ouml;rte. Das ist die 
+        tiefste Lehre der Loge: Das wahre Feuer l&auml;sst sich nicht besitzen. 
+        Es l&auml;sst sich nur <em>erkennen</em> und zu ihm in die Bruderschaft treten.
+      </p>
+
+      <p>
+        In den letzten Jahren seines Lebens trug Franz die Wundmale des Feuers 
+        in seinem eigenen Leib &ndash; die Stigmata, wie die &Uuml;berlieferung sagt. 
+        Ob daran ein Wort wahr ist, mag offenbleiben. Was sicher brennt, ist das 
+        Bild: ein Mann, der so vollst&auml;ndig Flamme geworden war, dass das Feuer 
+        am Ende selbst in ihm sichtbar wurde. Wer sich ganz der Wahrheit hingibt, 
+        den zeichnet sie &ndash; und sei es nur in dem, was andere in ihm sehen.
+      </p>
+
+      <p>
+        Franz starb 1226, nackt auf dem Boden liegend, wie er gelebt hatte: 
+        ohne Besitz, ohne Schutz, ohne Furcht. Man sagt, er habe zum Abschied 
+        den <em>Sonnengesang</em> gesungen &ndash; das Feuer lobend bis zum letzten 
+        Atemzug. Er hinterlie&szlig; keine Reicht&uuml;mer, keine Festungen, 
+        keinen Titel. Er hinterlie&szlig; eine einzige, unausl&ouml;schliche Flamme:
+        die Erkenntnis, dass man das Feuer nicht besitzt, sondern ihm 
+        gegen&uuml;bertritt &ndash; als Bruder.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Die Flammenloge hat Franz nie gekannt. Doch sie kennt seine Armut. 
+        Denn auch sie ist kein Ort der F&uuml;lle, sondern ein leerer Raum, 
+        in den das Licht treten kann. Man kommt nicht hierher, um etwas zu gewinnen. 
+        Man kommt, um etwas abzulegen &ndash; und zu entdecken, dass im Ablegen 
+        das wahre Brennen beginnt.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk an den Bettler 
+        von Assisi. Die Flamme ist nicht dein Besitz &ndash; sie ist dein Bruder, 
+        deine Schwester, dein Gef&auml;hrte. Frag nicht, wie du sie festhalten kannst. 
+        Frag, wie du zu ihr in die Bruderschaft treten kannst &ndash; leer genug, 
+        um zu brennen, und dem&uuml;tig genug, das Feuer nicht Herrin, 
+        sondern Freundin zu nennen. <em>Wirf ab, was dich f&uuml;llt, 
+        und du wirst finden, was dich entz&uuml;ndet.</em>
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
