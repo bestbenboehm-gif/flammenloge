@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giordano Bruno – Der Ketzer, der die Feuer der Sterne sah – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Giordano Bruno sah, dass die Sterne Sonnen sind und der Raum kein Ende hat. Für diese eine Einsicht stand er 1600 auf dem Campo de&rsquo; Fiori im Feuer &ndash; und nahm das Urteil ruhiger an als seine Richter. Eine Geschichte über die Wahrheit, die nicht verl&ouml;scht.">
+  <meta name="keywords" content="Giordano Bruno, unendliches Universum, Inquisition, Campo de Fiori, Ketzer, Kosmos, Sterne, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Giordano Bruno – Der Ketzer, der die Feuer der Sterne sah">
+  <meta property="og:description" content="Eine Geschichte über den M&ouml;nch, der die Himmelsmauer einriss, unz&auml;hlige Welten sah und daf&uuml;r auf dem Scheiterhaufen brannte &ndash; ohne zu widerrufen.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/giordano-bruno.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">September 2026</div>
+      <h1 class="entry-title">Giordano Bruno</h1>
+      <p class="entry-sub">Der Ketzer, der die Feuer der Sterne sah</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die ein Feuer anz&uuml;nden, um zu sehen. Und es gibt
+        Menschen, die ein Feuer anz&uuml;nden, um nicht mehr sehen zu m&uuml;ssen.
+        Giordano Bruno geh&ouml;rte zu den ersten &ndash; und die zweiten
+        stellten ihn auf einen Scheiterhaufen. Was sie nicht wussten:
+        Sie konnten nur seinen Leib verbrennen. Sein Licht hatten sie bereits
+        in die Nacht entlassen.
+      </p>
+
+      <p>
+        Er wurde 1548 in Nola geboren, einer kleinen Stadt bei Neapel, und
+        hie&szlig; zun&auml;chst Filippo. Sp&auml;ter trat er in ein Kloster
+        ein und nahm den Namen Giordano an &ndash; als w&auml;re ein Name
+        eine Pforte, hinter der man sich verstecken k&ouml;nnte. Doch hinter
+        jeder Pforte, die er durchschritt, fand er dieselbe Frage wieder, die
+        ihn sein Leben lang nicht loslie&szlig;: Wie weit reicht die Welt?
+      </p>
+
+      <p>
+        In den Zellen des Klosters lernte er die Lehre seiner Zeit, und die
+        Lehre ging so: Der Himmel ist eine feste Kugelschale, dicht und
+        geschlossen, und dar&uuml;ber ist nichts. Sieben Sph&auml;ren, ein
+        fester Rand, ein fertiges Haus. Bruno sah die Wand, die man ihm
+        beschrieb &ndash; und begriff, dass sie nur in den K&ouml;pfen
+        stand, nicht in den Sternen. 1576 legte er die Kutte ab,
+        mitsamt allem, was darin wohnte: Ordnung, Sicherheit, Zugeh&ouml;rigkeit.
+      </p>
+
+      <p>
+        Was folgte, war kein Leben, sondern ein Brennen auf Reisen. Er lehrte
+        in Paris, in London, in Wittenberg, in Prag, in Frankfurt. Er hatte
+        keine Heimat, kein Amt, keine Gemeinde &ndash; nur eine Zunge, die
+        nicht schweigen konnte. Man lud ihn ein, weil er gl&auml;nzte, und
+        wies ihn aus, weil er zu hell brannte. In London schrieb er 1584,
+        was ihn sp&auml;ter das Leben kostete: das <em>Aschermittwochsmahl</em>,
+        <em>Von der Ursache, dem Prinzip und dem Einen</em>, <em>Vom
+        unendlichen Universum und den Welten</em>.
+      </p>
+
+      <p>
+        In diesen Seiten riss er das Dach der Welt auf. Der Raum hat kein Ende,
+        schrieb er. Die Sonne ist ein Stern unter Sternen. Die Sterne sind
+        Sonnen, jede mit ihren eigenen Welten. Es gibt keinen Mittelpunkt,
+        kein Oben, kein Unten, keine letzte Mauer. Und er schrieb es nicht als
+        Rechnung, sondern als <em>Erfahrung</em> &ndash; als h&auml;tte er
+        hinausgeblickt und einen Blick getan, den vor ihm die Menschheit
+        nicht getan hatte.
+      </p>
+
+      <p>
+        Man stelle sich vor, was das bedeutete. Die Welt jener Jahre war
+        sorgf&auml;ltig gebaut wie ein Altar: eine Erde in der Mitte, ein
+        Himmel dar&uuml;ber, ein Thron am Rand. Bruno nahm dieser Welt den
+        Rand. Und mit dem Rand verschwand die Frage, wer am h&ouml;chsten
+        sitzt. Ein unendliches Feuer braucht keinen Platzhalter &ndash;
+        es brennt &uuml;berall zugleich.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Die Wahrheit ist die Tochter der Zeit.&ldquo;</p>
+        <div class="attribution">&mdash; Giordano Bruno, als Siegel gef&uuml;hrt</div>
+      </div>
+
+      <p>
+        Die R&uuml;ckkehr nach Italien, 1591, war der Schritt eines Mannes,
+        der wusste, dass er nicht in Sicherheit lebte &ndash; und der die
+        Heimkehr trotzdem suchte. In Venedig denunzierte ihn ein Sch&uuml;ler,
+        dem er zu viel und zu wenig gesagt hatte. 1592 legten sie ihn in Ketten.
+        Was dann begann, dauerte acht Jahre: Verh&ouml;re, Zellen, Gutachten,
+        die Liste seiner Irrt&uuml;mer, l&auml;nger als ein Katalog.
+      </p>
+
+      <p>
+        Sie waren nicht unklug, seine Richter. Sie boten ihm das &Uuml;bliche an:
+        ein Wort, eine Wendung, ein halber Widerruf, und der Rest des Lebens
+        st&uuml;nde ihm frei. Bruno gab ihn nicht. Nicht aus Trotz, wie man
+        erz&auml;hlt, sondern aus etwas K&uuml;hlerem und St&auml;rkerem:
+        aus der Weigerung, das Gesehene zu verleugnen, um l&auml;nger atmen
+        zu d&uuml;rfen.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Am 8. Februar 1600 lasen sie ihm das Urteil. Die &Uuml;berlieferung
+        der Augenzeugen hat uns einen einzigen Satz von ihm bewahrt &ndash;
+        er ist nicht in seinen B&uuml;chern zu finden, sondern in der Hand
+        eines fremden Mannes, der im Saal sa&szlig;:
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Vielleicht verk&uuml;ndet ihr dieses Urteil<br>
+        mit gr&ouml;&szlig;erer Furcht, als ich es entgegennehme.&ldquo;</p>
+        <div class="attribution">&mdash; Giordano Bruno zu seinen Richtern, &uuml;berliefert</div>
+      </div>
+
+      <p>
+        Am 17. Februar 1600 f&uuml;hrten sie ihn auf den Campo de&rsquo; Fiori
+        in Rom. Sie banden ihm die Zunge fest, damit kein Wort mehr in die
+        Menge fiel. So starb er &ndash; schweigend von au&szlig;en,
+        brennend von innen. Seine Asche ging mit dem Rauch auf und wurde
+        niemals gefunden. Kein Grab, kein Stein, keine Reliquie.
+        Nur eine Stelle im Pflaster, an der nichts mehr zu holen war.
+      </p>
+
+      <p>
+        Die Flammenloge liest diese Nacht anders als die Chronisten. Sie
+        fragt nicht zuerst: War er im Recht? Sie fragt: Was war es, das
+        288 Jahre sp&auml;ter Bildhauer zwang, genau dort, wo das Feuer
+        stand, eine Bronzefigur aufzurichten &ndash; das Gesicht dem
+        Vatikan zugewandt, wie eine stumme, nie endende Anklage? Wahrheit
+        ist kein Besitz, der sich in einem Buch verwahren lie&szlig;e.
+        Sie ist ein Vorgang, wie das Feuer. Man kann sie ersticken,
+        aber nicht abschlie&szlig;en.
+      </p>
+
+      <p>
+        Wer Bruno verstehen will, muss sich nicht mit Kosmologie befassen.
+        Er muss sich eine kleinere Frage stellen: Wo bin ich gerade ehrlich,
+        weil es nichts kostet &ndash; und wo werde ich leise, weil es teuer
+        w&uuml;rde? Jeder tr&auml;gt einen Rand um sein Denken, der sich
+        Himmel nennt und in Wahrheit nur Gewohnheit ist. Bruno lehrt,
+        ihn anzufassen. Nicht ihn zu st&uuml;rmen, nicht ihn zu leugnen.
+        Nur ihn zu ber&uuml;hren und zu sehen, dass er dem durchl&auml;ssig
+        wird, der lange genug hineinschaut.
+      </p>
+
+      <p>
+        Er starb allein und ohne Zeugen seiner Sache am 17. Februar 1600,
+        und doch liegt in seinem Ende etwas, das nicht nach Niederlage
+        aussieht. Wer nichts mehr zu verlieren hat, weil er die
+        Wahrheit nicht mehr weggeben will, steht auf einem Scheiterhaufen
+        ruhiger als die M&auml;nner, die ihn entz&uuml;ndet haben.
+        Das ist die Vermessung, die z&auml;hlt: nicht die Weite des
+        Raumes, sondern die Frage, wie viel Dunkel ein Mensch aush&auml;lt,
+        ohne das Licht kleiner zu machen.
+      </p>
+
+      <p>
+        Die Flammenloge hat Giordano Bruno nie gekannt. Doch sie kennt seine
+        Unerschrockenheit. Auch sie ist kein Ort, an dem man Antworten
+        sicherstellt, sondern einer, an dem man Fragen bis zum Ende
+        aush&auml;lt. Man kommt nicht hierher, um Recht zu behalten.
+        Man kommt, um zu brennen, ohne die Gr&ouml;&szlig;e der Nacht
+        klein zu reden.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, denk an den Mann,
+        dem sie die Zunge banden. Schau in die Flamme und frag dich,
+        was du heute verschwiegen hast, obwohl du es sahst. Und dann
+        stell dir vor, wie weit der Raum wirklich reicht &ndash;
+        wie viele Sonnen &uuml;ber dir brennen, jede mit ihren Welten,
+        keine einzige &auml;rmer an Licht als deine.
+        <em>Was du einmal gesehen hast, kann man dir nicht mehr nehmen.
+        Man kann nur den Menschen nehmen, der es gesehen hat.</em>
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
