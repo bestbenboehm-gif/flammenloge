@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teresa von &Aacute;vila &ndash; Das Feuer im siebten Gemach &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Sie trat in ein Kloster ein, um zu &uuml;berleben &ndash; und fand erst zwanzig Jahre sp&auml;ter das Feuer. Teresa von &Aacute;vila beschrieb die Seele als Burg aus Kristall, mit sieben Gem&auml;chern und einem brennenden Zentrum. Eine Geschichte &uuml;ber die Innenschau und die Geduld, die alles erreicht.">
+  <meta name="keywords" content="Teresa von Avila, Innere Burg, Wohnungen der inneren Burg, Mystik, Karmel, Nada te turbe, Innenschau, Feuer, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Teresa von &Aacute;vila &ndash; Das Feuer im siebten Gemach">
+  <meta property="og:description" content="Eine Geschichte &uuml;ber eine Frau, die durch einen lauten Konvent ging, um in ihrem eigenen Inneren ein Feuer zu finden, das kein Besuchszimmer, keine Krankheit und kein Orden l&ouml;schen konnte.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/teresa-von-avila.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Men&uuml; &ouml;ffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">Oktober 2026</div>
+      <h1 class="entry-title">Teresa von &Aacute;vila</h1>
+      <p class="entry-sub">Das Feuer im siebten Gemach</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Sie trat in ein Kloster ein, um zu &uuml;berleben &ndash; nicht, um zu brennen.
+        Und sie brauchte fast zwanzig Jahre, um zu merken, dass das Feuer
+        nicht im Geb&auml;ude wohnt, sondern in ihr selbst.
+      </p>
+
+      <p>
+        Sie wurde am 28. M&auml;rz 1515 in &Aacute;vila geboren, in einer Stadt
+        Kastiliens, die schon damals ihre Mauern wie einen geschlossenen
+        Mund trug. Sie war Tochter eines Kaufmanns, eines Mannes der B&uuml;cher
+        und der Gesch&auml;fte, und sie war ein M&auml;dchen voller R&auml;tsel:
+        eitel genug, um Romane zu verschlingen, in denen Ritter f&uuml;r
+        unm&ouml;gliche Dinge starben, und klug genug, um zu wissen, dass diese
+        Geschichten nicht die Wahrheit waren.
+      </p>
+
+      <p>
+        Am 2. November 1535 &ouml;ffnete sie die T&uuml;r des Karmels von der
+        Menschwerdung &ndash; gegen den Willen ihres Vaters, wie die Legende sagt.
+        Aber das Kloster war kein stiller Ort. Knapp vierzig Frauen lebten dort,
+        und binnen weniger Jahre wurden es fast zweihundert. Umgangszimmer,
+        Besuch, Geplauder, kleine Eifers&uuml;chte, gro&szlig;e Langeweile.
+        Ein Haus voller Menschen, in dem eine Seele allein bleiben kann wie
+        ein Stein im Regen.
+      </p>
+
+      <p>
+        Sie lag krank danieder, &uuml;ber Jahre, oft mehr tot als lebendig.
+        Man betete f&uuml;r ihr Ende. Sie selbst hielt ihre Untreue f&uuml;r die
+        Ursache &uuml;bel, dabei war es nur ein K&ouml;rper, der nicht mitkam.
+        Und in dieser Zeit geschah, was man ihre zweite Bekehrung nennt:
+        Sie stand in der Fastenzeit des Jahres 1554 vor einer kleinen Statue
+        des Schmerzensmannes, und es brach auf. Nicht laut, nicht nach au&szlig;en
+        &ndash; sondern nach innen. Sie nannte es ein neues Leben.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Nada te turbe, nada te espante &ndash; todo se pasa:<br>
+        la paciencia todo lo alcanza.&ldquo;</p>
+        <div class="attribution">&mdash; Teresa von &Aacute;vila, Gebet &bdquo;Nada te turbe&ldquo;</div>
+      </div>
+
+      <p>
+        Nichts soll dich verwirren. Nichts dich erschrecken. Alles geht
+        vor&uuml;ber. Und die Geduld &ndash; nicht der Schwung, nicht die
+        Begeisterung, nicht die gl&uuml;hende Stunde &ndash; erreicht alles.
+        Sie schrieb das nicht als Trost f&uuml;r andere. Sie hatte es sich selbst
+        abgerungen, in Jahren, in denen sie sich f&uuml;r ein Mittelmass hielt.
+      </p>
+
+      <p>
+        Am 24. August 1562 gr&uuml;ndete sie in &Aacute;vila ihr erstes Kloster
+        des heiligen Josef: dreizehn Schwestern, keine Mitgift, kein
+        eigenes Einkommen, kein Besitz. Man spottete &uuml;ber die, die mit
+        nackten F&uuml;&szlig;en gingen und nannte sie die Unbeschuhten. Wer
+        arm ist, hat nichts zu zeigen &ndash; und nichts zu verteidigen.
+        Vielleicht ist das der Grund, warum das Feuer dort blieb.
+      </p>
+
+      <p>
+        Danach h&ouml;rte das Wandern nicht mehr auf. Sechzehn weitere
+        Gr&uuml;ndungen, und in Zusammenarbeit mit Johannes vom Kreuz auch der
+        m&auml;nnliche Zweig eines Ordens, den sie neu aus der Asche hob.
+        Sie sass auf Karren, die im Schlamm stecken blieben, schlief in
+        fremden H&auml;usern, fieberte, wurde beschuldigt, angezeigt,
+        gepr&uuml;ft. Eine Frau, die schrieb, plante und Befehle gab &ndash;
+        in einer Zeit, in der eine Frau nicht ohne Begleitung reiste und
+        nicht ohne Erlaubnis sprach. Sie <em>reiste</em>.
+      </p>
+
+      <p>
+        Ihre wichtigsten B&uuml;cher aber schrieb sie nicht in einer Studierstube.
+        Sie schrieb sie auf Gehei&szlig; von Beichtv&auml;tern, in Ecken von
+        Kl&ouml;stern, in kurzen Fristen, oft mit schlechter Gesundheit und
+        immer mit dem Gedanken: Wer bin ich, dass ich das sagen soll?
+        Aus diesem Widerstand entstand 1577 die <em>Wohnungen der inneren Burg</em>:
+        die Seele als ein Schloss aus einem einzigen, ganz klaren Kristall, mit
+        vielen Gem&auml;chern, und im Zentrum das Gemach, in dem der K&ouml;nig
+        wohnt. Man muss nicht &uuml;ber den Wall, um hinein zu kommen. Man muss
+        nur in sich hineingehen &ndash; und viele kommen ihr Leben lang.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Es liegt nicht daran, viel zu denken,<br>
+        sondern viel zu lieben.&ldquo;</p>
+        <div class="attribution">&mdash; Teresa von &Aacute;vila, Wohnungen der inneren Burg IV</div>
+      </div>
+
+      <p>
+        Das ist der eine Satz, an dem sich das ganze Geb&auml;ude aufh&auml;ngt.
+        Die Innenschau ist kein Kopfrechnen. Sie ist kein Konto, das man
+        mit guten Werken auff&uuml;llt, kein Kreuzzug der Selbstkritik.
+        Sie ist eine Richtungsangabe: Nimm die W&auml;rme und trage sie nach
+        innen. Wer sich nach au&szlig;en verkauft, brennt f&uuml;r die Zuschauer.
+        Wer innen brennt, leuchtet ohne Publikum.
+      </p>
+
+      <p>
+        Die letzten Jahre waren F&uuml;hrung und Streit &ndash; sie leitete
+        den Reformzweig, sie verwaltete, sie schlichtete, sie wurde bis
+        zuletzt von Gutachtern beobachtet. Im Fr&uuml;hjahr 1582 rief man
+        sie noch einmal auf die Reise. Sie ging, wie sie immer gegangen war,
+        und w&auml;hrend der R&uuml;ckkehr von der letzten Gr&uuml;ndung wurde
+        sie nach Alba de Tormes beordert. Am 20. September kam sie dort
+        todkrank an. Am Abend des 4. Oktober 1582, gegen neun Uhr,
+        erlosch sie.
+      </p>
+
+      <p>
+        Und dann tat die Zeit einen Sprung. In der Nacht, in der Teresa
+        von &Aacute;vila starb, folgte auf den 4. Oktober unmittelbar der
+        15. &ndash; die Gregorianische Kalenderreform fiel in dieselbe Stunde.
+        Zehn Tage sind nie gewesen. Der Tag, an dem sie starb, ist nicht
+        der Tag, an dem sie begraben wurde, und ihr Gedenken liegt seitdem
+        auf dem 15. Man kann es als F&uuml;gung lesen oder als Bild:
+        Wer aufgeht in dem, was gr&ouml;&szlig;er ist als die Zeit, wird
+        selbst zum Kalenderwechsel.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Am 27. September 1970 erkl&auml;rte Paul VI. sie zur Kirchenlehrerin
+        &ndash; als erste Frau in der Geschichte. Vierhundert Jahre nach ihr
+        musste eine Institution, die sie zu Lebzeiten gepr&uuml;ft hatte,
+        ihren Text als Lehre anerkennen. Sie hat es nicht mehr erlebt.
+        Sie hat es nie gewollt.
+      </p>
+
+      <p>
+        Die Flammenloge kennt keine Heiligen und braucht keine. Was wir
+        erkennen, ist etwas Unbequemeres: Sie hat nicht &uuml;ber Feuer
+        geschrieben. Sie hat beschrieben, <em>wo es liegt</em> &ndash;
+        n&auml;mlich nicht drau&szlig;en in Statuen, Worten und Meinungen,
+        sondern in einem Gemach, das man selbst betreten muss, allein,
+        ohne Zeugen, ohne Beifall. Die sechzehn Reisen, die Kl&ouml;ster,
+        der Streit, die Gutachter &ndash; alles Nebensache. Ein einziger
+        Blick nach innen wiegt schwerer als eine Stadt voller Bewunderung.
+      </p>
+
+      <p>
+        Deshalb: Wenn du heute Abend eine Kerze anz&uuml;ndest, dann blick
+        nicht mit ihr in das Zimmer. Tritt hinter sie. Sieh, wie sie
+        sich in allem spiegelt, was dir nah ist &ndash; und dann schlie&szlig;
+        die T&uuml;r und geh die Gem&auml;cher deiner eigenen Burg ab,
+        eines nach dem anderen, bis zum innersten, wo es still ist
+        und warm. Du wirst niemanden dort antreffen als dich. Und genau
+        daf&uuml;r lohnt der Weg.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Nichts soll dich ersch&uuml;ttern. Nichts dich erschrecken.<br>
+        Alles geht vor&uuml;ber &ndash; das Feuer bleibt.&ldquo;</p>
+        <div class="attribution">&mdash; nach Teresa von &Aacute;vila &middot; f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
