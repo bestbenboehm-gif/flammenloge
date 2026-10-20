@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sokrates &ndash; Der Mann, der nichts wusste und alles entz&uuml;ndete &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Sokrates schrieb kein Wort und hinterlie&szlig; keine Lehre. Er stellte Fragen, bis die Gewissheiten der M&auml;chtigen ausgingen wie Lichter. Eine Geschichte &uuml;ber das Feuer, das nicht antwortet, sondern pr&uuml;ft.">
+  <meta name="keywords" content="Sokrates, Athen, M&auml;eutik, Selbsterkenntnis, Daimonion, Schierling, Apologie, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Sokrates &ndash; Der Mann, der nichts wusste und alles entz&uuml;ndete">
+  <meta property="og:description" content="Er schrieb nichts, besa&szlig; nichts, lehrte nichts. Und brannte so hell, dass eine Stadt ihn nicht l&auml;nger ertrug.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/sokrates.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Men&uuml; &ouml;ffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">Oktober 2026</div>
+      <h1 class="entry-title">Sokrates</h1>
+      <p class="entry-sub">Der Mann, der nichts wusste und alles entz&uuml;ndete</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es ging in Athen eine Flamme um, die nicht w&auml;rmte und nicht
+        verzehrte. Sie fragte nur. Und wer ihr zu nahe kam, brannte trotzdem
+        &ndash; oft bis auf den Grund seiner sichersten &Uuml;berzeugungen.
+      </p>
+
+      <p>
+        Er wurde um 469 vor der Zeitrechnung in Athen geboren, im Bezirk
+        Alopeke, als Sohn des Steinmetzen Sophroniskos und der Hebamme
+        Phainarete. Zwei Handwerke also, die ihm niemand als Erbe auszahlte.
+        Er lernte das eine notd&uuml;rftig und das andere gar nicht &ndash;
+        und behauptete sp&auml;ter, gerade darin sein eigentliches K&ouml;nnen
+        gefunden zu haben. Die Hebamme bringt nicht zur Welt. Sie steht dabei,
+        h&auml;lt aus, greift ein, wenn es schiefgeht, und pr&uuml;ft danach,
+        ob das Kind lebt oder nur ein Windei war. Genau das, sagte er, sei
+        seine Kunst: Gedanken zur Welt bringen und dann nachsehen, ob sie
+        atmen.
+      </p>
+
+      <p>
+        Er schrieb nichts. Kein Buch, keine Schrift, keine Zeile, die er
+        eigenh&auml;ndig hinterlie&szlig;. Alles, was wir von ihm haben, haben
+        andere aufgeschrieben &ndash; Sch&uuml;ler, Bewunderer, Sp&ouml;tter.
+        Ein Mann, der so viel sprach und so wenig hinterlie&szlig;, muss
+        geahnt haben, dass ein geschriebener Satz erkaltet, w&auml;hrend ein
+        gesprochener weiterbrennt. Er vertraute nicht dem Papier. Er
+        vertraute dem Augenblick, in dem zwei Menschen einander gegen&uuml;ber
+        sitzen und keiner mehr ausweichen kann.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Ich wei&szlig;, dass ich nichts wei&szlig;.&ldquo;</p>
+        <div class="attribution">&mdash; Sokrates, so &uuml;berliefert &ndash; nach der Apologie, wo er sein Nichtwissen dem Scheinwissen der anderen gegen&uuml;berstellt</div>
+      </div>
+
+      <p>
+        Der Satz ist ber&uuml;hmt und wird meist falsch verstanden. Er ist keine
+        Bescheidenheit. Bescheidenheit w&auml;re bequem. Es ist eine
+        Kampfansage. Denn wenn ich nichts wei&szlig;, dann kann ich auch nicht
+        aufh&ouml;ren zu suchen &ndash; und dann gibt es keinen Grund, dir zu
+        glauben, nur weil du laut sprichst, alt bist oder ein Amt tr&auml;gst.
+        Er ging auf den Markt, zu den Feldherren, den Dichtern, den
+        Handwerkern, die ihr Werk wirklich verstanden, und stellte eine
+        einzige Frage: Was ist das eigentlich &ndash; das Gerechte, das
+        Tapfere, das Sch&ouml;ne? Und dann fragte er weiter. So lange, bis die
+        sch&ouml;nen Antworten ausgingen wie Lichter in einem Haus, das
+        niemand mehr versorgt.
+      </p>
+
+      <p>
+        Man nannte das sp&auml;ter Ironie. Es war nichts als Konsequenz. Wer
+        ihm eine Definition gab, bekam eine R&uuml;ckfrage. Wer eine
+        R&uuml;ckfrage beantwortete, bekam zwei. Am Ende stand meist nicht
+        seine L&ouml;sung, sondern die Entdeckung des anderen, dass er die
+        eigene nicht besa&szlig;. Manche gingen daraus hervor wie aus einem
+        Bad. Andere wie aus einer Schlacht &ndash; und die letzteren haben
+        sich das &uuml;ber Jahrzehnte gemerkt.
+      </p>
+
+      <p>
+        Und doch war da etwas in ihm, das er selbst nicht erkl&auml;ren konnte.
+        Er nannte es sein <em>Daimonion</em>, eine Stimme, die seit seiner
+        Kindheit zu ihm sprach. Sie sagte nie: Tu dies. Sie sagte immer nur:
+        Nicht dies. Sie war keine F&uuml;hrung, kein Befehl, kein Gesetz.
+        Sie war ein Warnfeuer am Rand des Weges. Man kann an ihm
+        vorbeigehen. Aber wer einmal gemerkt hat, dass es nie irrt, der geht
+        nicht mehr blind weiter.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das ungepr&uuml;fte Leben ist f&uuml;r den Menschen<br>
+        nicht lebenswert.&ldquo;</p>
+        <div class="attribution">&mdash; Sokrates, Apologie (38a)</div>
+      </div>
+
+      <p>
+        Man muss diesen Satz in der Reihenfolge lesen, in der er f&auml;llt:
+        als Verteidigungsrede vor einem Gericht, das &uuml;ber sein Leben
+        entscheidet. Er sagt ihn nicht als Lebensweisheit f&uuml;r ein
+        Publikum. Er sagt ihn als Begr&uuml;ndung, warum er lieber stirbt,
+        als mit dem Fragen aufzuh&ouml;ren. Das ist keine Poesie. Das ist eine
+        Preisangabe.
+      </p>
+
+      <p>
+        Er hatte den Mut zu dieser Preisangabe l&auml;ngst vorher ge&uuml;bt
+        &ndash; nicht im Denken, im Verweigern. Als die drei&szlig;ig
+        Tyrannen 404 die Stadt beherrschten, befahlen sie ihm, einen Mann
+        namens Leon aus Salamis herbeizuholen. Er ging nach Hause. Sp&auml;ter,
+        als Prytane, weigerte er sich, &uuml;ber ein unrechtm&auml;&szlig;iges
+        Massenverfahren mitabstimmen zu lassen, obwohl das Geschrei im Saal
+        ihn fast zerriss. Zweimal stand er allein gegen eine ganze Ordnung
+        &ndash; und beide Male war es dieselbe kleine Bewegung: die Hand
+        nicht heben, den Fu&szlig; nicht setzen, das Wort nicht sagen.
+        Mut ist oft kein Vorw&auml;rtsgehen. Mut ist h&auml;ufig nur: nicht
+        mitmachen.
+      </p>
+
+      <p>
+        399 vor der Zeitrechnung klagten ihn drei M&auml;nner an: Meletos,
+        Anytos, Lykon. Die Vorw&uuml;rfe lauteten, er f&uuml;hre neue
+        G&ouml;tter ein und verderbe die Jugend. Zwei Vorw&uuml;rfe, die
+        eigentlich einer waren. Denn wer junge Menschen lehrt, selbst zu
+        pr&uuml;fen, nimmt ihnen die bequeme Ehrfurcht &ndash; und wer die
+        Ehrfurcht verliert, der gehorcht nicht mehr. Die Mehrheit, die ihn
+        verurteilte, war klein. Wenige Stimmen entschieden &uuml;ber einen
+        Mann, der der Stadt nie etwas anderes angeboten hatte als Fragen.
+      </p>
+
+      <p>
+        Im Gef&auml;ngnis kam Kriton mit einem Fluchtplan: ein offenes Tor,
+        ein Schiff, ein Dorf in Thessalien, Freunde mit Geld. Es h&auml;tte
+        funktioniert. Sokrates lehnte ab, und er lehnte nicht aus
+        Gehorsamkeit ab, sondern aus einer sehr viel unbequemeren Einsicht:
+        Er hatte sein ganzes Leben lang behauptet, dass die Stadt mehr ist
+        als ihre Beamten, dass ihre Gesetze ihn erzogen, gen&auml;hrt und
+        gesch&uuml;tzt haben &ndash; und er wollte nicht im letzten Akt
+        genau das zerst&ouml;ren, was er verteidigt hatte, nur um ein paar
+        Jahre zu gewinnen. Ein Mensch, der am Ende seine eigenen S&auml;tze
+        verr&auml;t, hat nie wirklich welche gehabt.
+      </p>
+
+      <p>
+        Er trank den Schierling wie einen Schluck aus einem Becher, den man
+        ihm reicht, und ging dabei im Raum auf und ab, weil das Gift in den
+        Beinen zu kriechen begann. Seine letzten Worte, so wird es
+        &uuml;berliefert, waren keine gro&szlig;e Lehre, sondern eine
+        Kleinigkeit: Man schulde dem Asklepios einen Hahn, man solle ihn
+        opfern, nicht vergessen. Ein Mann, der wei&szlig;, dass er in
+        wenigen Augenblicken tot sein wird, denkt an eine unbezahlte
+        Dankesschuld. Man kann darin den letzten Beweis sehen, dass er
+        nichts besa&szlig; und nichts schuldig bleiben wollte. Vielleicht
+        aber ist es etwas anderes: Er betrachtete seinen Tod als Heilung.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Die Flammenloge hat keinen Meister und braucht keinen. Aber wenn sie
+        einen Mann kennt, der ihr Handwerk verstand, dann diesen. Denn er hat
+        gezeigt, was ein Feuer eigentlich tut: Es gibt keine Antworten. Es
+        gibt Licht, und in diesem Licht siehst du, was du vorher nicht sehen
+        wolltest. Wer von einer Flamme eine L&ouml;sung erwartet, wird
+        entt&auml;uscht. Wer sich von ihr ansehen l&auml;sst, kommt ver&auml;ndert
+        zur&uuml;ck.
+      </p>
+
+      <p>
+        Deshalb: Wenn du heute Abend eine Kerze anz&uuml;ndest, dann stell ihr
+        eine Frage. Eine echte. Eine, auf die du die Antwort schon zu haben
+        glaubst. Und dann warte. Sie wird nicht antworten. Sie wird brennen,
+        ruhig und ohne Eile, und in diesem Brennen wird dir etwas auffallen,
+        das du vorher &uuml;berh&ouml;rt hast &ndash; nicht die Antwort,
+        sondern die Stelle in dir, die sie nicht haben will. Das ist der
+        Anfang. Der Rest ist Gehen.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das Feuer, das Antworten gibt, erlischt.<br>
+        Das Feuer, das fragt, brennt weiter.&ldquo;</p>
+        <div class="attribution">&mdash; nach Sokrates &middot; f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
