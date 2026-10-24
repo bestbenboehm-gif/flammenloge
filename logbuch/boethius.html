@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boethius &ndash; Der Gefangene, der die Zeit anhielt &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Boethius wurde eingekerkert, seiner W&uuml;rden beraubt und zum Tod verurteilt. Im Kerker schrieb er kein Wort der Verteidigung, sondern ein Buch &uuml;ber die Ewigkeit &ndash; und fand heraus, dass ein Feuer keine Vergangenheit hat.">
+  <meta name="keywords" content="Boethius, Trost der Philosophie, Consolatio, Ewigkeit, Rad des Gl&uuml;cks, Theoderich, Pavia, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Boethius &ndash; Der Gefangene, der die Zeit anhielt">
+  <meta property="og:description" content="Ein Mann verliert alles: Amt, Verm&ouml;gen, Namen, Freiheit. Und schreibt im Kerker die genaueste Beschreibung eines Feuers, das nicht vergeht.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/boethius.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Men&uuml; &ouml;ffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">Oktober 2026</div>
+      <h1 class="entry-title">Boethius</h1>
+      <p class="entry-sub">Der Gefangene, der die Zeit anhielt</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Man kann einen Menschen einsperren. Man kann ihm das Amt nehmen,
+        das Verm&ouml;gen, den Namen, die Freunde, das ganze laute Ger&uuml;st
+        seines Lebens. Was sich nicht einsperren l&auml;sst, ist ein Gedanke,
+        der zu Ende gedacht wird. Boethius hat das im Kerker bewiesen &ndash;
+        und dabei etwas gefunden, das gr&ouml;&szlig;er war als das Leben,
+        das man ihm gerade nahm.
+      </p>
+
+      <p>
+        Er wurde um das Jahr 477 in Rom geboren, in eine der vornehmsten
+        Familien der Stadt, und verlor fr&uuml;h seinen Vater. Aufgezogen
+        wurde er im Haus des Symmachus, eines Mannes, der die alten B&uuml;cher
+        liebte und der ihm sp&auml;ter seine Tochter gab. Was der junge Boethius
+        dort lernte, war keine Karriere, sondern eine Leidenschaft: das
+        Griechische. Denn w&auml;hrend das westr&ouml;mische Reich zerfiel und
+        die Gelehrsamkeit mit ihm, sa&szlig; er &uuml;ber Aristoteles und
+        Platon und begann, sie ins Lateinische zu holen &ndash; Satz f&uuml;r
+        Satz, Werk f&uuml;r Werk. Er ahnte, was er damit tat: Er trug Feuer
+        durch eine Zeit, in der die Lichter ausgingen.
+      </p>
+
+      <p>
+        Es ging ihm gut. Sehr gut sogar. Im Jahr 510 wurde er Konsul, der
+        h&ouml;chste Ehrenname, den Rom noch zu vergeben hatte. Sp&auml;ter
+        diente er am Hof des Ostgotenk&ouml;nigs Theoderich in Ravenna als
+        <em>magister officiorum</em>, eine Art Kanzler der Kanzleien und der
+        Ordnung. Und im Jahr 522 standen seine beiden S&ouml;hne gemeinsam
+        als Konsuln auf der B&uuml;hne &ndash; ein Knabe noch, der andere
+        kaum &auml;lter &ndash; und Boethius hielt die Rede, in der er der
+        Stadt seine Dankbarkeit zur&uuml;ckgab. Es war der Gipfel. Wer so
+        hoch steht, sieht den Abgrund nicht, der unter ihm liegt.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;In jedem widrigen Geschick ist die elendste Art<br>
+        des Ungl&uuml;cks, gl&uuml;cklich gewesen zu sein.&ldquo;</p>
+        <div class="attribution">&mdash; Boethius, Trost der Philosophie, Buch II</div>
+      </div>
+
+      <p>
+        Es dauerte ein Jahr. Ein Mann namens Cyprianus trat auf und beschuldigte
+        ihn des Hochverrats: heimlicher Briefe an den ostr&ouml;mischen Kaiser,
+        dazu &ndash; und das war der eigentliche Dolch &ndash; der Befleckung
+        heiliger Dinge durch Sternkunde. Der Senat, den Boethius ein Leben lang
+        verteidigt hatte, verurteilte ihn mit. Niemand stand auf. Man brachte
+        ihn nach Pavia, in ein Gef&auml;ngnis, und lie&szlig; ihn dort sitzen
+        mit seinen Gedanken und der Gewissheit, dass ein Urteil &uuml;ber ihn
+        schon geschrieben war.
+      </p>
+
+      <p>
+        In diesen Monaten h&auml;tte ein anderer Briefe geschrieben. Bitten.
+        Rechtfertigungen. Listen von Feinden. Boethius schrieb etwas anderes:
+        ein Buch dar&uuml;ber, was Gl&uuml;ck &uuml;berhaupt ist. F&uuml;nf
+        B&uuml;cher, halb Prosa, halb Vers, und darin eine Erscheinung, die
+        man sich merken sollte: Die Philosophie selbst kommt zu ihm ins
+        Gef&auml;ngnis &ndash; als Frau von ehrw&uuml;rdigem Alter, mit einem
+        Gesicht, das bald in strahlendem Licht leuchtet, bald in Staub und
+        Dunkelheit versinkt, weil sie das Leid ihrer Kinder tr&auml;gt. Sie
+        jagt zuerst die Dichterinnen fort, die ihn mit Trauerges&auml;ngen
+        f&uuml;ttern wollen. Sie sagt nicht: H&ouml;r auf zu leiden. Sie sagt:
+        Du hast dich selbst vergessen.
+      </p>
+
+      <p>
+        Das ist der Angelpunkt. Nicht die Umst&auml;nde werden hier verhandelt,
+        sondern die Frage, wer da eigentlich denkt, w&auml;hrend die Umst&auml;nde
+        ihn zerschlagen. Und dann legt sie ihm das Rad des Gl&uuml;cks vor
+        Augen &ndash; jenes Bild, das durch das ganze Mittelalter wandern
+        sollte: ein Rad, das aufsteigt und abst&uuml;rzt, auf dem die einen
+        oben sitzen und die anderen unten liegen und dasselbe Rad
+        weiterschiebt. Wer sein Herz an den Rand des Rades h&auml;ngt, wird
+        mitgeschleudert. Wer in der Nabe sitzt, dreht sich nicht mit.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Im f&uuml;nften Buch stellt er die Frage, an der sich bis heute die
+        K&ouml;pfe scheiden: Wenn es ein Wissen Gottes gibt, ist dann mein
+        Wille noch frei? Und die Antwort, die er daf&uuml;r findet, ist die
+        sch&ouml;nste Definition, die je &uuml;ber Zeit geschrieben wurde.
+        Sie sagt nicht, dass Ewigkeit lange dauert. Sie sagt, dass Ewigkeit
+        gar nicht dauert.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Ewigkeit ist der vollst&auml;ndige<br>
+        und gleichzeitige Besitz unendlichen Lebens.&ldquo;</p>
+        <div class="attribution">&mdash; Boethius, Trost der Philosophie, Buch V</div>
+      </div>
+
+      <p>
+        Ein Mensch lebt in der Zeit wie einer, der durch ein Buch bl&auml;ttert:
+        eine Seite nach der anderen, nie alle zugleich. Ewigkeit dagegen ist
+        der Zustand dessen, der das ganze Buch auf einmal gegenw&auml;rtig hat
+        &ndash; nicht als Erinnerung und nicht als Erwartung, sondern als
+        einziger, ungeteilter Augenblick. Alles, was wir von Ewigkeit sagen
+        k&ouml;nnen, ist: immer Jetzt.
+      </p>
+
+      <p>
+        Nun sieh dir eine Flamme an. Sie hat kein Gestern. Sie plant nicht das
+        Morgen. Der Teil von ihr, der eben noch brannte, ist schon Asche,
+        und der Teil, der gleich brennt, ist noch nicht da. Und doch steht sie
+        da, aufrecht, ganz gegenw&auml;rtig &ndash; ein Ding, das nur aus
+        Augenblick besteht und gerade darin so alt aussieht wie die Welt.
+        Wenn man Boethius beim Wort nimmt, dann ist jedes Feuer ein kleines
+        St&uuml;ck Ewigkeit, das sich in die Zeit hineingebrannt hat. Darum
+        beruhigt es uns. Wir sitzen davor und werden f&uuml;r einen Moment
+        das, was wir sonst nie sind: ohne Vergangenheit.
+      </p>
+
+      <p>
+        Man hat oft bemerkt, dass in diesem Trostbuch der Name Christi nicht
+        f&auml;llt. Boethius war Christ &ndash; er hatte theologische Schriften
+        verfasst &ndash; und doch spricht im Kerker nur die Philosophie. Die
+        Gelehrten streiten bis heute, ob das ein Zeichen ist oder ein Zufall.
+        Die Loge liest es so: In der letzten Stunde wird kein Bekenntnis
+        abgefragt. Da wird gefragt, ob du jemals selbst gedacht hast. Wer
+        in seiner Not nur noch Formeln wiederholt, hat nichts, woran er sich
+        halten kann &ndash; denn Formeln halten nicht, wenn das Rad sich dreht.
+        Was h&auml;lt, ist der eigene, durchgearbeitete Gedanke, und sei er
+        noch so kahl.
+      </p>
+
+      <p>
+        Hingerichtet wurde er um das Jahr 524, in Calvenzano bei Pavia, mit
+        dem Schwert. Er war ungef&auml;hr siebenundvierzig Jahre alt. Ein
+        Senator, den seine Stadt verga&szlig;, ein &Uuml;bersetzer, dessen B&uuml;cher
+        verbrannten, ein Gefangener, der eine Schrift hinterlie&szlig;, die
+        man in den folgenden tausend Jahren &uuml;berall abschrieb, in Kl&ouml;stern,
+        an H&ouml;fen, in kalten Zellen. Der Angelsachse Alfred trug sie ins
+        Altenglische, Chaucer ins Mittelenglische, und eine englische
+        K&ouml;nigin, die selbst im Gef&auml;ngnis sa&szlig;, &uuml;bersetzte
+        sie ein letztes Mal. Man begrub ihn in Pavia, in San Pietro in Ciel
+        d'Oro, wo er noch liegt &ndash; und wo das Licht durch die Apsis
+        f&auml;llt wie durch ein Fenster in der Zeit.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Die Flammenloge hat kein Interesse an Heiligen. Aber sie erkennt ihre
+        Leute daran, was sie tun, wenn nichts mehr zu tun ist. Boethius h&auml;tte
+        schreien, fluchen, verhandeln, verraten k&ouml;nnen &ndash; alles
+        menschlich, alles verzeihlich. Er hat stattdessen die Frage gestellt,
+        die gr&ouml;&szlig;er ist als sein Fall: Was bleibt, wenn alles wegf&auml;llt?
+        Und er hat die Antwort nicht behauptet, sondern durchgerechnet, Seite
+        um Seite, in einer Zelle, aus der niemand mehr herauskam.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, dann tu etwas, das
+        schwerer ist, als es klingt: Schau nicht auf die Flamme, um dich zu
+        beruhigen. Schau auf sie, um zu merken, dass sie nichts festh&auml;lt.
+        Sie bewahrt nichts auf. Sie hat keinen Vorrat und keine Versicherung.
+        Und gerade deshalb brennt sie &ndash; ruhig, gleichm&uuml;tig,
+        unbeeindruckt von dem, was gestern war und was morgen kommt. Wenn du
+        das eine Weile aush&auml;ltst, ohne wegzusehen, wirst du vielleicht
+        sp&uuml;ren, was der Gefangene von Pavia in seiner Zelle fand: dass
+        der Augenblick, ganz angenommen, kein Anfang und kein Ende mehr hat.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das Feuer kennt keine Vergangenheit.<br>
+        Es brennt nicht gestern und nicht morgen &ndash;<br>
+        es brennt jetzt, und darin ist es ewig.&ldquo;</p>
+        <div class="attribution">&mdash; nach Boethius &middot; f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
