@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simone Weil – Das Feuer der reinen Aufmerksamkeit – Tagebuch der Flamme</title>
+
+  <meta name="description" content="Simone Weil verlie&szlig; die Lehre, um an Maschinen zu stehen, ging nach Spanien, um die Wahrheit zu sehen statt den Sieg, und schrieb in London ein Buch f&uuml;r ein Land, das es noch gab. Eine Geschichte &uuml;ber Aufmerksamkeit als Feuer.">
+  <meta name="keywords" content="Simone Weil, Aufmerksamkeit, Schwerkraft und Gnade, Die Einwurzelung, Philosophie, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Simone Weil – Das Feuer der reinen Aufmerksamkeit">
+  <meta property="og:description" content="Sie wollte nicht gerettet werden und nicht siegen. Sie wollte sehen. Eine Geschichte &uuml;ber die seltenste Form der Gro&szlig;z&uuml;gigkeit.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/simone-weil.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Men&uuml; &ouml;ffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">November 2026</div>
+      <h1 class="entry-title">Simone Weil</h1>
+      <p class="entry-sub">Das Feuer der reinen Aufmerksamkeit</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die brennen, um gesehen zu werden. Und es gibt
+        Menschen, die brennen, um zu sehen. Simone Weil geh&ouml;rte zu den
+        zweiten. Sie hat nichts erobert, nichts gegr&uuml;ndet, niemanden
+        bekehrt &ndash; und doch hat sie eine Klinge gef&uuml;hrt, die sch&auml;rfer
+        war als jede aus Stahl: ihren Blick.
+      </p>
+
+      <p>
+        Sie wurde 1909 in Paris geboren, in ein Haus voller B&uuml;cher und
+        Selbstverst&auml;ndlichkeiten. Ihr Vater war Arzt, ihre Mutter eine Frau
+        von schnellem Verstand, und die Tochter lernte fr&uuml;h, was es hei&szlig;t,
+        in einem Raum zu sitzen, in dem alle einverstanden sind. Sie war das
+        Kind, das die Frage stellte, die keiner h&ouml;ren wollte: Woher nehmt
+        ihr eigentlich die Sicherheit, dass es euch zusteht?
+      </p>
+
+      <p>
+        Sie studierte Philosophie, bestand ihre Pr&uuml;fung f&uuml;r das h&ouml;here
+        Lehramt, wurde Lehrerin. Sie h&auml;tte in einem Klassenzimmer
+        alt werden k&ouml;nnen, mit einem Leben aus Kreide und K&auml;lte. Sie tat
+        es nicht. 1934/35 legte sie ihre Stelle nieder und stellte sich selbst
+        an die Maschinen &ndash; erst in einem Elektrowerk, dann in einem
+        Automobilwerk. Nicht als Forscherin, die von der Empore hinunterschaut.
+        Als Arbeiterin, mit demselben Takt, demselben L&auml;rm, derselben
+        M&uuml;digkeit, die keine Pause kennt.
+      </p>
+
+      <p>
+        Dort machte sie eine Entdeckung, die keinen Donner hatte und alles
+        ersch&uuml;tterte: Die Ersch&ouml;pfung t&ouml;tet nicht den K&ouml;rper
+        zuerst. Sie t&ouml;tet die <em>Aufmerksamkeit</em>. Ein Mensch, der
+        vierzehn Stunden am Tag im Takt steht, verliert nicht die Kraft zum
+        Denken &ndash; er verliert die M&ouml;glichkeit, bei einem Gedanken zu
+        bleiben. Und wenn niemand mehr bei einem Gedanken bleibt, bleibt auch
+        niemand mehr bei einem Menschen. Das ist das stille Feuer, das ganze
+        V&ouml;lker verzehrt, ohne dass es raucht.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Die Aufmerksamkeit ist die seltenste<br>
+        und reinste Form der Gro&szlig;z&uuml;gigkeit.&ldquo;</p>
+        <div class="attribution">&mdash; Simone Weil, aus einem Brief an Jo&euml; Bousquet, 1942</div>
+      </div>
+
+      <p>
+        Man hat sie sp&auml;ter eine Heilige genannt, und das ist ein Wort, das
+        mehr verdeckt als zeigt. Denn sie war unbequem, eigensinnig, streits&uuml;chtig
+        in der Sache und ohne jede Spur jener S&uuml;&szlig;igkeit, die man
+        Heiligen nachsagt. Sie a&szlig; nicht, wenn andere hungerten. Sie
+        schlief auf dem Boden, wenn andere Betten hatten. Sie zog 1936 nach
+        Spanien, in den Krieg, den sie nicht f&uuml;r einen guten hielt &ndash;
+        sie ging, um zu sehen, was Krieg mit Menschen macht, die keine
+        Geschichte &uuml;ber ihn schreiben werden. Sie trug keine Waffe,
+        obwohl sie es konnte. In einem Zelt bei Sitges stie&szlig; sie kochendes
+        &Ouml;l um, und ihr Bein verbrannte. Sie nannte diesen Unfall sp&auml;ter
+        eine der wenigen reinen Ersch&uuml;tterungen ihres Lebens &ndash; nicht
+        weil der Schmerz lehrte, sondern weil er das Denken f&uuml;r ein paar
+        Wochen zum Schweigen brachte.
+      </p>
+
+      <p>
+        Das ist die Form ihrer Tapferkeit: Sie wollte nicht den Sieg. Sie
+        wollte die Wahrheit &uuml;ber das, was sie sah &ndash; und sie war
+        bereit, sich selbst daf&uuml;r als Ma&szlig; zu gebrauchen. Wer die
+        Loge sucht, um sich st&auml;rker zu f&uuml;hlen, wird bei ihr kalt.
+        Wer sie sucht, um ehrlich zu werden, wird bei ihr brennen.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        1942 musste sie aus Frankreich fliehen, &uuml;ber Marseille, Casablanca,
+        New York, und landete zuletzt in London. Dort geschah das Unwahrscheinliche:
+        Die zarte Frau, die keine Armee mochte, arbeitete f&uuml;r das Freie
+        Frankreich an Entw&uuml;rfen f&uuml;r ein Land, das noch nicht
+        existierte. Und sie schrieb in wenigen Monaten ein Buch, das
+        <em>Die Einwurzelung</em> hei&szlig;t &ndash; &uuml;ber die Frage, was
+        ein Mensch braucht, um &uuml;berhaupt verwurzelt sein zu k&ouml;nnen:
+        nicht Meinungen, nicht Parolen, sondern Arbeit, Ort, Sprache, Ehre und
+        Strafe, die den Namen verdient. Sie schrieb es f&uuml;r ein Volk, das
+        entwurzelt worden war &ndash; und sie schrieb es mit derselben K&auml;lte,
+        mit der man ein Fundament pr&uuml;ft.
+      </p>
+
+      <p>
+        Ihr bekanntestes Bild ist ein Widerspruch, der keiner ist: Zwei
+        Kr&auml;fte beherrschen das All &ndash; die Schwerkraft, die alles
+        hinabzieht, und die Gnade, die ebenfalls <em>f&auml;llt</em>, aber von
+        oben. Beide fallen. Nur die Richtung unterscheidet sie. Darin liegt
+        ihre ganze Lehre: Es gibt keine Leiter, auf der man steigt. Es gibt nur
+        das Fallenlassen. Und das Feuer ist nichts anderes als der Ort, an dem
+        dieses Fallen hell wird.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Zwei Kr&auml;fte beherrschen das All:<br>
+        das Licht und die Schwerkraft.&ldquo;</p>
+        <div class="attribution">&mdash; nach Simone Weil, <em>Schwerkraft und Gnade</em></div>
+      </div>
+
+      <p>
+        Sie hat daf&uuml;r ein Wort erfunden, das kein Philosoph vor ihr so
+        gebrauchte: <em>Entsch&ouml;pfung</em>. Ein Sch&ouml;pfer, so sagt sie,
+        zieht sich zur&uuml;ck, damit das Gesch&ouml;pf &uuml;berhaupt Platz
+        hat zu sein. Die h&ouml;chste Liebe ist nicht Zugabe, sondern Verzicht
+        auf sich selbst. Und genau hier bekommt die Flamme ihre Gestalt: Sie
+        brennt nicht, weil sie sich nimmt. Sie brennt, weil sie sich
+        <em>hergibt</em> &ndash; Wachs, Docht, Luft, von nichts als Hingabe
+        zusammengehalten.
+      </p>
+
+      <p>
+        Am 24. August 1943 starb sie in einem Sanatorium in Ashford in England,
+        vierunddrei&szlig;ig Jahre alt, an Tuberkulose &ndash; und weil sie
+        es ablehnte, besser versorgt zu werden als die Menschen, die sie in
+        Frankreich zur&uuml;ckgelassen hatte. Man muss das nicht nachahmen,
+        um es zu verstehen. Ihr K&ouml;rper war ein Beweis, den sie sich selbst
+        vorgelegt hat: Sie konnte nicht mehr zwischen dem eigenen Blick und dem
+        Leid der Welt unterscheiden. Ob das Weisheit war oder eine Wunde, liegt
+        nicht bei uns zu entscheiden. Beides brannte.
+      </p>
+
+      <p>
+        Was bleibt, hat keine Gew&auml;nde. Es sind Hefte, Zeichnungen von
+        Dreiecken, S&auml;tze, die halb fertig sind, weil ein Gedanke keine
+        glatte Kante haben darf. Aus diesen Bl&auml;ttern spricht kein System.
+        Es spricht jemand, der beim Beobachten erwischt wurde &ndash; und der
+        nicht mehr aufh&ouml;ren konnte.
+      </p>
+
+      <p>
+        Die Flammenloge hat Simone Weil nicht, um irgendetwas zu beweisen. Sie
+        hat sie, weil ihr Leben zeigt, was ein Feuer eigentlich ist: keine
+        Flut, kein Aufruhr, kein gro&szlig;es Wort. Eine gesammelte
+        Aufmerksamkeit, die tut, was sie tut.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, dann setz dich nicht
+        daneben, um nachzudenken. Sieh nur zu. Die Flamme hat keinen
+        Vorsatz, sie hat nur Richtung: nach oben, ohne Grund. Gib ihr, soviel
+        Zeit du hast. Und w&auml;hrend du nichts tust &ndash; kein Gebet, keine
+        Bitte, kein gutes Werk &ndash; brennt in dir etwas, das vorher nicht
+        da war. Nicht weil du es erzwungen hast. Weil du aufgeh&ouml;rt hast,
+        wegzuschauen.
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
