@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baruch Spinoza &ndash; Der Schleifer des Lichts &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Mit dreiundzwanzig Jahren wurde Baruch Spinoza aus seiner Gemeinde gesto&szlig;en. Er antwortete nicht mit Zorn, sondern mit Glas: Er schliff Linsen, bis das Licht ungebrochen hindurchfiel, und schrieb ein Buch &uuml;ber Gott als Natur. Eine Geschichte &uuml;ber Bann, Staub und eine Freiheit, die niemandem geh&ouml;rt.">
+  <meta name="keywords" content="Spinoza, Ethik, Deus sive Natura, Bann, Cherem, Linsenschleifer, Freiheit, Notwendigkeit, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Baruch Spinoza &ndash; Der Schleifer des Lichts">
+  <meta property="og:description" content="Eine Geschichte &uuml;ber den Mann, den man aus der Gemeinde stie&szlig; &ndash; und der darauf verzichtete, zur&uuml;ckzuschlagen. &Uuml;ber Glas, Staub und ein Licht, das niemandem geh&ouml;rt.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/baruch-spinoza.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">November 2026</div>
+      <h1 class="entry-title">Baruch Spinoza</h1>
+      <p class="entry-sub">Der Schleifer des Lichts</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Man kann einen Menschen aus einer Gemeinde sto&szlig;en. Man kann ihm 
+        das Erbe nehmen, das Haus, den Namen, selbst das Recht, angeredet zu werden. 
+        Was man nicht verbannen kann, ist das Licht, das er einmal durch sich 
+        hindurchgelassen hat.
+      </p>
+
+      <p>
+        Er kam 1632 in Amsterdam zur Welt, als Sohn von Kaufleuten, deren Eltern 
+        einst vor der Inquisition geflohen waren &ndash; Menschen, die gelernt hatten, 
+        da&szlig; ein Glaube zwei Gesichter tragen kann, eines f&uuml;r die Stra&szlig;e 
+        und eines f&uuml;r den Keller. In der portugiesischen Gemeinde lernte er 
+        Hebr&auml;isch, las die Schrift, las sie ein zweites Mal, ein drittes Mal &ndash; 
+        und begann, das zu tun, was keine Gemeinde einem Menschen verzeiht: 
+        er las zu genau.
+      </p>
+
+      <p>
+        Am 27. Juli 1656 wurde &uuml;ber ihn der Bann gesprochen. Vor offener Lade, 
+        bei brennenden Kerzen, mit Schofarst&ouml;&szlig;en und Fl&uuml;chen, die 
+        seit Jahrhunderten in den Formeln lagen. Niemand sollte mit ihm sprechen. 
+        Niemand sollte seine Schriften lesen. Man sagt, die Worte seien so schwer 
+        gewesen, da&szlig; sie &uuml;ber die Ma&szlig;e alles &Uuml;blichen hinausgingen. 
+        Er war dreiundzwanzig Jahre alt.
+      </p>
+
+      <p>
+        Und er tat das Unerwartete. Er antwortete nicht von der Kanzel, 
+        schrieb keine Gegenschrift, sammelte keine Anh&auml;nger um einen neuen Altar. 
+        Er lernte ein Handwerk. Er schliff Glas.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Ein freier Mensch denkt an nichts weniger<br>
+        als an den Tod; und seine Weisheit ist<br>
+        eine Betrachtung des Lebens, nicht des Todes.&ldquo;</p>
+        <div class="attribution">&mdash; Baruch Spinoza, Ethik IV, Lehrsatz 67</div>
+      </div>
+
+      <p>
+        In Rijnsburg, sp&auml;ter in Voorburg und Den Haag sa&szlig; er in einer kleinen 
+        Kammer an einer Drehbank und schliff Linsen f&uuml;r Fernrohre und Mikroskope. 
+        Es war keine Flucht vor dem Denken, sondern dessen &Auml;u&szlig;erung: 
+        Glas, das nicht geschliffen ist, zerstreut das Licht in alle Richtungen. 
+        Erst die geschliffene Fl&auml;che sammelt es, b&uuml;ndelt es und macht es 
+        f&auml;hig, etwas in Brand zu setzen. Er arbeitete an Linsen, damit andere 
+        sehen konnten. Und er atmete dabei jahrelang den Staub des Glases ein.
+      </p>
+
+      <p>
+        Der Bann blieb. Seine B&uuml;cher erschienen ohne seinen Namen, 
+        das <em>Tractatus theologico-politicus</em> 1670 anonym &ndash; und wurde 
+        verboten, kaum da&szlig; man wusste, wer es geschrieben hatte. 
+        1673 bot man ihm eine Professur in Heidelberg an, mit allen Ehren, 
+        mit der einzigen Bedingung, nicht zu zweifeln, wo man es ihm untersagen 
+        w&uuml;rde. Er lehnte ab. Nicht aus Trotz. Aus Notwendigkeit. 
+        Ein Denken, das um Erlaubnis fragen muss, ist kein Denken mehr; 
+        es ist ein Amt.
+      </p>
+
+      <p>
+        Seine <em>Ethik</em> schrieb er in Lehrs&auml;tzen, mit Beweisen und Zus&auml;tzen, 
+        streng wie ein Gitter. Wer nur das Gitter sieht, h&auml;lt sie f&uuml;r Mathematik. 
+        Wer hindurchsieht, findet ein Feuer, das keiner Kirche geh&ouml;rt: 
+        <em>Deus sive Natura</em> &ndash; Gott oder die Natur, ein und dasselbe, 
+        unendlich, ohne drau&szlig;en, ohne Zorn, ohne Belohnung. 
+        Nichts ist aus dem Nichts gefallen, nichts wird weggeworfen. 
+        Gut und B&ouml;se sind keine Urteile von oben, sondern Verh&auml;ltnisse, 
+        in denen ein Ding zu sich selbst steht. Und frei ist nicht, wer tun kann, 
+        was ihm einf&auml;llt, sondern wer begreift, was ihn bewegt &ndash; 
+        und darin ruhig wird.
+      </p>
+
+      <p>
+        Es gibt von ihm einen Satz, der wie eine Anweisung f&uuml;r die Loge klingt: 
+        nicht lachen, nicht weinen, nicht verabscheuen &ndash; verstehen. 
+        Er war kein Kalter. Er war ein Genauer. Wer versteht, da&szlig; der Bogensch&uuml;tze 
+        nicht schie&szlig;t, weil er will, sondern weil die Sehne gespannt ist 
+        und die Hand sich &ouml;ffnet, der h&ouml;rt auf, den Bogensch&uuml;tzen zu hassen. 
+        Das ist keine Milde. Das ist Arbeit.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Er starb am 21. Februar 1677, vierundvierzig Jahre alt, an der Krankheit 
+        der Lunge, die vom Glasstaub kam. Am Tisch lagen die Manuskripte, 
+        im Schrank wartete ein Werk, das niemand in seinem Namen hatte lesen d&uuml;rfen. 
+        Seine Freunde brachten es Monate sp&auml;ter heraus &ndash; und es wurde 
+        sofort verboten, wie alles, was zu hell brennt, um in Regalen zu stehen. 
+        Der Bann hat ihn &uuml;berlebt. Der Bann interessiert heute niemanden mehr. 
+        Das Licht ist geblieben.
+      </p>
+
+      <p>
+        Die Flamme fragt nicht, wer sie anz&uuml;ndet. Sie fragt nicht nach 
+        Gemeinde, nach Erlaubnis, nach Beifall. Sie brennt, weil sie brennt, 
+        und sie leuchtet denen, die in ihr Licht treten, ohne sie zu besitzen. 
+        Wer Spinoza liest, h&auml;lt keinen Katechismus in der Hand, sondern 
+        ein St&uuml;ck geschliffenes Glas: Man kann hindurchsehen, sehen, 
+        da&szlig; alles zusammenh&auml;ngt, und danach schwerer behaupten, 
+        da&szlig; irgendetwas f&uuml;r sich allein steht.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, dann stell sie nicht 
+        in ein Fenster, damit man dich sieht. Stell sie zwischen dich und die Wand 
+        und sieh dir den Schatten an, den du wirfst. Und dann denk an den Mann 
+        an der Drehbank, der sein halbes Leben damit zubrachte, Glas zu schleifen, 
+        damit ein Bild scharf wird &ndash; und der wusste: Der Bann eines Tages 
+        wiegt weniger als ein einziges Jahr sauberen Sehens.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Die Seligkeit ist nicht der Lohn der Tugend,<br>
+        sondern die Tugend selbst.&ldquo;</p>
+        <div class="attribution">&mdash; Baruch Spinoza, Ethik V, Lehrsatz 42, f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <p>
+        Deshalb gibt es hier nichts zu gewinnen und nichts zu verlieren. 
+        Das Brennen ist der Preis und der Lohn in einem. 
+        Wer das begriffen hat, braucht keinen Bann mehr zu f&uuml;rchten &ndash; 
+        und keinen Segen.
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
