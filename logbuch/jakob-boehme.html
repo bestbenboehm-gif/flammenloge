@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jakob B&ouml;hme &ndash; Der Schuhmacher, der den Ungrund sah &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Jakob B&ouml;hme war Schuhmacher in G&ouml;rlitz, ein Laie ohne Gelehrsamkeit. In einer Werkstatt voller Leder und Faden sah er, dass alles Sein in einem Feuer steht &ndash; und dass dasselbe Feuer dunkel oder hell brennt, je nachdem, was es empf&auml;ngt.">
+  <meta name="keywords" content="Jakob B&ouml;hme, G&ouml;rlitz, Morgenr&ouml;te im Aufgang, Ungrund, Mystik, Feuer, Schuhmacher, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Jakob B&ouml;hme &ndash; Der Schuhmacher, der den Ungrund sah">
+  <meta property="og:description" content="Ein Laie, dem die Stadtr&auml;te das Schreiben verboten &ndash; und der weiterschrieb, weil ein Feuer sich nicht verbieten l&auml;sst.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/jakob-boehme.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">November 2026</div>
+      <h1 class="entry-title">Jakob B&ouml;hme</h1>
+      <p class="entry-sub">Der Schuhmacher, der den Ungrund sah</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Er n&auml;hte Schuhe. Leder, Pechdraht, ein Leisten aus Holz &ndash; und
+        darunter, in der Stille zwischen zwei Hammerschl&auml;gen, ein Feuer,
+        das er nicht bestellt hatte und nicht mehr loswurde.
+        Die Stadt nannte ihn einen Laien. Er nannte es Sehen.
+      </p>
+
+      <p>
+        Jakob B&ouml;hme wurde 1575 in Alt-Seidenberg bei G&ouml;rlitz geboren,
+        als Sohn eines Bauern, in einer Zeit, in der die Kanzeln &uuml;ber
+        Glauben stritten wie &uuml;ber L&auml;ndereien. Er lernte ein Handwerk,
+        wurde Schuhmacher, zog nach G&ouml;rlitz, wurde Meister, gr&uuml;ndete
+        eine Familie, sa&szlig; auf der Bank in seiner Werkstatt und tat,
+        was alle taten. Aber wer lange genug bei einer Sache sitzt,
+        dem f&auml;ngt sie irgendwann an, etwas zu sagen.
+      </p>
+
+      <p>
+        Im Jahr 1600 geschah es. So erz&auml;hlen es die &Uuml;berlieferungen:
+        Das Sonnenlicht fiel auf ein Zinngeschirr, und f&uuml;r die Dauer eines
+        Atemzugs war das Blech durchsichtig. B&ouml;hme sah nicht das Zinn.
+        Er sah, wie das Licht darin stand &ndash; und wie alles, was ist,
+        in einem einzigen Zusammenhang brennt. Er sprach zw&ouml;lf Jahre
+        mit niemandem dar&uuml;ber. Dann schrieb er es auf.
+      </p>
+
+      <p>
+        Das Buch hie&szlig; <em>Morgenr&ouml;te im Aufgang</em>. Es war keine
+        Gelehrsamkeit und wollte keine sein; es war die Niederschrift eines
+        Vorgangs. Ein Schuhmacher erkl&auml;rte die Sch&ouml;pfung nicht,
+        er beschrieb, wie sie in ihm brannte &ndash; und die Handschrift
+        wanderte von Hand zu Hand, bis die Kanzel davon erfuhr.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Es muss ein Feuer in der Finsternis entbrennen &ndash;<br>
+        und das Licht ist seine Frucht, nicht sein Gegner.&ldquo;</p>
+        <div class="attribution">&mdash; aus der Morgenr&ouml;te, f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <p>
+        Der Pfarrer von G&ouml;rlitz, Gregor Richter, hielt es f&uuml;r
+        Gottesl&auml;sterung, da&szlig; ein Mann ohne Latein &uuml;ber Gott
+        sprach. Der Rat der Stadt verbot B&ouml;hme das Schreiben. Man nahm ihm
+        keine Werkstatt, kein Haus, kein Brot &ndash; man nahm ihm die Feder.
+        Er schwieg elf Jahre lang. Elf Jahre, in denen er Schuhe machte,
+        Garn verkaufte, zur Kirche ging und inwendig weiterlas.
+        Ein Feuer, das man nicht sch&uuml;ren darf, verl&ouml;scht nicht.
+        Es zieht sich zusammen.
+      </p>
+
+      <p>
+        Ab 1618 schrieb er wieder &ndash; heimlich, in Heften, die er
+        vergraben lie&szlig; und unter Freunden weitergab. In diesen sechs
+        Jahren entstanden <em>De signatura rerum</em>, das
+        <em>Mysterium magnum</em>, der <em>Weg zu Christo</em>.
+        Kein Satz davon ist gez&auml;hmt. Und in allen steht dasselbe Wort,
+        das nur er so gebraucht hat: der <em>Ungrund</em>.
+      </p>
+
+      <p>
+        Der Ungrund ist das, was vor jedem Grund liegt &ndash; weder Licht
+        noch Finsternis, weder Sein noch Nichtsein, sondern die Stille,
+        aus der beides entspringt, weil sie selbst nichts festhalten will.
+        Aus diesem Ungrund steigt ein Wille auf, sich zu offenbaren,
+        und dieser Wille ist Feuer. Feuer ist bei B&ouml;hme nichts B&ouml;ses;
+        es ist der Anfang von allem, was werden kann. Aber Feuer ist
+        zweischneidig: Dasselbe Brennen, das w&auml;rmt, verzehrt.
+        Ein Zornfeuer oder ein Liebesfeuer &ndash; der Unterschied liegt nicht
+        im Feuer. Er liegt darin, was das Feuer empf&auml;ngt.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Hier wird es unbequem, und hier wird es kostbar. B&ouml;hme behauptet
+        n&auml;mlich nicht, da&szlig; man das Dunkle hinter sich l&auml;&szlig;t,
+        um ins Helle zu kommen. Er sagt: Ohne Finsternis kein Feuer,
+        ohne Feuer kein Licht. Wer sein Dunkel wegschneiden will,
+        schneidet seine eigene Flamme heraus. Man mu&szlig; hindurch.
+        Das ist der Teil seiner Lehre, den die Loge ohne Vorbehalt
+        unterschreibt: Es gibt keinen Aufstieg, der nicht durch die eigene
+        Tiefe f&uuml;hrt.
+      </p>
+
+      <p>
+        Die Gelehrten seiner Zeit hielten ihn f&uuml;r verr&uuml;ckt,
+        sp&auml;tere Jahrhunderte hielten ihn f&uuml;r einen Vorl&auml;ufer &ndash;
+        die Romantiker lasen ihn, die Philosophen stritten &uuml;ber ihn,
+        und er selbst hielt sich f&uuml;r nichts als einen,
+        dem etwas gezeigt wurde. Das ist die genaueste Beschreibung
+        eines Brennenden, die es gibt: keine Meisterschaft,
+        nur ein Empfangen, das nicht aufh&ouml;rt.
+      </p>
+
+      <p>
+        Er starb 1624, neunundvierzig Jahre alt, in G&ouml;rlitz,
+        ein paar Tage nachdem er sein letztes Heft beendet hatte.
+        &Uuml;berliefert ist, da&szlig; er seine Familie rufen lie&szlig;,
+        sich aufrichtete und sagte, nun fahre er ins Paradies &ndash;
+        nicht wie einer, der etwas erhofft, sondern wie einer,
+        der etwas erkennt. Und da&szlig; er danach still wurde,
+        so still wie drei&szlig;ig Jahre zuvor in der Werkstatt,
+        wenn das Licht auf das Zinn fiel.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Wer nicht stirbt, ehe er stirbt,<br>
+        der verdirbt, wenn er stirbt.&ldquo;</p>
+        <div class="attribution">&mdash; in der deutschen Mystik &uuml;berliefert, oft Jakob B&ouml;hme zugeschrieben</div>
+      </div>
+
+      <p>
+        Die Flammenloge lehrt kein Bekenntnis, sie lehrt ein Brennen.
+        Und B&ouml;hme ist ihr Zeuge daf&uuml;r, da&szlig; dieses Brennen
+        keine Bildung braucht. Er hatte kein Latein, keine Schule,
+        keinen Stand &ndash; nur eine Werkstatt, ein Verbot
+        und den Mut, elf Jahre zu schweigen, ohne zu erl&ouml;schen.
+        Wer schweigen kann, ohne kalt zu werden, hat das Feuer nicht
+        verloren. Er hat es gelernt zu halten.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, sieh nicht nur
+        auf das Licht. Sieh auf den dunklen Kern unter der Flamme,
+        dort, wo der Docht schwarz wird, bevor er brennt &ndash;
+        und begreife, da&szlig; beides zusammengeh&ouml;rt: das Vergehen
+        und das Leuchten. Du kannst nicht das eine nehmen und das andere
+        verachten. Du kannst nur in deinen eigenen Ungrund steigen
+        und dort anz&uuml;nden, was niemand f&uuml;r dich anz&uuml;nden kann.
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
