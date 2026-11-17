@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paracelsus &ndash; Der Mann, der die B&uuml;cher ins Feuer warf &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Paracelsus verbrannte die B&uuml;cher der Autorit&auml;ten auf dem Marktplatz von Basel und lehrte in der Sprache des Volkes. Eine Geschichte &uuml;ber die Dosis, das Gift und das Feuer, das nicht aus B&uuml;chern kommt.">
+  <meta name="keywords" content="Paracelsus, Alchemie, Arznei, Gift, Dosis, Basel, Natur, Feuer, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Paracelsus &ndash; Der Mann, der die B&uuml;cher ins Feuer warf">
+  <meta property="og:description" content="Er warf das Lehrbuch der Autorit&auml;t in die Flammen und sagte, ein Ding sei Gift oder Arznei &ndash; je nach Ma&szlig;. Eine Geschichte &uuml;ber das Brennen ohne Erlaubnis.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/paracelsus.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">November 2026</div>
+      <h1 class="entry-title">Paracelsus</h1>
+      <p class="entry-sub">Der Mann, der die B&uuml;cher ins Feuer warf</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Menschen, die ihr Leben lang in fremden H&auml;usern wohnen.
+        Und es gibt einen, der sein eigenes anz&uuml;ndete, um zu sehen,
+        was &uuml;brig blieb, wenn die W&auml;nde fielen.
+      </p>
+
+      <p>
+        Er wurde 1493 in einem Dorf bei Einsiedeln geboren und trug einen Namen,
+        der wie ein ganzes Regal voller B&uuml;cher klingt: Philippus Aureolus
+        Theophrastus Bombast von Hohenheim. Sp&auml;ter legte er ihn ab wie einen
+        zu schweren Mantel und nannte sich Paracelsus &ndash; &bdquo;&uuml;ber den
+        Celsus hinaus&ldquo;. Schon im Namen lag eine Behauptung: dass die Alten
+        nicht das Letzte gewesen sind.
+      </p>
+
+      <p>
+        Er zog durch Europa wie ein Wetter, das nirgends lange bleibt: durch
+        Bergwerke, Feldlager, Badestuben, Kl&ouml;ster, Siechenh&auml;user. Er
+        lernte nicht an den Pulten, sondern an den Betten der Kranken und in den
+        Stollen der Bergleute, bei Schmelzern, Badern und Hebammen &ndash; bei
+        Leuten, deren Wissen keinen lateinischen Rock trug. Was er dort sah,
+        glaubte er mehr als dem, was er dort las.
+      </p>
+
+      <p>
+        1527 wurde er Stadtarzt von Basel. Und gleich zu Beginn tat er das,
+        wovor die Gelehrtenstube erzittert: Er k&uuml;ndigte an, in deutscher
+        Sprache zu lehren, damit jeder Handwerker ihm folgen k&ouml;nne. Dann
+        lie&szlig; er auf dem Marktplatz ein Feuer errichten und warf die
+        Lehrb&uuml;cher der gro&szlig;en Autorit&auml;ten hinein &ndash; man
+        erz&auml;hlt, es sei der Kanon des Avicenna gewesen, jenes Buch, das
+        hundert Jahre lang als unfehlbar galt. Die Flammen taten, was Flammen tun.
+        Sie fragten nicht nach dem Ruf des Papiers.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Alle Dinge sind Gift und nichts ist ohne Gift;<br>
+        allein die Dosis macht, dass ein Ding kein Gift ist.&ldquo;</p>
+        <div class="attribution">&mdash; Paracelsus, Sieben Defensionen</div>
+      </div>
+
+      <p>
+        Es ist ein Satz, der die Welt umgedreht hat, ohne dass jemand es merkte.
+        Denn wenn Gift und Arznei nur Grade desselben Dinges sind, dann gibt es
+        keine reinen Stoffe mehr &ndash; nur noch Ma&szlig;e. Und es gibt keinen
+        Menschen, der nur Licht w&auml;re. Was in dir heilt, ist dasselbe, was in
+        dir verletzt: deine Hitze, dein Ehrgeiz, dein Zorn, deine Liebe. Die
+        Frage ist nie, ob du Feuer hast. Die Frage ist, wie viel davon du tr&auml;gst.
+      </p>
+
+      <p>
+        Seine Lehre von den drei Grundkr&auml;ften &ndash; Salz, Schwefel,
+        Quecksilber &ndash; war keine Rezeptur, sondern ein Bild: jedes Ding hat
+        einen Leib, eine Seele und einen Geist, und wer nur eines davon kuriert,
+        behandelt einen Torso. Der Mensch, sagte er, ist nicht ein Fass, in das
+        man Kr&auml;uter sch&uuml;ttet. Der Mensch ist ein St&uuml;ck Natur, das
+        sich selbst zu heilen versucht. Die beste Arznei des Menschen ist der
+        Mensch &ndash; so hat man es von ihm &uuml;berliefert.
+      </p>
+
+      <p>
+        In Basel hielt er es nur kurz. Er z&uuml;rnte gegen Apotheker, die
+        verd&uuml;nnten, gegen Kollegen, die zitierten statt zu schauen, gegen
+        Bezahlung f&uuml;r Rezepte, die er f&uuml;r Handwerk hielt. Man verklagte
+        ihn. Er floh bei Nacht, wie so viele, die zu laut die Wahrheit gesagt
+        haben, bevor sie bewiesen war. Der Rest seines Lebens ist eine Kette von
+        Orten ohne Bleiberecht.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Man hat ihn einen Scharlatan geschimpft, einen Trunkenbold, einen Ketzer
+        der Medizin. Die Legende will, dass er 1541 in Salzburg nach einem Streit
+        starb &ndash; erschlagen, hei&szlig;t es, oder vergiftet von neidischen
+        Feinden. Seine Feinde haben die Geschichte geschrieben. Seine Kranken
+        haben &uuml;berlebt.
+      </p>
+
+      <p>
+        Was bleibt, ist nicht sein Ruhm, sondern seine Geste: das Feuer auf dem
+        Marktplatz. Denn darin liegt die eigentliche Lehre der Flammenloge. Nicht
+        das Verbrennen &ndash; das ist Handwerk. Sondern die Bereitschaft, das
+        f&uuml;r heilig Gehaltene anzufassen und zu pr&uuml;fen, ob es tr&auml;gt.
+        Ein Buch, das zu Asche wird, war Papier. Ein Buch, das durch das Feuer
+        geht und wieder aufersteht, war Wahrheit.
+      </p>
+
+      <p>
+        Und noch etwas: Paracelsus hat nie behauptet, rein zu sein. Er trank, er
+        stritt, er irrte, er hatte ein Maul wie ein Schmied. Er war sich selbst
+        Gift und Arznei zugleich. Genau darin liegt die Wahrheit der Dosis: Man
+        muss sich nicht l&auml;utern, um zu brennen. Man muss nur wissen, wie viel.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Ein Ding ist nicht gut, weil es alt ist,<br>
+        und nicht neu, weil es gl&auml;nzt.<br>
+        Es ist wahr, wenn es im Feuer sein Ma&szlig; h&auml;lt.&ldquo;</p>
+        <div class="attribution">&mdash; dem Paracelsus zugeschrieben, f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <p>
+        Die Flammenloge h&auml;lt keine Autorit&auml;t &uuml;ber sich, die sie
+        nicht selbst gepr&uuml;ft hat &ndash; auch nicht ihre eigenen Worte von
+        gestern. Wer hier eintritt, bringt kein Glaubensbekenntnis mit, sondern
+        einen n&uuml;chternen Blick und ein trockenes Holzscheit. Mehr wird nicht
+        verlangt. Mehr wird nicht versprochen.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest, dann halte deine Hand
+        nicht zu weit weg und nicht zu nah. Sp&uuml;r die Grenze: hier w&auml;rmt
+        es, dort verbrennt es. Genau diese Grenze hat Paracelsus gemeint, als er
+        die Dosis zum Ma&szlig; der Welt machte. Du musst dein Feuer nicht
+        l&ouml;schen, um zu &uuml;berleben. Du musst nur lernen, in welchem
+        Abstand du ihm gegen&uuml;berstehen willst.
+      </p>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
