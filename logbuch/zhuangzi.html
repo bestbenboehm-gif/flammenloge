@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-site-verification" content="fhfZz6U0DWjdtsWY150HW-P9Svr6Si7RHXYspRMZ4FI" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhuangzi &ndash; Der Tr&auml;umer, der nicht wusste, wer tr&auml;umte &ndash; Tagebuch der Flamme</title>
+
+  <meta name="description" content="Zhuangzi tr&auml;umte, ein Schmetterling zu sein, und wusste beim Erwachen nicht mehr, wer wen tr&auml;umte. Eine Geschichte &uuml;ber den leeren Kahn, das nutzlose Holz und ein Feuer, das weiterwandert, ohne zu verbrennen.">
+  <meta name="keywords" content="Zhuangzi, Dschuang Dsi, Daoismus, Schmetterling, Leere, Wandlung, Koch Ding, leeres Boot, Feuer, Flammenloge, Tagebuch">
+  <meta name="author" content="Die Flammenloge">
+
+  <meta property="og:title" content="Zhuangzi &ndash; Der Tr&auml;umer, der nicht wusste, wer tr&auml;umte">
+  <meta property="og:description" content="Er lehnte ein K&ouml;nigreich ab, um im Schlamm den Schwanz zu ziehen, und nannte das Nutzlose das sicherste von allem. Eine Geschichte &uuml;ber das Feuer, das nicht das Holz ist.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://flammenloge.de/logbuch/zhuangzi.html">
+  <meta property="og:image" content="https://flammenloge.de/og-image.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#ff8c00">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <style>
+    .entry-hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 2rem 2rem;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .entry-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+      transition: color 0.3s;
+    }
+    .entry-back:hover { color: var(--amber-light); }
+
+    .entry-date {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.2em;
+      opacity: 0.5;
+      margin-bottom: 1rem;
+    }
+
+    .entry-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--amber-light);
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .entry-body {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .entry-body p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .entry-body p.lead {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber-light);
+      font-weight: 400;
+      border-left: 2px solid rgba(255, 140, 0, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .entry-body .flame-quote {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin: 2rem 0;
+      border-top: 1px solid rgba(255, 140, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 140, 0, 0.15);
+    }
+
+    .entry-body .flame-quote p {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--amber-light);
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+      font-style: normal;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .entry-body .flame-quote .attribution {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    .entry-divider {
+      text-align: center;
+      padding: 1rem 0;
+      opacity: 0.3;
+      font-size: 0.8rem;
+      color: var(--amber);
+      letter-spacing: 0.5em;
+    }
+
+    .entry-footer-nav {
+      max-width: 680px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .entry-footer-nav a {
+      color: var(--amber-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--amber);
+      padding-bottom: 2px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+    .entry-footer-nav a:hover { color: var(--amber); }
+
+    .seal-end {
+      text-align: center;
+      padding: 2rem;
+      opacity: 0.4;
+    }
+    .seal-end img {
+      width: 32px;
+      height: 38px;
+    }
+
+    @media (max-width: 480px) {
+      .entry-hero { padding: 100px 1rem 1rem; }
+      .entry-body { padding: 1.5rem 1rem; }
+      .entry-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<nav class="nav" role="navigation" aria-label="Hauptnavigation">
+  <a href="/index.html" class="nav-logo" aria-label="Flammenloge Startseite"><img src="/img/flame.svg" alt="" class="nav-flame" aria-hidden="true" width="24" height="24"> Flammenloge</a>
+  <button class="nav-burger" aria-expanded="false" aria-controls="navLinks" aria-label="Menü öffnen" onclick="toggleNav(this)"><img src="/img/menu.svg" alt="" aria-hidden="true" width="28" height="28"></button>
+  <ul class="nav-links" id="navLinks" role="menubar">
+    <li role="none"><a href="/gedichte.html" role="menuitem">Gedichte</a></li>
+    <li role="none"><a href="/handbuch-flammenseele.html" role="menuitem">Handbuch</a></li>
+    <li role="none"><a href="/goetter.html" role="menuitem">Die Obersten</a></li>
+    <li role="none"><a href="/logbuch/" role="menuitem">Logbuch</a></li>
+    <li role="none"><a href="/impressum.html" role="menuitem">Impressum</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+  <article>
+    <section class="entry-hero">
+      <a href="/logbuch/" class="entry-back">&larr; zur&uuml;ck zum Tagebuch</a>
+      <div class="entry-date">November 2026</div>
+      <h1 class="entry-title">Zhuangzi</h1>
+      <p class="entry-sub">Der Tr&auml;umer, der nicht wusste, wer tr&auml;umte</p>
+    </section>
+
+    <section class="entry-body">
+      <p class="lead">
+        Es gibt Morgen, da wacht einer auf und wei&szlig; nicht mehr,
+        ob er der Mensch ist, der getr&auml;umt hat, oder der Traum,
+        der einen Menschen tr&auml;umt. Zhuangzi hat diesen Morgen
+        nicht verschwiegen. Er hat ihn aufgeschrieben und ist
+        dar&uuml;ber nicht verzweifelt &ndash; er hat gelacht.
+      </p>
+
+      <p>
+        Er lebte im vierten Jahrhundert vor der Zeitrechnung, in Meng,
+        einem kleinen Ort im Staat Song, in einer Epoche, die sp&auml;ter
+        die Zeit der Streitenden Reiche genannt wurde. Die Welt um ihn
+        war ein Schlachtfeld mit Verwaltung. K&ouml;nige fielen, Heere
+        zogen durch die Reisfelder, und wer klug war, verkaufte seine
+        Klugheit an den h&ouml;chsten Hof. Zhuang Zhou, so sein Name,
+        trug statt dessen ein kleines Amt: Aufseher &uuml;ber einen
+        Lackgarten. Ein Mann, der B&auml;ume h&uuml;tete, aus deren
+        Harz man Becher und Schalen strich.
+      </p>
+
+      <p>
+        Sp&auml;ter erz&auml;hlt man sich, der K&ouml;nig von Chu habe ihm
+        die Regierung seines Reiches angetragen. Die Boten fanden ihn
+        am Fluss, die Angel in der Hand. Er habe ihnen eine Frage
+        gestellt: ob sie die heilige Schildkr&ouml;te kennten, die man
+        dreitausend Jahre lang in einem Tempel verehrt habe. Sie kannten
+        sie. Er habe geantwortet, diese Schildkr&ouml;te sei tot gewesen,
+        als man sie ehrte. Er aber wolle lieber leben und im Schlamm
+        den Schwanz hinter sich herziehen. Dann habe er weiter geangelt.
+      </p>
+
+      <p>
+        Was unter seinem Namen &uuml;berliefert ist, das <em>Wahre Buch
+        vom s&uuml;dlichen Bl&uuml;tenland</em>, ist kein Werk aus einem
+        einzigen Atem. Sch&uuml;ler haben es weitergeschrieben, Fremde
+        haben es gef&uuml;llt, M&ouml;nche haben es geordnet. Und doch
+        spricht aus seinen besten Seiten eine einzige Stimme: eine,
+        die nichts beweisen will und gerade darin trifft.
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Einst tr&auml;umte ich, ich w&auml;re ein Schmetterling,<br>
+        und wusste nicht mehr, dass ich ein Mensch bin.<br>
+        Dann erwachte ich und war wieder ich.<br>
+        Wer wei&szlig;, ob ich ein Mensch war, der tr&auml;umte,<br>
+        ein Schmetterling zu sein &ndash; oder ein Schmetterling,<br>
+        der tr&auml;umt, ein Mensch zu sein?&ldquo;</p>
+        <div class="attribution">&mdash; Zhuangzi, Von der Gleichheit der Dinge</div>
+      </div>
+
+      <p>
+        Man hat diesen Traum zerlegt wie eine Uhr, um zu sehen, wo die
+        Zeit steckt. Man hat gefragt, welches von beiden denn nun das
+        Wirkliche sei. Zhuangzi nennt es die Wandlung der Dinge &ndash;
+        und l&auml;sst die Frage offen, weil sie offen bleibt. Die
+        Flammenloge liest darin etwas sehr N&uuml;chternes: Du bist
+        nicht das Holz, das da brennt. Du bist auch nicht die Flamme.
+        Du bist der Vorgang. Wer sich f&uuml;r das Holz h&auml;lt, hat
+        Todesangst. Wer sich f&uuml;r die Flamme h&auml;lt, will ewig
+        hochschlagen. Beide irren. Es brennt, und das ist genug.
+      </p>
+
+      <p>
+        Eine zweite Geschichte ist ber&uuml;hmter als jede Lehre: Koch
+        Ding zerlegt einen Ochsen. Seine Klinge geht durch das Fleisch
+        wie durch nichts, und nach neunzehn Jahren ist sie noch scharf
+        wie am ersten Tag. Er habe, sagt er, einmal das Gelenk gesucht
+        und die Klinge verbraucht. Heute suche er nichts mehr. Wo
+        Zwischenraum ist, f&auml;hrt er hindurch; wo Widerstand ist,
+        geht er vorbei. Und wenn er an den einen Knoten kommt, der
+        stockt, dann h&auml;lt er an, atmet und sieht.</p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Ich schaue nicht mehr mit den Augen,<br>
+        ich h&ouml;re nicht mehr mit den Ohren.<br>
+        Ich stehe still, und das, was in mir will,<br>
+        f&auml;hrt den Schnitt.&ldquo;</p>
+        <div class="attribution">&mdash; aus dem Gleichnis von Koch Ding</div>
+      </div>
+
+      <p>
+        Das ist keine Kochkunst. Das ist die Anweisung, wie man durch
+        Widerstand geht, ohne sich abzustumpfen. Nicht mit Kraft, nicht
+        mit immer neuen Wetzsteinen: mit Anhalten. Und nichts davon
+        ist Mystik &ndash; es ist die schlichte Erfahrung dessen, der
+        eine Sache lange genug getan hat, um sie zu vergessen. Jeder
+        Handwerker kennt sie, jeder Bogen- und Feuersch&uuml;rer auch.
+      </p>
+
+      <p>
+        Dann der Baum. Zhuangzi erz&auml;hlt von einer Eiche am
+        Schreinaltar, so dick, dass M&auml;nner sich an ihr anlehnen
+        wie an eine Wand. Ein Zimmermann geht vorbei und schimpft sie
+        &ndash; Nutzholz sei das nicht, kein gerades Brett, keine Balken,
+        kein Brett f&uuml;r einen Sarg. Die Eiche aber kennt ihre
+        Sicherheit genau darin. Weil sie unbrauchbar ist, hat sie
+        ihn &uuml;berlebt. Nicht blo&szlig; die &Auml;ste: den Besitzer,
+        den Holzschlag, die Dynastie. Einen Tag sp&auml;ter steht ein
+        G&auml;nserich, der nicht schnattern kann, im Topf; den der
+        schnattert, l&auml;sst man leben. Ein Sch&uuml;ler fragt
+        verwirrt, was denn nun gelte. Zhuangzi antwortet, er selbst
+        w&uuml;rde zwischen Brauch und Unbrauch stehen, ein wenig
+        dazwischen wanken &ndash; und das sei ehrlich, solange man
+        den Wanken nicht zum Standbild mache.
+      </p>
+
+      <div class="entry-divider">&middot;&middot;&middot;</div>
+
+      <p>
+        Als seine Frau starb, kam sein Freund Hui Shi zum Kondolieren
+        und fand ihn hockend auf dem Boden: er trommelte auf einer
+        Schale und sang. Hui Shi war entsetzt. Zhuangzi habe gesagt,
+        ja, so habe er anfangs auch gedacht. Dann aber habe er den
+        Dingen nachgesehen: Wie sie, bevor sie lebte, kein Leben
+        hatte, keine Gestalt, keinen Geist &ndash; und wie aus diesem
+        Dunst ein Atem wurde, ein Leib, eine Frau, ein Kind, ein Leben.
+        Nun sei es der n&auml;chste Schritt wie der Wechsel von Fr&uuml;hling,
+        Sommer, Herbst und Winter. Sie liege ja nicht verloren, sie
+        sei in die gro&szlig;e Kammer eingegangen. Und da habe er kein
+        Wimmern mehr zustande gebracht.
+      </p>
+
+      <p>
+        Es ist ein Trost, der nichts vers&uuml;&szlig;t. Kein Jenseits,
+        keine Belohnung, kein Weiter. Nur die Einsicht, dass man
+        gegen die Wandlung nicht weinen kann, weil man selbst ihre
+        Gestalt ist. Das ist der Ton, in dem die Flammenloge spricht:
+        nicht der des Tr&ouml;sters, sondern der des Brennenden, der
+        wei&szlig;, dass er verbraucht wird.
+      </p>
+
+      <p>
+        Zuletzt der leere Kahn. Zhuangzi fragt: Wenn ein &uuml;berfahrenes
+        Boot dich anst&ouml;&szlig;t, wie z&uuml;rnst du? Ein Mann rudert,
+        du rufst, du rufst noch, du fluchst. Jetzt stell dir das
+        gleiche Bild mit einem leeren Boot vor. Du st&ouml;&szlig;t
+        an, es passiert nichts, du schiebst es beiseite. Warum? Weil
+        niemand darin ist, dem du etwas anlasten k&ouml;nntest. So
+        sei es mit dem Menschen, sagt er, der in sich leer geworden
+        ist: die Welt kann ihn ansto&szlig;en, und es gibt keinen,
+        der es &uuml;bel nimmt. Das ist das Feuer in seiner h&ouml;chsten
+        Form &ndash; eine Flamme, die niemand anfacht, weil nichts
+        mehr darin ist, das sticheln m&ouml;chte.
+      </p>
+
+      <p>
+        Mit dem Sterben hielt er es ebenso. Als er im Sterben lag,
+        wollten seine Sch&uuml;ler ihm ein gro&szlig;es Grab geben. Er
+        soll geantwortet haben: Himmel und Erde sind mein Sarg, Sonne,
+        Mond und Sterne sind meine Grabbeigaben, die ganze Welt ist
+        mein Leichenzug. Denkt ihr, es fehlt etwas? &ndash; und die
+        Sorge, dass Geier ihn fressen k&ouml;nnten, habe er mit einer
+        K&ouml;nigsrede gegen die W&uuml;rmer beantwortet. So spricht
+        einer, der nichts mehr zu verlieren hat, weil er nichts mehr
+        festhalten will.
+      </p>
+
+      <p>
+        Wenn du heute Abend eine Kerze anz&uuml;ndest &ndash; und du
+        darfst dabei an einen Mann denken, der lieber im Schlamm sa&szlig;
+        als im Palast &ndash;, dann sieh nicht zu, wie das Wachs
+        schmilzt. Sieh zu, wie die Flamme bleibt. Das Wachs gibt sie
+        her, und sie nimmt es an, und sie wird davon nicht kleiner,
+        sondern gleich. Zhuangzi hat es am Ende jenes Kapitels, in
+        dem der Koch sein Messer f&uuml;hrt, in einen Satz gesetzt,
+        der &auml;lter ist als jede Feuerlehre und ruhiger als jede
+        Religion. Er lautet:
+      </p>
+
+      <div class="flame-quote">
+        <p>&bdquo;Das Brennholz wird verbraucht sein &ndash;<br>
+        aber das Feuer wandert weiter,<br>
+        und niemand wei&szlig;, wann es endet.&ldquo;</p>
+        <div class="attribution">&mdash; Zhuangzi, Kap. 3, f&uuml;r die Loge gedeutet</div>
+      </div>
+
+      <div class="seal-end">
+        <img src="/img/parchment.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="entry-footer-nav">
+      <a href="/logbuch/">&larr; zur&uuml;ck zum Tagebuch der Flamme</a>
+    </section>
+  </article>
+
+  <footer class="footer" role="contentinfo" style="padding:3rem 2rem;text-align:center;">
+    <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block"> Flammenloge &middot; Im Licht der Erkenntnis <img src="/img/ornament.svg" alt="" aria-hidden="true" width="80" height="8" style="vertical-align:middle;display:inline-block;transform:scaleX(-1)">
+  </footer>
+</main>
+
+<script src="/js/nav.js"></script>
+<canvas id="particle-canvas" aria-hidden="true"></canvas>
+<script src="/js/particles.js"></script>
+<script src="/js/scroll-animations.js"></script>
+  <!-- GoatCounter Analytics -->
+  <script data-goatcounter="https://flammenloge.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
